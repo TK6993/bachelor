@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BachelorArbeit", "BachelorArbeit.csproj", "{588B983B-7C08-2D5E-EC6B-C10FDA27BCE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BachelorArbeit.Editor", "BachelorArbeit.Editor.csproj", "{6A12F0FB-C632-B4F9-A9C7-42F137E39EF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{588B983B-7C08-2D5E-EC6B-C10FDA27BCE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{588B983B-7C08-2D5E-EC6B-C10FDA27BCE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{588B983B-7C08-2D5E-EC6B-C10FDA27BCE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{588B983B-7C08-2D5E-EC6B-C10FDA27BCE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A12F0FB-C632-B4F9-A9C7-42F137E39EF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A12F0FB-C632-B4F9-A9C7-42F137E39EF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A12F0FB-C632-B4F9-A9C7-42F137E39EF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A12F0FB-C632-B4F9-A9C7-42F137E39EF2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
