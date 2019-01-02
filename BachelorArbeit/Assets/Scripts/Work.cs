@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,7 +19,7 @@ public class Work : Bedurfniss {
 
     public override bool satisfy()
     {
-        decreaseCurrentValue( 5 );
+        decreaseCurrentValue( 4 );
         //base.tryToSatisfy();
         return false;
 
@@ -26,6 +27,8 @@ public class Work : Bedurfniss {
 
     }
 
-
-
+    public override bool needHasNotBeenSatisfied()
+    {
+        throw new NotImplementedException();
+    }
 }

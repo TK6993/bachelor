@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,7 +20,7 @@ public class Hunger : Bedurfniss {
 
     public override bool satisfy()
     {
-        decreaseCurrentValue( 10 );
+        decreaseCurrentValue( 40 );
         // base.tryToSatisfy();
         return false;
 
@@ -27,6 +28,12 @@ public class Hunger : Bedurfniss {
 
     }
 
+    public override bool needHasNotBeenSatisfied()
+    {
+        if ( currentvalue > MaxValue - 5 ) {
 
-
+            Destroy( gameObject );
+        }
+        return false;
+    }
 }

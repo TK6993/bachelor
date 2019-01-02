@@ -15,8 +15,9 @@ public class KIAgent : MonoBehaviour
     public GameObject waiterPrefab;
     public Bedurfniss workingNeed;
     public bool waitingForFreeNeedPoint = false;
+    public int counterOfWaitingNeeds = 0;
 
-    List<GameObject> currentCollisions = new List<GameObject>();
+    public List<GameObject> currentCollisions = new List<GameObject>();
 
 
     // Use this for initialization
@@ -28,56 +29,74 @@ public class KIAgent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ( waiter == null && !isWorkingOnNeed) {
+        
+
+        if ( waiter == null && !isWorkingOnNeed ) {
             waiter = Instantiate( waiterPrefab );
 
             increaseNeeds();
             evaluateNeeds();
-        }
-
-        else if ( isWorkingOnNeed ) {
-
             tryToSatisfyNeed( workingNeed );
 
         }
 
-    }
 
-    private void tryToSatisfyNeed( Bedurfniss workingNeed )
+        else if ( waiter == null && isWorkingOnNeed ) {
+            waiter = Instantiate( waiterPrefab );
+            increaseNeeds();
+            isWorkingOnNeed = tryToSatisfyNeed( workingNeed );
+
+
+        }
+
+    }
+    // TODO: 2 und 3 ... wichtigstes bedürfnis angehen wenn bestzet
+    // is wworking on needs betrachten 
+    private bool tryToSatisfyNeed( Bedurfniss workingNeed )
     {
         foreach ( GameObject coll in currentCollisions )
         {
             if ( coll.tag == workingNeed.name ) {
 
-              isWorkingOnNeed =  workingNeed.satisfy();
+                NeedStation needS = coll.gameObject.GetComponent<NeedStation>();
+                return workingNeed.satisfy();
             }
         }
+        return true;
     }
 
     private void evaluateNeeds()
     {
 
-        //noch sehr einfach (nimmt erstes unbefreidigtes bedürfniss.)
-        if ( !isWorkingOnNeed )
-        {
-            int highestNeedValue = -20;
-            Bedurfniss highestNeed = null;
-            foreach ( Bedurfniss b in bedürfnisse )
-            {
-                if ( b.Currentvalue >= highestNeedValue)
-                {
-                    highestNeedValue = b.Currentvalue;
-                    highestNeed = b;
+        //noch sehr einfach (ermittelt das höchste bedürfniss.)
+       
 
+            Array.Sort( bedürfnisse );
+            Array.Reverse( bedürfnisse );
+            //highestNeedValue = b.Currentvalue;
+            workingNeed = bedürfnisse[ counterOfWaitingNeeds];
+
+
+
+            if ( workingNeed != null )
+            {
+                FindWayTosatisfactionPoint( workingNeed );
+                // Wenn kein freier Platz für die befriedigung des Bedürfnisses gefunden wurde ist "isworkingOnNeed" falsch und
+                // needHasNotBeenSatisfied() wird aufgerufen sowie der  counterOfWaitingNeeds wird erhöht das als nächtes das am 2 meisten gewollte bedrüfniss befriedigt wird.
+                isWorkingOnNeed = !waitingForFreeNeedPoint;
+                if ( waitingForFreeNeedPoint )
+                {
+                    waitingForFreeNeedPoint = false;
+                    counterOfWaitingNeeds++;
+                    if(counterOfWaitingNeeds > bedürfnisse.Length-1 ) { counterOfWaitingNeeds = 0; }
+                    workingNeed.needHasNotBeenSatisfied();
+                }
+                else {
+                    counterOfWaitingNeeds--;
+                    if ( counterOfWaitingNeeds < 0 ) counterOfWaitingNeeds = 0;
                 }
             }
-            if ( highestNeed != null )
-            {
-                FindWayTosatisfactionPoint( highestNeed );
-                workingNeed = highestNeed;
-                isWorkingOnNeed = !waitingForFreeNeedPoint;
-            }
-        }
+        
 
     }
 
@@ -96,24 +115,32 @@ public class KIAgent : MonoBehaviour
 
 
     }
-   
+
 
 
     void OnTriggerEnter( Collider col )
     {
-        currentCollisions.Add( col.gameObject );
-    }
+        if ( col.gameObject.layer == 8 )
+        {
+            NeedStation needS = col.GetComponent<NeedStation>();
+            if ( needS.hasCapacity && !needS.agentsOnThisStation.Contains( gameObject ) ) return;
+           // if(col.GetComponent<NeedStation>().resgisterOnStation( gameObject ))
+           currentCollisions.Add( col.gameObject );
 
+        }
+    }
     void OnTriggerExit( Collider col )
     {
-       currentCollisions.Remove( col.gameObject );
-       if ( col.gameObject.layer == 8 ) {
-            NeedStation needS = col.gameObject.GetComponent<NeedStation>();
-            if ( needS.taken && needS.agentOnThisStation == gameObject) {
-                    needS.taken = false;
-                    needS.agentOnThisStation = null;
-                }
-        }
+        // Agent gibt die Bedürfnissstation frei
+        col.GetComponent<NeedStation>().removeFromStation(gameObject);
+        currentCollisions.Remove( col.gameObject );
+        /* if ( col.gameObject.layer == 8 ) {
+              NeedStation needS = col.gameObject.GetComponent<NeedStation>();
+              if ( needS.taken && needS.agentOnThisStation == gameObject) {
+                      needS.taken = false;
+                      needS.agentOnThisStation = null;
+                  }
+          }*/
     }
 
 

@@ -7,8 +7,8 @@ public class Waiter : MonoBehaviour {
     // Das objekt wartet eine gewisse Zeit bis es timeisUp als true zurückgibt.
 
     float elapsedTime;
-    public int unitSize = 1;
-    public int unitsToWait = 1;
+    public float unitSize = 1;
+    public float unitsToWait = 1;
     bool startedTimer = false;
    public  bool timeisUp = true;
 

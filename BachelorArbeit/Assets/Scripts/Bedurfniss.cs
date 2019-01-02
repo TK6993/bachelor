@@ -1,13 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Bedurfniss : MonoBehaviour {
+public abstract class Bedurfniss : MonoBehaviour, IComparable {
 
 
   public int increaseValue = 1;
   public int currentvalue;
-  private int maxValue= 10;
+  private int maxValue= 60;
   private int minValue=-10;
   public string name;
   public GameObject needy;
@@ -87,11 +88,21 @@ public abstract class Bedurfniss : MonoBehaviour {
         return currentvalue;
     }
 
+    abstract public bool needHasNotBeenSatisfied();
+
     public virtual bool satisfy() {
         //work to do
-        if ( isWorkingOn ) return true;
-        isWorkingOn = true;
-        return true;
+        if ( isWorkingOn ) return false;
+        isWorkingOn = false;
+        return false;
     }
 
+    public int CompareTo( object obj )
+    {
+        Bedurfniss otherBedurfnis = obj as Bedurfniss;
+        if ( otherBedurfnis != null )
+            return this.currentvalue.CompareTo( otherBedurfnis.currentvalue );
+        else
+            throw new ArgumentException( "Object is not a Temperature" );
+    }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - hunger
   - work
+  - freetime
   layers:
   - Default
   - TransparentFX

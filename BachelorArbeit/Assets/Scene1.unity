@@ -118,7 +118,7 @@ Prefab:
     - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: "bed\xFCrfnisse.Array.size"
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_LocalPosition.x
@@ -205,6 +205,86 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[2]"
+      value: 
+      objectReference: {fileID: 1813206143}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[3]"
+      value: 
+      objectReference: {fileID: 939911211}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[4]"
+      value: 
+      objectReference: {fileID: 942145908}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[5]"
+      value: 
+      objectReference: {fileID: 955967484}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[6]"
+      value: 
+      objectReference: {fileID: 1044942380}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[7]"
+      value: 
+      objectReference: {fileID: 1111052130}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[8]"
+      value: 
+      objectReference: {fileID: 1175710940}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[9]"
+      value: 
+      objectReference: {fileID: 1201154683}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[10]"
+      value: 
+      objectReference: {fileID: 1433070541}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[11]"
+      value: 
+      objectReference: {fileID: 1641474679}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[12]"
+      value: 
+      objectReference: {fileID: 1683524915}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[13]"
+      value: 
+      objectReference: {fileID: 1801062615}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[14]"
+      value: 
+      objectReference: {fileID: 1813206143}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[15]"
+      value: 
+      objectReference: {fileID: 1865837438}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[16]"
+      value: 
+      objectReference: {fileID: 2001316842}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[17]"
+      value: 
+      objectReference: {fileID: 2100598732}
     m_RemovedComponents:
     - {fileID: 114902731038674346, guid: f7f5779b837f536449a6abe873a56021, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f7f5779b837f536449a6abe873a56021, type: 2}
@@ -307,7 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 3
+  increaseValue: 2
   currentvalue: 2
   name: 
   needy: {fileID: 0}
@@ -323,8 +403,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 3
   currentvalue: 8
+  name: 
+  needy: {fileID: 0}
+  isWorkingOn: 0
+--- !u!114 &54128294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 54128285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657d93cba2677b744ab6067b2eadcc58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseValue: 0
+  currentvalue: 0
   name: 
   needy: {fileID: 0}
   isWorkingOn: 0
@@ -338,7 +434,7 @@ Prefab:
     - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: "bed\xFCrfnisse.Array.size"
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_LocalPosition.x
@@ -429,6 +525,86 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[2]"
+      value: 
+      objectReference: {fileID: 1111052130}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[3]"
+      value: 
+      objectReference: {fileID: 939911211}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[4]"
+      value: 
+      objectReference: {fileID: 942145908}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[5]"
+      value: 
+      objectReference: {fileID: 955967484}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[6]"
+      value: 
+      objectReference: {fileID: 1044942380}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[7]"
+      value: 
+      objectReference: {fileID: 1111052130}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[8]"
+      value: 
+      objectReference: {fileID: 1175710940}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[9]"
+      value: 
+      objectReference: {fileID: 1201154683}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[10]"
+      value: 
+      objectReference: {fileID: 1433070541}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[11]"
+      value: 
+      objectReference: {fileID: 1641474679}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[12]"
+      value: 
+      objectReference: {fileID: 1683524915}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[13]"
+      value: 
+      objectReference: {fileID: 1801062615}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[14]"
+      value: 
+      objectReference: {fileID: 1813206143}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[15]"
+      value: 
+      objectReference: {fileID: 1865837438}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[16]"
+      value: 
+      objectReference: {fileID: 2001316842}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[17]"
+      value: 
+      objectReference: {fileID: 2100598732}
     m_RemovedComponents:
     - {fileID: 114902731038674346, guid: f7f5779b837f536449a6abe873a56021, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f7f5779b837f536449a6abe873a56021, type: 2}
@@ -443,7 +619,7 @@ Prefab:
     - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: "bed\xFCrfnisse.Array.size"
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_LocalPosition.x
@@ -534,6 +710,86 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[2]"
+      value: 
+      objectReference: {fileID: 1433070541}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[3]"
+      value: 
+      objectReference: {fileID: 939911211}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[4]"
+      value: 
+      objectReference: {fileID: 942145908}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[5]"
+      value: 
+      objectReference: {fileID: 955967484}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[6]"
+      value: 
+      objectReference: {fileID: 1044942380}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[7]"
+      value: 
+      objectReference: {fileID: 1111052130}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[8]"
+      value: 
+      objectReference: {fileID: 1175710940}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[9]"
+      value: 
+      objectReference: {fileID: 1201154683}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[10]"
+      value: 
+      objectReference: {fileID: 1433070541}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[11]"
+      value: 
+      objectReference: {fileID: 1641474679}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[12]"
+      value: 
+      objectReference: {fileID: 1683524915}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[13]"
+      value: 
+      objectReference: {fileID: 1801062615}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[14]"
+      value: 
+      objectReference: {fileID: 1813206143}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[15]"
+      value: 
+      objectReference: {fileID: 1865837438}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[16]"
+      value: 
+      objectReference: {fileID: 2001316842}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[17]"
+      value: 
+      objectReference: {fileID: 2100598732}
     m_RemovedComponents:
     - {fileID: 114902731038674346, guid: f7f5779b837f536449a6abe873a56021, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f7f5779b837f536449a6abe873a56021, type: 2}
@@ -548,7 +804,7 @@ Prefab:
     - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: "bed\xFCrfnisse.Array.size"
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_LocalPosition.x
@@ -637,8 +893,88 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[2]"
+      value: 
+      objectReference: {fileID: 2100598732}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[3]"
+      value: 
+      objectReference: {fileID: 939911211}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[4]"
+      value: 
+      objectReference: {fileID: 942145908}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[5]"
+      value: 
+      objectReference: {fileID: 955967484}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[6]"
+      value: 
+      objectReference: {fileID: 1044942380}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[7]"
+      value: 
+      objectReference: {fileID: 1111052130}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[8]"
+      value: 
+      objectReference: {fileID: 1175710940}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[9]"
+      value: 
+      objectReference: {fileID: 1201154683}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[10]"
+      value: 
+      objectReference: {fileID: 1433070541}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[11]"
+      value: 
+      objectReference: {fileID: 1641474679}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[12]"
+      value: 
+      objectReference: {fileID: 1683524915}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[13]"
+      value: 
+      objectReference: {fileID: 1801062615}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[14]"
+      value: 
+      objectReference: {fileID: 1813206143}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[15]"
+      value: 
+      objectReference: {fileID: 1865837438}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[16]"
+      value: 
+      objectReference: {fileID: 2001316842}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[17]"
+      value: 
+      objectReference: {fileID: 2100598732}
     m_RemovedComponents:
     - {fileID: 114902731038674346, guid: f7f5779b837f536449a6abe873a56021, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f7f5779b837f536449a6abe873a56021, type: 2}
@@ -687,9 +1023,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d519bffe6f75f5b46b27a24b6aadb4ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  justforOne: 1
-  taken: 0
-  agentOnThisStation: {fileID: 0}
+  hasCapacity: 1
+  isFull: 0
+  stationSize: 1
+  agentsOnThisStation: []
 --- !u!54 &209197843
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -964,9 +1301,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d519bffe6f75f5b46b27a24b6aadb4ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  justforOne: 1
-  taken: 0
-  agentOnThisStation: {fileID: 0}
+  hasCapacity: 1
+  isFull: 0
+  stationSize: 1
+  agentsOnThisStation: []
 --- !u!54 &389375436
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1048,7 +1386,12 @@ Prefab:
     - target: {fileID: 114261190196950190, guid: 3e9d9184e476eab40a2ad17f96fa7e40,
         type: 2}
       propertyPath: hungerPoints.Array.size
-      value: 3
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114261190196950190, guid: 3e9d9184e476eab40a2ad17f96fa7e40,
+        type: 2}
+      propertyPath: freetTimePints.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4655833829113388, guid: 3e9d9184e476eab40a2ad17f96fa7e40, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1122,6 +1465,31 @@ Prefab:
       propertyPath: workPoints.Array.data[4]
       value: 
       objectReference: {fileID: 209197840}
+    - target: {fileID: 114261190196950190, guid: 3e9d9184e476eab40a2ad17f96fa7e40,
+        type: 2}
+      propertyPath: freetTimePints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1577843174}
+    - target: {fileID: 114261190196950190, guid: 3e9d9184e476eab40a2ad17f96fa7e40,
+        type: 2}
+      propertyPath: hungerPoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 1912876087}
+    - target: {fileID: 114261190196950190, guid: 3e9d9184e476eab40a2ad17f96fa7e40,
+        type: 2}
+      propertyPath: hungerPoints.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114261190196950190, guid: 3e9d9184e476eab40a2ad17f96fa7e40,
+        type: 2}
+      propertyPath: hungerPoints.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114261190196950190, guid: 3e9d9184e476eab40a2ad17f96fa7e40,
+        type: 2}
+      propertyPath: hungerPoints.Array.data[6]
+      value: 
+      objectReference: {fileID: 1912876087}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e9d9184e476eab40a2ad17f96fa7e40, type: 2}
   m_IsPrefabParent: 0
@@ -1141,7 +1509,7 @@ Prefab:
     - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: "bed\xFCrfnisse.Array.size"
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1230,8 +1598,88 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[2]"
+      value: 
+      objectReference: {fileID: 955967484}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[3]"
+      value: 
+      objectReference: {fileID: 939911211}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[4]"
+      value: 
+      objectReference: {fileID: 942145908}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[5]"
+      value: 
+      objectReference: {fileID: 955967484}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[6]"
+      value: 
+      objectReference: {fileID: 1044942380}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[7]"
+      value: 
+      objectReference: {fileID: 1111052130}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[8]"
+      value: 
+      objectReference: {fileID: 1175710940}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[9]"
+      value: 
+      objectReference: {fileID: 1201154683}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[10]"
+      value: 
+      objectReference: {fileID: 1433070541}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[11]"
+      value: 
+      objectReference: {fileID: 1641474679}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[12]"
+      value: 
+      objectReference: {fileID: 1683524915}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[13]"
+      value: 
+      objectReference: {fileID: 1801062615}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[14]"
+      value: 
+      objectReference: {fileID: 1813206143}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[15]"
+      value: 
+      objectReference: {fileID: 1865837438}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[16]"
+      value: 
+      objectReference: {fileID: 2001316842}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[17]"
+      value: 
+      objectReference: {fileID: 2100598732}
     m_RemovedComponents:
     - {fileID: 114902731038674346, guid: f7f5779b837f536449a6abe873a56021, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f7f5779b837f536449a6abe873a56021, type: 2}
@@ -1346,9 +1794,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d519bffe6f75f5b46b27a24b6aadb4ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  justforOne: 1
-  taken: 0
-  agentOnThisStation: {fileID: 0}
+  hasCapacity: 1
+  isFull: 0
+  stationSize: 1
+  agentsOnThisStation: []
 --- !u!1 &556066030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1499,7 +1948,7 @@ Prefab:
     - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: "bed\xFCrfnisse.Array.size"
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1586,6 +2035,86 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[2]"
+      value: 
+      objectReference: {fileID: 1865837438}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[3]"
+      value: 
+      objectReference: {fileID: 939911211}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[4]"
+      value: 
+      objectReference: {fileID: 942145908}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[5]"
+      value: 
+      objectReference: {fileID: 955967484}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[6]"
+      value: 
+      objectReference: {fileID: 1044942380}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[7]"
+      value: 
+      objectReference: {fileID: 1111052130}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[8]"
+      value: 
+      objectReference: {fileID: 1175710940}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[9]"
+      value: 
+      objectReference: {fileID: 1201154683}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[10]"
+      value: 
+      objectReference: {fileID: 1433070541}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[11]"
+      value: 
+      objectReference: {fileID: 1641474679}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[12]"
+      value: 
+      objectReference: {fileID: 1683524915}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[13]"
+      value: 
+      objectReference: {fileID: 1801062615}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[14]"
+      value: 
+      objectReference: {fileID: 1813206143}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[15]"
+      value: 
+      objectReference: {fileID: 1865837438}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[16]"
+      value: 
+      objectReference: {fileID: 2001316842}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[17]"
+      value: 
+      objectReference: {fileID: 2100598732}
     m_RemovedComponents:
     - {fileID: 114902731038674346, guid: f7f5779b837f536449a6abe873a56021, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f7f5779b837f536449a6abe873a56021, type: 2}
@@ -1600,7 +2129,7 @@ Prefab:
     - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: "bed\xFCrfnisse.Array.size"
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1689,8 +2218,88 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[2]"
+      value: 
+      objectReference: {fileID: 1801062615}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[3]"
+      value: 
+      objectReference: {fileID: 939911211}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[4]"
+      value: 
+      objectReference: {fileID: 942145908}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[5]"
+      value: 
+      objectReference: {fileID: 955967484}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[6]"
+      value: 
+      objectReference: {fileID: 1044942380}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[7]"
+      value: 
+      objectReference: {fileID: 1111052130}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[8]"
+      value: 
+      objectReference: {fileID: 1175710940}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[9]"
+      value: 
+      objectReference: {fileID: 1201154683}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[10]"
+      value: 
+      objectReference: {fileID: 1433070541}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[11]"
+      value: 
+      objectReference: {fileID: 1641474679}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[12]"
+      value: 
+      objectReference: {fileID: 1683524915}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[13]"
+      value: 
+      objectReference: {fileID: 1801062615}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[14]"
+      value: 
+      objectReference: {fileID: 1813206143}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[15]"
+      value: 
+      objectReference: {fileID: 1865837438}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[16]"
+      value: 
+      objectReference: {fileID: 2001316842}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[17]"
+      value: 
+      objectReference: {fileID: 2100598732}
     m_RemovedComponents:
     - {fileID: 114902731038674346, guid: f7f5779b837f536449a6abe873a56021, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f7f5779b837f536449a6abe873a56021, type: 2}
@@ -1877,7 +2486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 3
+  increaseValue: 2
   currentvalue: 9
   name: 
   needy: {fileID: 0}
@@ -1893,8 +2502,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 3
   currentvalue: 2
+  name: 
+  needy: {fileID: 0}
+  isWorkingOn: 0
+--- !u!114 &939911211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 939911202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657d93cba2677b744ab6067b2eadcc58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseValue: 0
+  currentvalue: 0
   name: 
   needy: {fileID: 0}
   isWorkingOn: 0
@@ -1914,7 +2539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 3
+  increaseValue: 2
   currentvalue: 5
   name: 
   needy: {fileID: 0}
@@ -1935,6 +2560,22 @@ MonoBehaviour:
   name: 
   needy: {fileID: 0}
   isWorkingOn: 0
+--- !u!114 &942145908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 942145899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657d93cba2677b744ab6067b2eadcc58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseValue: 0
+  currentvalue: 0
+  name: 
+  needy: {fileID: 0}
+  isWorkingOn: 0
 --- !u!1 &955967475 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021,
@@ -1951,7 +2592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 3
+  increaseValue: 2
   currentvalue: 6
   name: 
   needy: {fileID: 0}
@@ -1967,8 +2608,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 3
   currentvalue: 5
+  name: 
+  needy: {fileID: 0}
+  isWorkingOn: 0
+--- !u!114 &955967484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 955967475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657d93cba2677b744ab6067b2eadcc58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseValue: 0
+  currentvalue: 0
   name: 
   needy: {fileID: 0}
   isWorkingOn: 0
@@ -2159,7 +2816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 3
+  increaseValue: 2
   currentvalue: 9
   name: 
   needy: {fileID: 0}
@@ -2175,8 +2832,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 3
   currentvalue: 2
+  name: 
+  needy: {fileID: 0}
+  isWorkingOn: 0
+--- !u!114 &1044942380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1044942371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657d93cba2677b744ab6067b2eadcc58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseValue: 0
+  currentvalue: 0
   name: 
   needy: {fileID: 0}
   isWorkingOn: 0
@@ -2196,7 +2869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 3
+  increaseValue: 2
   currentvalue: 2
   name: 
   needy: {fileID: 0}
@@ -2212,8 +2885,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 3
   currentvalue: 8
+  name: 
+  needy: {fileID: 0}
+  isWorkingOn: 0
+--- !u!114 &1111052130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1111052121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657d93cba2677b744ab6067b2eadcc58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseValue: 0
+  currentvalue: 0
   name: 
   needy: {fileID: 0}
   isWorkingOn: 0
@@ -2227,7 +2916,7 @@ Prefab:
     - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: "bed\xFCrfnisse.Array.size"
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_LocalPosition.x
@@ -2316,8 +3005,88 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[2]"
+      value: 
+      objectReference: {fileID: 1641474679}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[3]"
+      value: 
+      objectReference: {fileID: 939911211}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[4]"
+      value: 
+      objectReference: {fileID: 942145908}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[5]"
+      value: 
+      objectReference: {fileID: 955967484}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[6]"
+      value: 
+      objectReference: {fileID: 1044942380}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[7]"
+      value: 
+      objectReference: {fileID: 1111052130}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[8]"
+      value: 
+      objectReference: {fileID: 1175710940}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[9]"
+      value: 
+      objectReference: {fileID: 1201154683}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[10]"
+      value: 
+      objectReference: {fileID: 1433070541}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[11]"
+      value: 
+      objectReference: {fileID: 1641474679}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[12]"
+      value: 
+      objectReference: {fileID: 1683524915}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[13]"
+      value: 
+      objectReference: {fileID: 1801062615}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[14]"
+      value: 
+      objectReference: {fileID: 1813206143}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[15]"
+      value: 
+      objectReference: {fileID: 1865837438}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[16]"
+      value: 
+      objectReference: {fileID: 2001316842}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[17]"
+      value: 
+      objectReference: {fileID: 2100598732}
     m_RemovedComponents:
     - {fileID: 114902731038674346, guid: f7f5779b837f536449a6abe873a56021, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f7f5779b837f536449a6abe873a56021, type: 2}
@@ -2338,7 +3107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 2
   currentvalue: 9
   name: 
   needy: {fileID: 0}
@@ -2359,6 +3128,22 @@ MonoBehaviour:
   name: 
   needy: {fileID: 0}
   isWorkingOn: 0
+--- !u!114 &1175710940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1175710931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657d93cba2677b744ab6067b2eadcc58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseValue: 0
+  currentvalue: 0
+  name: 
+  needy: {fileID: 0}
+  isWorkingOn: 0
 --- !u!1 &1201154674 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021,
@@ -2375,7 +3160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 3
+  increaseValue: 2
   currentvalue: 5
   name: 
   needy: {fileID: 0}
@@ -2391,8 +3176,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 4
   currentvalue: 4
+  name: 
+  needy: {fileID: 0}
+  isWorkingOn: 0
+--- !u!114 &1201154683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1201154674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657d93cba2677b744ab6067b2eadcc58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseValue: 0
+  currentvalue: 0
   name: 
   needy: {fileID: 0}
   isWorkingOn: 0
@@ -2406,7 +3207,7 @@ Prefab:
     - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: "bed\xFCrfnisse.Array.size"
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_LocalPosition.x
@@ -2495,8 +3296,88 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[2]"
+      value: 
+      objectReference: {fileID: 939911211}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[3]"
+      value: 
+      objectReference: {fileID: 939911211}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[4]"
+      value: 
+      objectReference: {fileID: 942145908}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[5]"
+      value: 
+      objectReference: {fileID: 955967484}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[6]"
+      value: 
+      objectReference: {fileID: 1044942380}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[7]"
+      value: 
+      objectReference: {fileID: 1111052130}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[8]"
+      value: 
+      objectReference: {fileID: 1175710940}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[9]"
+      value: 
+      objectReference: {fileID: 1201154683}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[10]"
+      value: 
+      objectReference: {fileID: 1433070541}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[11]"
+      value: 
+      objectReference: {fileID: 1641474679}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[12]"
+      value: 
+      objectReference: {fileID: 1683524915}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[13]"
+      value: 
+      objectReference: {fileID: 1801062615}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[14]"
+      value: 
+      objectReference: {fileID: 1813206143}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[15]"
+      value: 
+      objectReference: {fileID: 1865837438}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[16]"
+      value: 
+      objectReference: {fileID: 2001316842}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[17]"
+      value: 
+      objectReference: {fileID: 2100598732}
     m_RemovedComponents:
     - {fileID: 114902731038674346, guid: f7f5779b837f536449a6abe873a56021, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f7f5779b837f536449a6abe873a56021, type: 2}
@@ -2672,7 +3553,7 @@ Prefab:
     - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: "bed\xFCrfnisse.Array.size"
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_LocalPosition.x
@@ -2761,8 +3642,88 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[2]"
+      value: 
+      objectReference: {fileID: 2001316842}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[3]"
+      value: 
+      objectReference: {fileID: 939911211}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[4]"
+      value: 
+      objectReference: {fileID: 942145908}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[5]"
+      value: 
+      objectReference: {fileID: 955967484}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[6]"
+      value: 
+      objectReference: {fileID: 1044942380}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[7]"
+      value: 
+      objectReference: {fileID: 1111052130}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[8]"
+      value: 
+      objectReference: {fileID: 1175710940}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[9]"
+      value: 
+      objectReference: {fileID: 1201154683}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[10]"
+      value: 
+      objectReference: {fileID: 1433070541}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[11]"
+      value: 
+      objectReference: {fileID: 1641474679}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[12]"
+      value: 
+      objectReference: {fileID: 1683524915}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[13]"
+      value: 
+      objectReference: {fileID: 1801062615}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[14]"
+      value: 
+      objectReference: {fileID: 1813206143}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[15]"
+      value: 
+      objectReference: {fileID: 1865837438}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[16]"
+      value: 
+      objectReference: {fileID: 2001316842}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[17]"
+      value: 
+      objectReference: {fileID: 2100598732}
     m_RemovedComponents:
     - {fileID: 114902731038674346, guid: f7f5779b837f536449a6abe873a56021, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f7f5779b837f536449a6abe873a56021, type: 2}
@@ -2777,7 +3738,7 @@ Prefab:
     - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: "bed\xFCrfnisse.Array.size"
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_LocalPosition.x
@@ -2866,8 +3827,88 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[2]"
+      value: 
+      objectReference: {fileID: 1175710940}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[3]"
+      value: 
+      objectReference: {fileID: 939911211}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[4]"
+      value: 
+      objectReference: {fileID: 942145908}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[5]"
+      value: 
+      objectReference: {fileID: 955967484}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[6]"
+      value: 
+      objectReference: {fileID: 1044942380}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[7]"
+      value: 
+      objectReference: {fileID: 1111052130}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[8]"
+      value: 
+      objectReference: {fileID: 1175710940}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[9]"
+      value: 
+      objectReference: {fileID: 1201154683}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[10]"
+      value: 
+      objectReference: {fileID: 1433070541}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[11]"
+      value: 
+      objectReference: {fileID: 1641474679}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[12]"
+      value: 
+      objectReference: {fileID: 1683524915}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[13]"
+      value: 
+      objectReference: {fileID: 1801062615}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[14]"
+      value: 
+      objectReference: {fileID: 1813206143}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[15]"
+      value: 
+      objectReference: {fileID: 1865837438}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[16]"
+      value: 
+      objectReference: {fileID: 2001316842}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[17]"
+      value: 
+      objectReference: {fileID: 2100598732}
     m_RemovedComponents:
     - {fileID: 114902731038674346, guid: f7f5779b837f536449a6abe873a56021, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f7f5779b837f536449a6abe873a56021, type: 2}
@@ -2882,7 +3923,7 @@ Prefab:
     - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: "bed\xFCrfnisse.Array.size"
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_LocalPosition.x
@@ -2971,8 +4012,88 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[2]"
+      value: 
+      objectReference: {fileID: 942145908}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[3]"
+      value: 
+      objectReference: {fileID: 939911211}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[4]"
+      value: 
+      objectReference: {fileID: 942145908}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[5]"
+      value: 
+      objectReference: {fileID: 955967484}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[6]"
+      value: 
+      objectReference: {fileID: 1044942380}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[7]"
+      value: 
+      objectReference: {fileID: 1111052130}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[8]"
+      value: 
+      objectReference: {fileID: 1175710940}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[9]"
+      value: 
+      objectReference: {fileID: 1201154683}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[10]"
+      value: 
+      objectReference: {fileID: 1433070541}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[11]"
+      value: 
+      objectReference: {fileID: 1641474679}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[12]"
+      value: 
+      objectReference: {fileID: 1683524915}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[13]"
+      value: 
+      objectReference: {fileID: 1801062615}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[14]"
+      value: 
+      objectReference: {fileID: 1813206143}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[15]"
+      value: 
+      objectReference: {fileID: 1865837438}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[16]"
+      value: 
+      objectReference: {fileID: 2001316842}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[17]"
+      value: 
+      objectReference: {fileID: 2100598732}
     m_RemovedComponents:
     - {fileID: 114902731038674346, guid: f7f5779b837f536449a6abe873a56021, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f7f5779b837f536449a6abe873a56021, type: 2}
@@ -2987,7 +4108,7 @@ Prefab:
     - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: "bed\xFCrfnisse.Array.size"
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_LocalPosition.x
@@ -3076,8 +4197,88 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[2]"
+      value: 
+      objectReference: {fileID: 1044942380}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[3]"
+      value: 
+      objectReference: {fileID: 939911211}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[4]"
+      value: 
+      objectReference: {fileID: 942145908}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[5]"
+      value: 
+      objectReference: {fileID: 955967484}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[6]"
+      value: 
+      objectReference: {fileID: 1044942380}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[7]"
+      value: 
+      objectReference: {fileID: 1111052130}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[8]"
+      value: 
+      objectReference: {fileID: 1175710940}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[9]"
+      value: 
+      objectReference: {fileID: 1201154683}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[10]"
+      value: 
+      objectReference: {fileID: 1433070541}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[11]"
+      value: 
+      objectReference: {fileID: 1641474679}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[12]"
+      value: 
+      objectReference: {fileID: 1683524915}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[13]"
+      value: 
+      objectReference: {fileID: 1801062615}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[14]"
+      value: 
+      objectReference: {fileID: 1813206143}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[15]"
+      value: 
+      objectReference: {fileID: 1865837438}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[16]"
+      value: 
+      objectReference: {fileID: 2001316842}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[17]"
+      value: 
+      objectReference: {fileID: 2100598732}
     m_RemovedComponents:
     - {fileID: 114902731038674346, guid: f7f5779b837f536449a6abe873a56021, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f7f5779b837f536449a6abe873a56021, type: 2}
@@ -3098,7 +4299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 3
+  increaseValue: 2
   currentvalue: 6
   name: 
   needy: {fileID: 0}
@@ -3114,8 +4315,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 3
   currentvalue: 5
+  name: 
+  needy: {fileID: 0}
+  isWorkingOn: 0
+--- !u!114 &1433070541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1433070532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657d93cba2677b744ab6067b2eadcc58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseValue: 0
+  currentvalue: 0
   name: 
   needy: {fileID: 0}
   isWorkingOn: 0
@@ -3163,9 +4380,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d519bffe6f75f5b46b27a24b6aadb4ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  justforOne: 1
-  taken: 0
-  agentOnThisStation: {fileID: 0}
+  hasCapacity: 1
+  isFull: 0
+  stationSize: 1
+  agentsOnThisStation: []
 --- !u!54 &1474717646
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3354,6 +4572,120 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1570309886}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1577843174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1577843175}
+  - component: {fileID: 1577843180}
+  - component: {fileID: 1577843179}
+  - component: {fileID: 1577843178}
+  - component: {fileID: 1577843177}
+  - component: {fileID: 1577843176}
+  m_Layer: 8
+  m_Name: Cube (14)
+  m_TagString: freetime
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1577843175
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1577843174}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.99, y: 0.34, z: -0.01}
+  m_LocalScale: {x: 1.4692972, y: 1.4692972, z: 1.4692972}
+  m_Children: []
+  m_Father: {fileID: 1888507552}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1577843176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1577843174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d519bffe6f75f5b46b27a24b6aadb4ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasCapacity: 0
+  isFull: 0
+  stationSize: 1
+  agentsOnThisStation: []
+--- !u!54 &1577843177
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1577843174}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!23 &1577843178
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1577843174}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: a8042d80cd0a6cc489fcc73012727701, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &1577843179
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1577843174}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1577843180
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1577843174}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1583866765
 GameObject:
   m_ObjectHideFlags: 0
@@ -3464,9 +4796,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d519bffe6f75f5b46b27a24b6aadb4ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  justforOne: 1
-  taken: 0
-  agentOnThisStation: {fileID: 0}
+  hasCapacity: 1
+  isFull: 0
+  stationSize: 1
+  agentsOnThisStation: []
 --- !u!1 &1641474670 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021,
@@ -3483,7 +4816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 3
+  increaseValue: 2
   currentvalue: 2
   name: 
   needy: {fileID: 0}
@@ -3499,8 +4832,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 3
   currentvalue: 8
+  name: 
+  needy: {fileID: 0}
+  isWorkingOn: 0
+--- !u!114 &1641474679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1641474670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657d93cba2677b744ab6067b2eadcc58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseValue: 0
+  currentvalue: 0
   name: 
   needy: {fileID: 0}
   isWorkingOn: 0
@@ -3602,7 +4951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 3
+  increaseValue: 2
   currentvalue: 2
   name: 
   needy: {fileID: 0}
@@ -3618,8 +4967,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 3
   currentvalue: 8
+  name: 
+  needy: {fileID: 0}
+  isWorkingOn: 0
+--- !u!114 &1683524915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1683524906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657d93cba2677b744ab6067b2eadcc58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseValue: 0
+  currentvalue: 0
   name: 
   needy: {fileID: 0}
   isWorkingOn: 0
@@ -3633,7 +4998,7 @@ Prefab:
     - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: "bed\xFCrfnisse.Array.size"
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_LocalPosition.x
@@ -3722,8 +5087,88 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[2]"
+      value: 
+      objectReference: {fileID: 1201154683}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[3]"
+      value: 
+      objectReference: {fileID: 939911211}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[4]"
+      value: 
+      objectReference: {fileID: 942145908}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[5]"
+      value: 
+      objectReference: {fileID: 955967484}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[6]"
+      value: 
+      objectReference: {fileID: 1044942380}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[7]"
+      value: 
+      objectReference: {fileID: 1111052130}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[8]"
+      value: 
+      objectReference: {fileID: 1175710940}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[9]"
+      value: 
+      objectReference: {fileID: 1201154683}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[10]"
+      value: 
+      objectReference: {fileID: 1433070541}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[11]"
+      value: 
+      objectReference: {fileID: 1641474679}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[12]"
+      value: 
+      objectReference: {fileID: 1683524915}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[13]"
+      value: 
+      objectReference: {fileID: 1801062615}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[14]"
+      value: 
+      objectReference: {fileID: 1813206143}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[15]"
+      value: 
+      objectReference: {fileID: 1865837438}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[16]"
+      value: 
+      objectReference: {fileID: 2001316842}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[17]"
+      value: 
+      objectReference: {fileID: 2100598732}
     m_RemovedComponents:
     - {fileID: 114902731038674346, guid: f7f5779b837f536449a6abe873a56021, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f7f5779b837f536449a6abe873a56021, type: 2}
@@ -3920,9 +5365,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d519bffe6f75f5b46b27a24b6aadb4ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  justforOne: 1
-  taken: 0
-  agentOnThisStation: {fileID: 0}
+  hasCapacity: 1
+  isFull: 0
+  stationSize: 1
+  agentsOnThisStation: []
 --- !u!1 &1797734282
 GameObject:
   m_ObjectHideFlags: 0
@@ -4021,7 +5467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 3
+  increaseValue: 2
   currentvalue: 9
   name: 
   needy: {fileID: 0}
@@ -4037,8 +5483,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 3
   currentvalue: 3
+  name: 
+  needy: {fileID: 0}
+  isWorkingOn: 0
+--- !u!114 &1801062615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1801062606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657d93cba2677b744ab6067b2eadcc58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseValue: 0
+  currentvalue: 0
   name: 
   needy: {fileID: 0}
   isWorkingOn: 0
@@ -4058,7 +5520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 3
+  increaseValue: 2
   currentvalue: 6
   name: 
   needy: {fileID: 0}
@@ -4074,8 +5536,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 3
   currentvalue: 5
+  name: 
+  needy: {fileID: 0}
+  isWorkingOn: 0
+--- !u!114 &1813206143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1813206134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657d93cba2677b744ab6067b2eadcc58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseValue: 0
+  currentvalue: 0
   name: 
   needy: {fileID: 0}
   isWorkingOn: 0
@@ -4084,6 +5562,22 @@ GameObject:
   m_PrefabParentObject: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021,
     type: 2}
   m_PrefabInternal: {fileID: 614153035}
+--- !u!114 &1865837438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1865837431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657d93cba2677b744ab6067b2eadcc58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseValue: 0
+  currentvalue: 0
+  name: 
+  needy: {fileID: 0}
+  isWorkingOn: 0
 --- !u!114 &1865837439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4095,7 +5589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 3
+  increaseValue: 2
   currentvalue: 6
   name: 
   needy: {fileID: 0}
@@ -4111,7 +5605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 3
   currentvalue: 5
   name: 
   needy: {fileID: 0}
@@ -4149,9 +5643,125 @@ Transform:
   - {fileID: 1474717644}
   - {fileID: 209197841}
   - {fileID: 389375434}
+  - {fileID: 1577843175}
+  - {fileID: 1912876088}
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1912876087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1912876088}
+  - component: {fileID: 1912876093}
+  - component: {fileID: 1912876092}
+  - component: {fileID: 1912876091}
+  - component: {fileID: 1912876090}
+  - component: {fileID: 1912876089}
+  m_Layer: 8
+  m_Name: Cube (18)
+  m_TagString: hunger
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1912876088
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1912876087}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.57, y: 0.19, z: -4.51}
+  m_LocalScale: {x: 0.65586, y: 0.65586, z: 0.65586}
+  m_Children: []
+  m_Father: {fileID: 1888507552}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1912876089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1912876087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d519bffe6f75f5b46b27a24b6aadb4ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasCapacity: 1
+  isFull: 0
+  stationSize: 1
+  agentsOnThisStation: []
+--- !u!54 &1912876090
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1912876087}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!23 &1912876091
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1912876087}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 40955c32cb74dea4180ce9f98d769c8f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &1912876092
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1912876087}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1912876093
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1912876087}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1932349038
 GameObject:
   m_ObjectHideFlags: 0
@@ -4250,7 +5860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 3
+  increaseValue: 2
   currentvalue: -1
   name: 
   needy: {fileID: 0}
@@ -4266,8 +5876,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 3
   currentvalue: 3
+  name: 
+  needy: {fileID: 0}
+  isWorkingOn: 0
+--- !u!114 &2001316842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2001316833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657d93cba2677b744ab6067b2eadcc58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseValue: 0
+  currentvalue: 0
   name: 
   needy: {fileID: 0}
   isWorkingOn: 0
@@ -4381,9 +6007,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d519bffe6f75f5b46b27a24b6aadb4ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  justforOne: 1
-  taken: 0
-  agentOnThisStation: {fileID: 0}
+  hasCapacity: 1
+  isFull: 0
+  stationSize: 3
+  agentsOnThisStation: []
 --- !u!1 &2038458660
 GameObject:
   m_ObjectHideFlags: 0
@@ -4476,7 +6103,7 @@ Prefab:
     - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: "bed\xFCrfnisse.Array.size"
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_LocalPosition.x
@@ -4567,6 +6194,86 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[2]"
+      value: 
+      objectReference: {fileID: 54128294}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[3]"
+      value: 
+      objectReference: {fileID: 939911211}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[4]"
+      value: 
+      objectReference: {fileID: 942145908}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[5]"
+      value: 
+      objectReference: {fileID: 955967484}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[6]"
+      value: 
+      objectReference: {fileID: 1044942380}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[7]"
+      value: 
+      objectReference: {fileID: 1111052130}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[8]"
+      value: 
+      objectReference: {fileID: 1175710940}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[9]"
+      value: 
+      objectReference: {fileID: 1201154683}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[10]"
+      value: 
+      objectReference: {fileID: 1433070541}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[11]"
+      value: 
+      objectReference: {fileID: 1641474679}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[12]"
+      value: 
+      objectReference: {fileID: 1683524915}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[13]"
+      value: 
+      objectReference: {fileID: 1801062615}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[14]"
+      value: 
+      objectReference: {fileID: 1813206143}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[15]"
+      value: 
+      objectReference: {fileID: 1865837438}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[16]"
+      value: 
+      objectReference: {fileID: 2001316842}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[17]"
+      value: 
+      objectReference: {fileID: 2100598732}
     m_RemovedComponents:
     - {fileID: 114902731038674346, guid: f7f5779b837f536449a6abe873a56021, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f7f5779b837f536449a6abe873a56021, type: 2}
@@ -4587,7 +6294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 3
+  increaseValue: 2
   currentvalue: 5
   name: 
   needy: {fileID: 0}
@@ -4603,8 +6310,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 3
   currentvalue: 4
+  name: 
+  needy: {fileID: 0}
+  isWorkingOn: 0
+--- !u!114 &2100598732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2100598723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657d93cba2677b744ab6067b2eadcc58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseValue: 0
+  currentvalue: 0
   name: 
   needy: {fileID: 0}
   isWorkingOn: 0
@@ -4652,9 +6375,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d519bffe6f75f5b46b27a24b6aadb4ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  justforOne: 1
-  taken: 0
-  agentOnThisStation: {fileID: 0}
+  hasCapacity: 1
+  isFull: 0
+  stationSize: 1
+  agentsOnThisStation: []
 --- !u!54 &2121188646
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4731,11 +6455,11 @@ Prefab:
     - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: "bed\xFCrfnisse.Array.size"
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.33
+      value: 2.26
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_LocalPosition.y
@@ -4743,7 +6467,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.03
+      value: -2.43
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_LocalRotation.x
@@ -4818,6 +6542,86 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[2]"
+      value: 
+      objectReference: {fileID: 1683524915}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[3]"
+      value: 
+      objectReference: {fileID: 939911211}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[4]"
+      value: 
+      objectReference: {fileID: 942145908}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[5]"
+      value: 
+      objectReference: {fileID: 955967484}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[6]"
+      value: 
+      objectReference: {fileID: 1044942380}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[7]"
+      value: 
+      objectReference: {fileID: 1111052130}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[8]"
+      value: 
+      objectReference: {fileID: 1175710940}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[9]"
+      value: 
+      objectReference: {fileID: 1201154683}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[10]"
+      value: 
+      objectReference: {fileID: 1433070541}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[11]"
+      value: 
+      objectReference: {fileID: 1641474679}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[12]"
+      value: 
+      objectReference: {fileID: 1683524915}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[13]"
+      value: 
+      objectReference: {fileID: 1801062615}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[14]"
+      value: 
+      objectReference: {fileID: 1813206143}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[15]"
+      value: 
+      objectReference: {fileID: 1865837438}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[16]"
+      value: 
+      objectReference: {fileID: 2001316842}
+    - target: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+        type: 2}
+      propertyPath: "bed\xFCrfnisse.Array.data[17]"
+      value: 
+      objectReference: {fileID: 2100598732}
     m_RemovedComponents:
     - {fileID: 114902731038674346, guid: f7f5779b837f536449a6abe873a56021, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f7f5779b837f536449a6abe873a56021, type: 2}

@@ -9,15 +9,17 @@ public class NeedManager : MonoBehaviour {
 
     public GameObject[ ] hungerPoints;
     public GameObject[ ] workPoints;
+    public GameObject[ ] freetTimePints;
     Dictionary<string, GameObject[]> needs = new Dictionary<string,GameObject[]>();
 
     // Use this for initialization
     void Start () {
         needs.Add("hunger",hungerPoints);
         needs.Add( "work", workPoints );
+        needs.Add( "freetime", freetTimePints);
 
-		
-	}
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -40,7 +42,7 @@ public class NeedManager : MonoBehaviour {
 
             // Herausfinden ob die Stelle schon besetzt ist
             needS = p.GetComponent<NeedStation>();
-            if ( needS.taken ) {
+            if ( needS.isItFull()) {
                 continue;
             }
 
@@ -63,14 +65,14 @@ public class NeedManager : MonoBehaviour {
         
         if ( nearestPlace == null ){ // Warten wenn kein freier Punkt gefunden wurde 
             agent.GetComponent<KIAgent>().waitingForFreeNeedPoint = true;
-            return agent.transform.position;
+            return freetTimePints[0].transform.position;
         }
 
         agent.GetComponent<KIAgent>().waitingForFreeNeedPoint = false;
         needS = nearestPlace.GetComponent<NeedStation>(); // Variable wird hier neu verwendet
-        if ( needS.justforOne ) { // Wenn die Stelle nur für Einen ist wird Sie hier beesetzt.
-            needS.taken = true;
-            needS.agentOnThisStation = agent; } 
+        // Wenn die Stelle nur für begrenzte ist wird Sie hier beesetzt.
+         needS.resgisterOnStation( agent );
+       
 
         return nearestPlace.transform.position;
 

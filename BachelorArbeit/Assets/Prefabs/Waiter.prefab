@@ -51,6 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cf50bc2d3dbdd048a2585f7ec6cb66c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitSize: 1
-  unitsToWait: 1
+  unitSize: 0.1
+  unitsToWait: 0.1
   timeisUp: 1
