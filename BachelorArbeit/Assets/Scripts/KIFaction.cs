@@ -34,8 +34,7 @@ public class KIFaction : NeedManager,IIndigent {
             waiter = Instantiate( waiterPrefab );
 
             //increaseNeeds();
-            //evaluateNeeds();
-            //tryToSatisfyNeed( workingNeed );
+            evaluateNeeds();
 
         }
 
@@ -44,8 +43,8 @@ public class KIFaction : NeedManager,IIndigent {
         {
            /* waiter = Instantiate( waiterPrefab );
             increaseNeeds();
-            isWorkingOnNeed = tryToSatisfyNeed( workingNeed );
             */
+            isWorkingOnNeed = tryToSatisfyNeed( workingNeed );
 
         }
 
@@ -70,6 +69,8 @@ public class KIFaction : NeedManager,IIndigent {
 
     public  bool tryToSatisfyNeed( Bedurfniss workingNeed )
     {
-        throw new NotImplementedException();
+        workingNeed.satisfy();
+        return false;
+        
     }
 }

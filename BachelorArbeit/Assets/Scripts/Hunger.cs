@@ -19,7 +19,7 @@ public class Hunger : Bedurfniss {
 
     public override bool satisfy()
     {
-        decreaseCurrentValue( 40 );
+        decreaseCurrentValue( 50 );
         // base.tryToSatisfy();
         return false;
 

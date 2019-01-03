@@ -19,6 +19,7 @@ public class KIAgent : MonoBehaviour, IIndigent
     public bool waitingForFreeNeedPoint = false;
 
     public List<GameObject> currentCollisions = new List<GameObject>();
+    public float satisfaction = 0;
 
 
     // Use this for initialization
@@ -60,6 +61,11 @@ public class KIAgent : MonoBehaviour, IIndigent
             if ( coll.tag == workingNeed.name ) {
 
                 NeedStation needS = coll.gameObject.GetComponent<NeedStation>();
+
+                satisfaction -= 0.1f;
+                if ( satisfaction > 10 ) satisfaction = 10;
+                else if ( satisfaction < -10 ) satisfaction = -10;
+
                 return workingNeed.satisfy();
             }
         }
@@ -87,11 +93,14 @@ public class KIAgent : MonoBehaviour, IIndigent
                 isWorkingOnNeed = !waitingForFreeNeedPoint;
                 if ( waitingForFreeNeedPoint )
                 {
+                    satisfaction += 0.5f;
+                    if ( satisfaction > 10 ) satisfaction = 10;
+                    else if ( satisfaction < -10 ) satisfaction = -10;
                     waitingForFreeNeedPoint = false;
                     counterOfWaitingNeeds++;
                     if(counterOfWaitingNeeds > bedürfnisse.Length-1 ) { counterOfWaitingNeeds = 0; }
                      workingNeed.needHasNotBeenSatisfied(needManager,gameObject);
-                }
+            }
                 else {
                     counterOfWaitingNeeds--;
                     if ( counterOfWaitingNeeds < 0 ) counterOfWaitingNeeds = 0;
