@@ -10,7 +10,7 @@ public class NeedManager : MonoBehaviour {
     public GameObject[ ] hungerPoints;
     public GameObject[ ] workPoints;
     public GameObject[ ] freetTimePints;
-    Dictionary<string, GameObject[]> needs = new Dictionary<string,GameObject[]>();
+    public Dictionary<string, GameObject[]> needs = new Dictionary<string,GameObject[]>();
 
     // Use this for initialization
     void Start () {
@@ -76,6 +76,26 @@ public class NeedManager : MonoBehaviour {
 
         return nearestPlace.transform.position;
 
+
+    }
+
+    public void logoutAgent( GameObject agent ) {
+
+        GameObject[ ][] values = new GameObject[ needs.Count ][];
+        needs.Values.CopyTo( values, 0 );
+
+
+
+        for ( int needList = 0; needList < values.Length; needList++ )
+        {
+            
+            foreach ( GameObject satisfactionPoint in values[needList]) {
+                NeedStation needS = satisfactionPoint.GetComponent<NeedStation>();
+                needS.removeFromStation( agent );
+
+            }
+
+        }
 
     }
 }

@@ -89,7 +89,7 @@ public class KIAgent : MonoBehaviour
                     waitingForFreeNeedPoint = false;
                     counterOfWaitingNeeds++;
                     if(counterOfWaitingNeeds > bedürfnisse.Length-1 ) { counterOfWaitingNeeds = 0; }
-                    workingNeed.needHasNotBeenSatisfied();
+                     workingNeed.needHasNotBeenSatisfied(needManager,gameObject);
                 }
                 else {
                     counterOfWaitingNeeds--;
@@ -142,6 +142,8 @@ public class KIAgent : MonoBehaviour
                   }
           }*/
     }
+
+    
 
 
 }

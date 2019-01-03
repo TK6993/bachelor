@@ -28,10 +28,10 @@ public class Hunger : Bedurfniss {
 
     }
 
-    public override bool needHasNotBeenSatisfied()
+    public override bool needHasNotBeenSatisfied(NeedManager needM, GameObject agent)
     {
         if ( currentvalue > MaxValue - 5 ) {
-
+            needM.logoutAgent( agent );
             Destroy( gameObject );
         }
         return false;

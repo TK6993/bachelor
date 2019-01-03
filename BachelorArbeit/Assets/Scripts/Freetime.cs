@@ -7,7 +7,7 @@ public class Freetime : Bedurfniss {
 
 
 
-    public override bool needHasNotBeenSatisfied()
+    public override bool needHasNotBeenSatisfied( NeedManager needM, GameObject agent )
     {
         throw new NotImplementedException();
     }
