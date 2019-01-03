@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Hunger : Bedurfniss {
 
-    GameObject waiterObject;
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +30,7 @@ public class Hunger : Bedurfniss {
     public override bool needHasNotBeenSatisfied(NeedManager needM, GameObject agent)
     {
         if ( currentvalue > MaxValue - 5 ) {
-            needM.logoutAgent( agent );
+            needM.logoutAgentfromStation( agent );
             Destroy( gameObject );
         }
         return false;

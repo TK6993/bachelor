@@ -19,7 +19,7 @@ public class Work : Bedurfniss {
 
     public override bool satisfy()
     {
-        decreaseCurrentValue( 4 );
+        decreaseCurrentValue( 25 );
         //base.tryToSatisfy();
         return false;
 

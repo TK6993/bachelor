@@ -9,14 +9,14 @@ public class NeedManager : MonoBehaviour {
 
     public GameObject[ ] hungerPoints;
     public GameObject[ ] workPoints;
-    public GameObject[ ] freetTimePints;
-    public Dictionary<string, GameObject[]> needs = new Dictionary<string,GameObject[]>();
+    public GameObject[ ] freetTimePoints;
+    [SerializeField] private Dictionary<string, GameObject[]> agentNeeds = new Dictionary<string,GameObject[]>();
 
     // Use this for initialization
-    void Start () {
-        needs.Add("hunger",hungerPoints);
-        needs.Add( "work", workPoints );
-        needs.Add( "freetime", freetTimePints);
+   public  virtual void Start () {
+        agentNeeds.Add("hunger",hungerPoints);
+        agentNeeds.Add( "work", workPoints );
+        agentNeeds.Add( "freetime", freetTimePoints);
 
 
     }
@@ -31,7 +31,7 @@ public class NeedManager : MonoBehaviour {
          //Suche nach nächten freien Punkt zur Erfüllung des Bedürfnisses
          GameObject nearestPlace = null;
     
-         GameObject[ ] needSatisfactionPlaces = needs[b.name]; // Erstellen eines Arrays das wir uns aus dem Dictionry needs holen duch den na,en des bedürfnisses als Key 
+         GameObject[ ] needSatisfactionPlaces = agentNeeds[b.name]; // Erstellen eines Arrays das wir uns aus dem Dictionry needs holen duch den na,en des bedürfnisses als Key 
 
          NavMeshAgent navAgent = agent.GetComponent<KIAgent>().navAgent;       
          float pathlength = float.MaxValue;
@@ -40,32 +40,32 @@ public class NeedManager : MonoBehaviour {
 
          foreach ( GameObject p in needSatisfactionPlaces ) { // Gehen über alle für das Bedürfniss relevanten Stellen
 
-            // Herausfinden ob die Stelle schon besetzt ist
-            needS = p.GetComponent<NeedStation>();
-            if ( needS.isItFull()) {
-                continue;
-            }
+                // Herausfinden ob die Stelle schon besetzt ist
+                needS = p.GetComponent<NeedStation>();
+                if ( needS.isItFull()) {
+                    continue;
+                }
 
-            NavMeshPath path = new NavMeshPath();
-            navAgent.CalculatePath( p.transform.position, path ); // Pfand zum Ziel berechnen
-            Vector3[] corners = path.corners;
+                NavMeshPath path = new NavMeshPath();
+                navAgent.CalculatePath( p.transform.position, path ); // Pfand zum Ziel berechnen
+                Vector3[] corners = path.corners;
 
-            // Länge des Pfades berechnen
-            for ( int c = 0; c < corners.Length; c++ ){
-                if(c != corners.Length-1)
-                newPathLenght += Vector3.Distance( corners[ c ], corners[ c + 1 ] );
-            }
-            if ( newPathLenght < pathlength ) {
-                pathlength = newPathLenght;
-                nearestPlace = p;
-            }
-            newPathLenght = 0;
+                // Länge des Pfades berechnen
+                for ( int c = 0; c < corners.Length; c++ ){
+                    if(c != corners.Length-1)
+                    newPathLenght += Vector3.Distance( corners[ c ], corners[ c + 1 ] );
+                }
+                if ( newPathLenght < pathlength ) {
+                    pathlength = newPathLenght;
+                    nearestPlace = p;
+                }
+                newPathLenght = 0;
         }
 
         
         if ( nearestPlace == null ){ // Warten wenn kein freier Punkt gefunden wurde 
             agent.GetComponent<KIAgent>().waitingForFreeNeedPoint = true;
-            return freetTimePints[0].transform.position;
+            return freetTimePoints[0].transform.position;
         }
 
         agent.GetComponent<KIAgent>().waitingForFreeNeedPoint = false;
@@ -79,10 +79,10 @@ public class NeedManager : MonoBehaviour {
 
     }
 
-    public void logoutAgent( GameObject agent ) {
+    public void logoutAgentfromStation( GameObject agent ) {
 
-        GameObject[ ][] values = new GameObject[ needs.Count ][];
-        needs.Values.CopyTo( values, 0 );
+        GameObject[ ][] values = new GameObject[ agentNeeds.Count ][];
+        agentNeeds.Values.CopyTo( values, 0 );
 
 
 

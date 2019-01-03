@@ -150,7 +150,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_Name
@@ -160,7 +160,7 @@ Prefab:
         type: 2}
       propertyPath: needManager
       value: 
-      objectReference: {fileID: 431795269}
+      objectReference: {fileID: 275244029}
     - target: {fileID: 195580389378337380, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: m_Speed
@@ -390,8 +390,6 @@ MonoBehaviour:
   increaseValue: 2
   currentvalue: 2
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!114 &54128287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,8 +404,12 @@ MonoBehaviour:
   increaseValue: 3
   currentvalue: 8
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
+--- !u!114 &54128288 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+    type: 2}
+  m_PrefabInternal: {fileID: 2090603124}
+  m_Script: {fileID: 11500000, guid: 19c810e9caae01e42980612d47226a49, type: 3}
 --- !u!114 &54128294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,8 +424,6 @@ MonoBehaviour:
   increaseValue: 0
   currentvalue: 0
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!1001 &104805214
 Prefab:
   m_ObjectHideFlags: 0
@@ -466,7 +466,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_Name
@@ -476,7 +476,7 @@ Prefab:
         type: 2}
       propertyPath: needManager
       value: 
-      objectReference: {fileID: 431795269}
+      objectReference: {fileID: 275244029}
     - target: {fileID: 195580389378337380, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: m_Speed
@@ -651,7 +651,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_Name
@@ -661,7 +661,7 @@ Prefab:
         type: 2}
       propertyPath: needManager
       value: 
-      objectReference: {fileID: 431795269}
+      objectReference: {fileID: 275244029}
     - target: {fileID: 195580389378337380, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: m_Speed
@@ -836,7 +836,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_Name
@@ -846,7 +846,7 @@ Prefab:
         type: 2}
       propertyPath: needManager
       value: 
-      objectReference: {fileID: 431795269}
+      objectReference: {fileID: 275244029}
     - target: {fileID: 195580389378337380, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: m_Speed
@@ -1175,6 +1175,60 @@ Transform:
   m_Father: {fileID: 1477960879}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &275244027 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1969426687048932, guid: 3e9d9184e476eab40a2ad17f96fa7e40,
+    type: 2}
+  m_PrefabInternal: {fileID: 431795268}
+--- !u!114 &275244029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 275244027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 482eb6376d0de1748b6331ea1096ba4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hungerPoints:
+  - {fileID: 2035816088}
+  - {fileID: 1583866765}
+  - {fileID: 389375433}
+  - {fileID: 1912876087}
+  workPoints:
+  - {fileID: 512601993}
+  - {fileID: 1786062486}
+  - {fileID: 2121188643}
+  - {fileID: 1474717643}
+  - {fileID: 209197840}
+  freetTimePoints:
+  - {fileID: 1577843174}
+  fractionName: general
+  agentMembers:
+  - {fileID: 1865837432}
+  - {fileID: 1683524909}
+  - {fileID: 1813206137}
+  - {fileID: 54128288}
+  - {fileID: 1433070535}
+  - {fileID: 1111052124}
+  - {fileID: 955967478}
+  - {fileID: 1641474673}
+  - {fileID: 939911205}
+  - {fileID: 1044942374}
+  - {fileID: 1175710934}
+  - {fileID: 2100598726}
+  - {fileID: 1201154677}
+  - {fileID: 942145902}
+  - {fileID: 1801062609}
+  - {fileID: 2001316836}
+  fractionNeeds: []
+  workingNeed: {fileID: 0}
+  counterOfWaitingNeeds: 0
+  waiter: {fileID: 0}
+  waiterPrefab: {fileID: 1518697636941846, guid: 146421c5c4c91c1458d8d6f5bfbb8fb0,
+    type: 2}
+  isWorkingOnNeed: 0
 --- !u!1 &337769577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1393,6 +1447,11 @@ Prefab:
       propertyPath: freetTimePints.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114261190196950190, guid: 3e9d9184e476eab40a2ad17f96fa7e40,
+        type: 2}
+      propertyPath: freetTimePoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4655833829113388, guid: 3e9d9184e476eab40a2ad17f96fa7e40, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1423,7 +1482,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4655833829113388, guid: 3e9d9184e476eab40a2ad17f96fa7e40, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114261190196950190, guid: 3e9d9184e476eab40a2ad17f96fa7e40,
         type: 2}
@@ -1490,15 +1549,20 @@ Prefab:
       propertyPath: hungerPoints.Array.data[6]
       value: 
       objectReference: {fileID: 1912876087}
-    m_RemovedComponents: []
+    - target: {fileID: 114261190196950190, guid: 3e9d9184e476eab40a2ad17f96fa7e40,
+        type: 2}
+      propertyPath: freetTimePoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1577843174}
+    - target: {fileID: 114261190196950190, guid: 3e9d9184e476eab40a2ad17f96fa7e40,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114261190196950190, guid: 3e9d9184e476eab40a2ad17f96fa7e40, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 3e9d9184e476eab40a2ad17f96fa7e40, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &431795269 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114261190196950190, guid: 3e9d9184e476eab40a2ad17f96fa7e40,
-    type: 2}
-  m_PrefabInternal: {fileID: 431795268}
-  m_Script: {fileID: 11500000, guid: f28ef085c0483544ca0713843b049f52, type: 3}
 --- !u!1001 &469564118
 Prefab:
   m_ObjectHideFlags: 0
@@ -1541,7 +1605,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_Name
@@ -1551,7 +1615,7 @@ Prefab:
         type: 2}
       propertyPath: needManager
       value: 
-      objectReference: {fileID: 431795269}
+      objectReference: {fileID: 275244029}
     - target: {fileID: 195580389378337380, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: m_Speed
@@ -1980,7 +2044,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_Name
@@ -1990,7 +2054,7 @@ Prefab:
         type: 2}
       propertyPath: needManager
       value: 
-      objectReference: {fileID: 431795269}
+      objectReference: {fileID: 275244029}
     - target: {fileID: 195580389378337380, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: m_Speed
@@ -2161,7 +2225,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_Name
@@ -2171,7 +2235,7 @@ Prefab:
         type: 2}
       propertyPath: needManager
       value: 
-      objectReference: {fileID: 431795269}
+      objectReference: {fileID: 275244029}
     - target: {fileID: 195580389378337380, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: m_Speed
@@ -2489,8 +2553,6 @@ MonoBehaviour:
   increaseValue: 2
   currentvalue: 9
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!114 &939911204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2505,8 +2567,12 @@ MonoBehaviour:
   increaseValue: 3
   currentvalue: 2
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
+--- !u!114 &939911205 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+    type: 2}
+  m_PrefabInternal: {fileID: 1229527753}
+  m_Script: {fileID: 11500000, guid: 19c810e9caae01e42980612d47226a49, type: 3}
 --- !u!114 &939911211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2521,8 +2587,6 @@ MonoBehaviour:
   increaseValue: 0
   currentvalue: 0
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!1 &942145899 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021,
@@ -2542,8 +2606,6 @@ MonoBehaviour:
   increaseValue: 2
   currentvalue: 5
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!114 &942145901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2558,8 +2620,12 @@ MonoBehaviour:
   increaseValue: 1
   currentvalue: 4
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
+--- !u!114 &942145902 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+    type: 2}
+  m_PrefabInternal: {fileID: 1343880628}
+  m_Script: {fileID: 11500000, guid: 19c810e9caae01e42980612d47226a49, type: 3}
 --- !u!114 &942145908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2574,8 +2640,6 @@ MonoBehaviour:
   increaseValue: 0
   currentvalue: 0
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!1 &955967475 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021,
@@ -2595,8 +2659,6 @@ MonoBehaviour:
   increaseValue: 2
   currentvalue: 6
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!114 &955967477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2611,8 +2673,12 @@ MonoBehaviour:
   increaseValue: 3
   currentvalue: 5
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
+--- !u!114 &955967478 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+    type: 2}
+  m_PrefabInternal: {fileID: 469564118}
+  m_Script: {fileID: 11500000, guid: 19c810e9caae01e42980612d47226a49, type: 3}
 --- !u!114 &955967484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2627,8 +2693,6 @@ MonoBehaviour:
   increaseValue: 0
   currentvalue: 0
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!1 &958676030
 GameObject:
   m_ObjectHideFlags: 0
@@ -2716,7 +2780,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 53.832, y: 0, z: 0}
 --- !u!1 &1026967073
 GameObject:
@@ -2819,8 +2883,6 @@ MonoBehaviour:
   increaseValue: 2
   currentvalue: 9
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!114 &1044942373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2835,8 +2897,12 @@ MonoBehaviour:
   increaseValue: 3
   currentvalue: 2
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
+--- !u!114 &1044942374 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+    type: 2}
+  m_PrefabInternal: {fileID: 1362730227}
+  m_Script: {fileID: 11500000, guid: 19c810e9caae01e42980612d47226a49, type: 3}
 --- !u!114 &1044942380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2851,8 +2917,6 @@ MonoBehaviour:
   increaseValue: 0
   currentvalue: 0
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!1 &1111052121 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021,
@@ -2872,8 +2936,6 @@ MonoBehaviour:
   increaseValue: 2
   currentvalue: 2
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!114 &1111052123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2888,8 +2950,12 @@ MonoBehaviour:
   increaseValue: 3
   currentvalue: 8
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
+--- !u!114 &1111052124 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+    type: 2}
+  m_PrefabInternal: {fileID: 104805214}
+  m_Script: {fileID: 11500000, guid: 19c810e9caae01e42980612d47226a49, type: 3}
 --- !u!114 &1111052130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2904,8 +2970,6 @@ MonoBehaviour:
   increaseValue: 0
   currentvalue: 0
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!1001 &1150810664
 Prefab:
   m_ObjectHideFlags: 0
@@ -2948,7 +3012,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_Name
@@ -2958,7 +3022,7 @@ Prefab:
         type: 2}
       propertyPath: needManager
       value: 
-      objectReference: {fileID: 431795269}
+      objectReference: {fileID: 275244029}
     - target: {fileID: 195580389378337380, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: m_Speed
@@ -3110,8 +3174,6 @@ MonoBehaviour:
   increaseValue: 2
   currentvalue: 9
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!114 &1175710933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3126,8 +3188,12 @@ MonoBehaviour:
   increaseValue: 3
   currentvalue: 2
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
+--- !u!114 &1175710934 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+    type: 2}
+  m_PrefabInternal: {fileID: 1314012368}
+  m_Script: {fileID: 11500000, guid: 19c810e9caae01e42980612d47226a49, type: 3}
 --- !u!114 &1175710940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3142,8 +3208,6 @@ MonoBehaviour:
   increaseValue: 0
   currentvalue: 0
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!1 &1201154674 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021,
@@ -3163,8 +3227,6 @@ MonoBehaviour:
   increaseValue: 2
   currentvalue: 5
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!114 &1201154676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3179,8 +3241,12 @@ MonoBehaviour:
   increaseValue: 4
   currentvalue: 4
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
+--- !u!114 &1201154677 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+    type: 2}
+  m_PrefabInternal: {fileID: 1703918825}
+  m_Script: {fileID: 11500000, guid: 19c810e9caae01e42980612d47226a49, type: 3}
 --- !u!114 &1201154683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3195,8 +3261,6 @@ MonoBehaviour:
   increaseValue: 0
   currentvalue: 0
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!1001 &1229527753
 Prefab:
   m_ObjectHideFlags: 0
@@ -3239,7 +3303,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_Name
@@ -3249,7 +3313,7 @@ Prefab:
         type: 2}
       propertyPath: needManager
       value: 
-      objectReference: {fileID: 431795269}
+      objectReference: {fileID: 275244029}
     - target: {fileID: 195580389378337380, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: m_Speed
@@ -3541,7 +3605,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &1311013074
 Prefab:
@@ -3585,7 +3649,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_Name
@@ -3595,7 +3659,7 @@ Prefab:
         type: 2}
       propertyPath: needManager
       value: 
-      objectReference: {fileID: 431795269}
+      objectReference: {fileID: 275244029}
     - target: {fileID: 195580389378337380, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: m_Speed
@@ -3770,7 +3834,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_Name
@@ -3780,7 +3844,7 @@ Prefab:
         type: 2}
       propertyPath: needManager
       value: 
-      objectReference: {fileID: 431795269}
+      objectReference: {fileID: 275244029}
     - target: {fileID: 195580389378337380, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: m_Speed
@@ -3955,7 +4019,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_Name
@@ -3965,7 +4029,7 @@ Prefab:
         type: 2}
       propertyPath: needManager
       value: 
-      objectReference: {fileID: 431795269}
+      objectReference: {fileID: 275244029}
     - target: {fileID: 195580389378337380, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: m_Speed
@@ -4140,7 +4204,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_Name
@@ -4150,7 +4214,7 @@ Prefab:
         type: 2}
       propertyPath: needManager
       value: 
-      objectReference: {fileID: 431795269}
+      objectReference: {fileID: 275244029}
     - target: {fileID: 195580389378337380, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: m_Speed
@@ -4302,8 +4366,6 @@ MonoBehaviour:
   increaseValue: 2
   currentvalue: 6
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!114 &1433070534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4318,8 +4380,12 @@ MonoBehaviour:
   increaseValue: 3
   currentvalue: 5
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
+--- !u!114 &1433070535 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+    type: 2}
+  m_PrefabInternal: {fileID: 119664130}
+  m_Script: {fileID: 11500000, guid: 19c810e9caae01e42980612d47226a49, type: 3}
 --- !u!114 &1433070541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4334,8 +4400,6 @@ MonoBehaviour:
   increaseValue: 0
   currentvalue: 0
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!1 &1474717643
 GameObject:
   m_ObjectHideFlags: 0
@@ -4819,8 +4883,6 @@ MonoBehaviour:
   increaseValue: 2
   currentvalue: 2
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!114 &1641474672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4835,8 +4897,12 @@ MonoBehaviour:
   increaseValue: 3
   currentvalue: 8
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
+--- !u!114 &1641474673 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+    type: 2}
+  m_PrefabInternal: {fileID: 1150810664}
+  m_Script: {fileID: 11500000, guid: 19c810e9caae01e42980612d47226a49, type: 3}
 --- !u!114 &1641474679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4851,8 +4917,6 @@ MonoBehaviour:
   increaseValue: 0
   currentvalue: 0
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!1 &1678279386
 GameObject:
   m_ObjectHideFlags: 0
@@ -4954,8 +5018,6 @@ MonoBehaviour:
   increaseValue: 2
   currentvalue: 2
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!114 &1683524908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4970,8 +5032,12 @@ MonoBehaviour:
   increaseValue: 3
   currentvalue: 8
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
+--- !u!114 &1683524909 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+    type: 2}
+  m_PrefabInternal: {fileID: 2131762175}
+  m_Script: {fileID: 11500000, guid: 19c810e9caae01e42980612d47226a49, type: 3}
 --- !u!114 &1683524915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4986,8 +5052,6 @@ MonoBehaviour:
   increaseValue: 0
   currentvalue: 0
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!1001 &1703918825
 Prefab:
   m_ObjectHideFlags: 0
@@ -5030,7 +5094,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_Name
@@ -5040,7 +5104,7 @@ Prefab:
         type: 2}
       propertyPath: needManager
       value: 
-      objectReference: {fileID: 431795269}
+      objectReference: {fileID: 275244029}
     - target: {fileID: 195580389378337380, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: m_Speed
@@ -5470,8 +5534,6 @@ MonoBehaviour:
   increaseValue: 2
   currentvalue: 9
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!114 &1801062608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5486,8 +5548,12 @@ MonoBehaviour:
   increaseValue: 3
   currentvalue: 3
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
+--- !u!114 &1801062609 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+    type: 2}
+  m_PrefabInternal: {fileID: 709724961}
+  m_Script: {fileID: 11500000, guid: 19c810e9caae01e42980612d47226a49, type: 3}
 --- !u!114 &1801062615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5502,8 +5568,6 @@ MonoBehaviour:
   increaseValue: 0
   currentvalue: 0
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!1 &1813206134 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021,
@@ -5523,8 +5587,6 @@ MonoBehaviour:
   increaseValue: 2
   currentvalue: 6
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!114 &1813206136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5539,8 +5601,12 @@ MonoBehaviour:
   increaseValue: 3
   currentvalue: 5
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
+--- !u!114 &1813206137 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+    type: 2}
+  m_PrefabInternal: {fileID: 13266299}
+  m_Script: {fileID: 11500000, guid: 19c810e9caae01e42980612d47226a49, type: 3}
 --- !u!114 &1813206143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5555,13 +5621,17 @@ MonoBehaviour:
   increaseValue: 0
   currentvalue: 0
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!1 &1865837431 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021,
     type: 2}
   m_PrefabInternal: {fileID: 614153035}
+--- !u!114 &1865837432 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+    type: 2}
+  m_PrefabInternal: {fileID: 614153035}
+  m_Script: {fileID: 11500000, guid: 19c810e9caae01e42980612d47226a49, type: 3}
 --- !u!114 &1865837438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5576,8 +5646,6 @@ MonoBehaviour:
   increaseValue: 0
   currentvalue: 0
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!114 &1865837439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5592,8 +5660,6 @@ MonoBehaviour:
   increaseValue: 2
   currentvalue: 6
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!114 &1865837440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5608,8 +5674,6 @@ MonoBehaviour:
   increaseValue: 3
   currentvalue: 5
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!1 &1888507551
 GameObject:
   m_ObjectHideFlags: 0
@@ -5863,8 +5927,6 @@ MonoBehaviour:
   increaseValue: 2
   currentvalue: -1
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!114 &2001316835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5879,8 +5941,12 @@ MonoBehaviour:
   increaseValue: 3
   currentvalue: 3
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
+--- !u!114 &2001316836 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+    type: 2}
+  m_PrefabInternal: {fileID: 1311013074}
+  m_Script: {fileID: 11500000, guid: 19c810e9caae01e42980612d47226a49, type: 3}
 --- !u!114 &2001316842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5895,8 +5961,6 @@ MonoBehaviour:
   increaseValue: 0
   currentvalue: 0
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!1 &2035816088
 GameObject:
   m_ObjectHideFlags: 0
@@ -6135,7 +6199,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_Name
@@ -6145,7 +6209,7 @@ Prefab:
         type: 2}
       propertyPath: needManager
       value: 
-      objectReference: {fileID: 431795269}
+      objectReference: {fileID: 275244029}
     - target: {fileID: 195580389378337380, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: m_Speed
@@ -6297,8 +6361,6 @@ MonoBehaviour:
   increaseValue: 2
   currentvalue: 5
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!114 &2100598725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6313,8 +6375,12 @@ MonoBehaviour:
   increaseValue: 3
   currentvalue: 4
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
+--- !u!114 &2100598726 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114673337800720770, guid: f7f5779b837f536449a6abe873a56021,
+    type: 2}
+  m_PrefabInternal: {fileID: 142654050}
+  m_Script: {fileID: 11500000, guid: 19c810e9caae01e42980612d47226a49, type: 3}
 --- !u!114 &2100598732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6329,8 +6395,6 @@ MonoBehaviour:
   increaseValue: 0
   currentvalue: 0
   name: 
-  needy: {fileID: 0}
-  isWorkingOn: 0
 --- !u!1 &2121188643
 GameObject:
   m_ObjectHideFlags: 0
@@ -6487,7 +6551,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4216815033352660, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1745075514192604, guid: f7f5779b837f536449a6abe873a56021, type: 2}
       propertyPath: m_Name
@@ -6497,7 +6561,7 @@ Prefab:
         type: 2}
       propertyPath: needManager
       value: 
-      objectReference: {fileID: 431795269}
+      objectReference: {fileID: 275244029}
     - target: {fileID: 195580389378337380, guid: f7f5779b837f536449a6abe873a56021,
         type: 2}
       propertyPath: m_Speed

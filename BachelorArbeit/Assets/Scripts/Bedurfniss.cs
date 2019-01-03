@@ -6,13 +6,11 @@ using UnityEngine;
 public abstract class Bedurfniss : MonoBehaviour, IComparable {
 
 
-  public int increaseValue = 1;
+  [SerializeField] private int increaseValue = 1;
   public int currentvalue;
   private int maxValue= 60;
   private int minValue=-10;
   public string name;
-  public GameObject needy;
-  public bool isWorkingOn =false;
 
     public int MaxValue
     {
@@ -56,7 +54,6 @@ public abstract class Bedurfniss : MonoBehaviour, IComparable {
 
     // Use this for initialization
     void Start () {
-        needy = gameObject.transform.parent.gameObject;
 		
 	}
 
@@ -92,9 +89,8 @@ public abstract class Bedurfniss : MonoBehaviour, IComparable {
 
     public virtual bool satisfy() {
         //work to do
-        if ( isWorkingOn ) return false;
-        isWorkingOn = false;
-        return false;
+       return false;
+       
     }
 
     public int CompareTo( object obj )
