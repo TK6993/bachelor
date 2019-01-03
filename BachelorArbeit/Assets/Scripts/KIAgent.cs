@@ -5,15 +5,9 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-public class KIAgent : MonoBehaviour
+public class KIAgent : KIInstance
 {
     public NavMeshAgent navAgent;   
-    public Bedurfniss[ ] bedürfnisse;
-    public bool isWorkingOnNeed;
-    public NeedManager needManager;
-    public GameObject waiter;
-    public GameObject waiterPrefab;
-    public Bedurfniss workingNeed;
     public bool waitingForFreeNeedPoint = false;
     public int counterOfWaitingNeeds = 0;
 
@@ -52,7 +46,7 @@ public class KIAgent : MonoBehaviour
     }
     // TODO: 2 und 3 ... wichtigstes bedürfnis angehen wenn bestzet
     // is wworking on needs betrachten 
-    private bool tryToSatisfyNeed( Bedurfniss workingNeed )
+    public override bool tryToSatisfyNeed( Bedurfniss workingNeed )
     {
         foreach ( GameObject coll in currentCollisions )
         {
@@ -65,7 +59,7 @@ public class KIAgent : MonoBehaviour
         return true;
     }
 
-    private void evaluateNeeds()
+    public override void evaluateNeeds()
     {
 
         //noch sehr einfach (ermittelt das höchste bedürfniss.)
@@ -107,7 +101,7 @@ public class KIAgent : MonoBehaviour
     }
 
 
-    private void increaseNeeds() {
+    public override void increaseNeeds() {
         foreach ( Bedurfniss need in bedürfnisse )
         {
             need.changeNeed();

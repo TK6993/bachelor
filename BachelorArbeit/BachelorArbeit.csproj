@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\Freetime.cs" />
     <Compile Include="Assets\Scripts\Hunger.cs" />
     <Compile Include="Assets\Scripts\KIAgent.cs" />
+    <Compile Include="Assets\Scripts\KIInstance.cs" />
     <Compile Include="Assets\Scripts\NeedGiver.cs" />
     <Compile Include="Assets\Scripts\NeedManager.cs" />
     <Compile Include="Assets\Scripts\NeedStation.cs" />
