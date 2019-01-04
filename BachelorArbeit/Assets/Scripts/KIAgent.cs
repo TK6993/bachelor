@@ -11,11 +11,16 @@ public class KIAgent : MonoBehaviour, IIndigent
 
     [SerializeField] private Bedurfniss[ ] bedürfnisse;
     [SerializeField] private bool isWorkingOnNeed;
-    [SerializeField] private NeedManager needManager;
+    public NeedManager needManager;
     [SerializeField] private GameObject waiter;
     [SerializeField] private GameObject waiterPrefab;
     [SerializeField] private Bedurfniss workingNeed;
+    public Bedurfniss mostAskedNeed;
     [SerializeField] private int counterOfWaitingNeeds = 0;
+    public KIAction[] agentActions;
+
+    public Dictionary<string, KIAction> agentActionsbyName = new Dictionary<string, KIAction>();
+
     public bool waitingForFreeNeedPoint = false;
 
     public List<GameObject> currentCollisions = new List<GameObject>();
@@ -25,8 +30,12 @@ public class KIAgent : MonoBehaviour, IIndigent
     // Use this for initialization
     void Start()
     {
-
-    }
+        foreach ( KIAction action in agentActions )
+        {
+            agentActionsbyName.Add( action.name, action );
+        }
+        
+     }
 
     // Update is called once per frame
     void Update()
@@ -63,6 +72,7 @@ public class KIAgent : MonoBehaviour, IIndigent
                 NeedStation needS = coll.gameObject.GetComponent<NeedStation>();
 
                 satisfaction -= 0.1f;
+                workingNeed.changeAskedCounter( false );// true sorgt für eine Verringerung des AskCounters im Bedürfniss
                 if ( satisfaction > 10 ) satisfaction = 10;
                 else if ( satisfaction < -10 ) satisfaction = -10;
 
@@ -91,23 +101,27 @@ public class KIAgent : MonoBehaviour, IIndigent
                 // Wenn kein freier Platz für die befriedigung des Bedürfnisses gefunden wurde ist "isworkingOnNeed" falsch und
                 // needHasNotBeenSatisfied() wird aufgerufen sowie der  counterOfWaitingNeeds wird erhöht das als nächtes das am 2 meisten gewollte bedrüfniss befriedigt wird.
                 isWorkingOnNeed = !waitingForFreeNeedPoint;
+
                 if ( waitingForFreeNeedPoint )
                 {
                     satisfaction += 0.5f;
+                    workingNeed.changeAskedCounter( true );// true sorgt für eine Erhöhung des AskCounters im Bedürfniss
                     if ( satisfaction > 10 ) satisfaction = 10;
                     else if ( satisfaction < -10 ) satisfaction = -10;
+                    mostAskedNeed = setMostRequestedNeed();
+
                     waitingForFreeNeedPoint = false;
                     counterOfWaitingNeeds++;
                     if(counterOfWaitingNeeds > bedürfnisse.Length-1 ) { counterOfWaitingNeeds = 0; }
-                     workingNeed.needHasNotBeenSatisfied(needManager,gameObject);
+                    KIAction action = workingNeed.needHasNotBeenSatisfied(needManager,gameObject);
+                if ( action != null ) action.doAction(gameObject);
             }
                 else {
-                    counterOfWaitingNeeds--;
+                    counterOfWaitingNeeds = 0;
                     if ( counterOfWaitingNeeds < 0 ) counterOfWaitingNeeds = 0;
                 }
-            }
-        
 
+            }
     }
 
     private void FindWayTosatisfactionPoint( Bedurfniss b )
@@ -124,6 +138,19 @@ public class KIAgent : MonoBehaviour, IIndigent
         }
 
 
+    }
+
+    Bedurfniss setMostRequestedNeed() {
+        Bedurfniss tempNeed = null;
+        int highestAskCounter = 0;
+        foreach ( Bedurfniss need in bedürfnisse )      
+        {
+            if ( need.askForCounter > highestAskCounter ) {
+                tempNeed = need;
+                highestAskCounter = need.askForCounter;
+            }
+        }
+        return tempNeed;
     }
 
 
@@ -152,6 +179,8 @@ public class KIAgent : MonoBehaviour, IIndigent
                   }
           }*/
     }
+
+     
 
     
 

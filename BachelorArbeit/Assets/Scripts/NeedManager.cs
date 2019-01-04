@@ -10,7 +10,7 @@ public class NeedManager : MonoBehaviour {
     public GameObject[ ] hungerPoints;
     public GameObject[ ] workPoints;
     public GameObject[ ] freetTimePoints;
-    [SerializeField] private Dictionary<string, GameObject[]> agentNeeds = new Dictionary<string,GameObject[]>();
+    public Dictionary<string, GameObject[]> agentNeeds = new Dictionary<string,GameObject[]>();
 
     // Use this for initialization
    public  virtual void Start () {
@@ -26,7 +26,7 @@ public class NeedManager : MonoBehaviour {
 		
 	}
 
-    internal Vector3 getNearestPointofSatisfaction( Bedurfniss b, GameObject agent )
+    public virtual Vector3 getNearestPointofSatisfaction( Bedurfniss b, GameObject agent )
     {
          //Suche nach nächten freien Punkt zur Erfüllung des Bedürfnisses
          GameObject nearestPlace = null;

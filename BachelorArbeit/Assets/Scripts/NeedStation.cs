@@ -9,6 +9,7 @@ public class NeedStation : MonoBehaviour
     public bool isFull = false;
     public int stationSize = 1;
     public List<GameObject> agentsOnThisStation = new List<GameObject>();
+    public bool isInPossession =false;
 
     // Use this for initialization
     void Start()

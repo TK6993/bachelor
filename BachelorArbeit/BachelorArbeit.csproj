@@ -83,19 +83,22 @@
     <Compile Include="Assets\Imported Assets\NavMeshComponents\Scripts\NavMeshModifier.cs" />
     <Compile Include="Assets\Imported Assets\NavMeshComponents\Scripts\NavMeshModifierVolume.cs" />
     <Compile Include="Assets\Imported Assets\NavMeshComponents\Scripts\NavMeshSurface.cs" />
-    <Compile Include="Assets\Scripts\Bedurfniss.cs" />
-    <Compile Include="Assets\Scripts\CitizenSatisfaction.cs" />
-    <Compile Include="Assets\Scripts\Freetime.cs" />
-    <Compile Include="Assets\Scripts\Hunger.cs" />
+    <Compile Include="Assets\Scripts\AgentDie.cs" />
     <Compile Include="Assets\Scripts\IIndigent.cs" />
+    <Compile Include="Assets\Scripts\KIAction.cs" />
     <Compile Include="Assets\Scripts\KIAgent.cs" />
     <Compile Include="Assets\Scripts\KIFaction.cs" />
     <Compile Include="Assets\Scripts\NeedGiver.cs" />
     <Compile Include="Assets\Scripts\NeedManager.cs" />
+    <Compile Include="Assets\Scripts\Needs\Bedurfniss.cs" />
+    <Compile Include="Assets\Scripts\Needs\CitizenSatisfaction.cs" />
+    <Compile Include="Assets\Scripts\Needs\Freetime.cs" />
+    <Compile Include="Assets\Scripts\Needs\Hunger.cs" />
+    <Compile Include="Assets\Scripts\Needs\Work.cs" />
     <Compile Include="Assets\Scripts\NeedStation.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Waiter.cs" />
-    <Compile Include="Assets\Scripts\Work.cs" />
+    <Compile Include="Assets\Scripts\WorldNeedManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

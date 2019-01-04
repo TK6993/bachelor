@@ -14,6 +14,10 @@ public class KIFaction : NeedManager,IIndigent {
     [SerializeField] private Bedurfniss workingNeed;
     [SerializeField] private int counterOfWaitingNeeds = 0;
 
+    [SerializeField] private NeedManager worldneedManager;
+    public Bedurfniss mostWantedNeed;
+
+
     [SerializeField] private GameObject waiter;
     [SerializeField] private GameObject waiterPrefab;
     [SerializeField] private bool isWorkingOnNeed;
@@ -25,6 +29,7 @@ public class KIFaction : NeedManager,IIndigent {
     // Use this for initialization
     public override void Start () {
         base.Start();
+        
 	}
 	
 	// Update is called once per frame

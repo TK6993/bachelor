@@ -27,7 +27,7 @@ public class Work : Bedurfniss {
 
     }
 
-    public override bool needHasNotBeenSatisfied( NeedManager needM, GameObject Agent )
+    public override KIAction needHasNotBeenSatisfied( NeedManager needM, GameObject Agent )
     {
         throw new NotImplementedException();
     }

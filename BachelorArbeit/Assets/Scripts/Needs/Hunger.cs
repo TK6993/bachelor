@@ -22,17 +22,21 @@ public class Hunger : Bedurfniss {
         decreaseCurrentValue( 50 );
         // base.tryToSatisfy();
         return false;
-
+        
 
 
     }
 
-    public override bool needHasNotBeenSatisfied(NeedManager needM, GameObject agent)
+    public override KIAction needHasNotBeenSatisfied(NeedManager needM, GameObject agent)
     {
+
         if ( currentvalue > MaxValue - 5 ) {
-            needM.logoutAgentfromStation( agent );
-            Destroy( gameObject );
+            KIAction action = agent.GetComponent<KIAgent>().agentActionsbyName[ "agentDie" ];
+            return action;
+            
+           // needM.logoutAgentfromStation( agent );
+            //Destroy( gameObject );
         }
-        return false;
+        return null;
     }
 }

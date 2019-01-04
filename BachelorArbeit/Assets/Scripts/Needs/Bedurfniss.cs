@@ -7,6 +7,7 @@ public abstract class Bedurfniss : MonoBehaviour, IComparable {
 
 
   [SerializeField] private int increaseValue = 1;
+    public int askForCounter = 0;
   public int currentvalue;
   private int maxValue= 60;
   private int minValue=-10;
@@ -17,6 +18,7 @@ public abstract class Bedurfniss : MonoBehaviour, IComparable {
         get
         {
             return maxValue;
+            
         }
 
         set
@@ -76,7 +78,7 @@ public abstract class Bedurfniss : MonoBehaviour, IComparable {
         return currentvalue;
     }
 
-    abstract public bool needHasNotBeenSatisfied( NeedManager needM, GameObject agent );
+    abstract public KIAction needHasNotBeenSatisfied( NeedManager needM, GameObject agent );
 
     public virtual bool satisfy() {
         //work to do
@@ -91,5 +93,11 @@ public abstract class Bedurfniss : MonoBehaviour, IComparable {
             return this.currentvalue.CompareTo( otherBedurfnis.currentvalue );
         else
             throw new ArgumentException( "Object is not a Temperature" );
+    }
+
+    public void  changeAskedCounter( bool changeDirection ) {
+        askForCounter += ( -1 + (2* Convert.ToInt32( changeDirection )) );
+        if ( askForCounter < 0 ) askForCounter = 0;
+
     }
 }
