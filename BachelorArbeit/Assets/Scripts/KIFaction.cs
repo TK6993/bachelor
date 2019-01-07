@@ -15,8 +15,15 @@ public class KIFaction : NeedManager,IIndigent {
     [SerializeField] private int counterOfWaitingNeeds = 0;
 
     [SerializeField] private NeedManager worldneedManager;
+
+    public GameObject[] getAllNeedStationsFromWorldNeedManagerOfKind( string needStationKind )
+    {
+        return worldneedManager.agentNeeds[ needStationKind ];
+    }
+
     public Bedurfniss mostWantedNeed;
 
+    public KIAction taskForAgents;
 
     [SerializeField] private GameObject waiter;
     [SerializeField] private GameObject waiterPrefab;
@@ -74,7 +81,12 @@ public class KIFaction : NeedManager,IIndigent {
 
     public  bool tryToSatisfyNeed( Bedurfniss workingNeed )
     {
-        workingNeed.satisfy();
+        if ( !workingNeed.satisfy() ) {
+            KIAction fractionAction = workingNeed.needHasNotBeenSatisfied( gameObject );
+            fractionAction.doAction(gameObject);
+
+
+        }
         return false;
         
     }

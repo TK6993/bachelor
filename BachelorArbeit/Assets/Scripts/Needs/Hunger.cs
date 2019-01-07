@@ -27,7 +27,7 @@ public class Hunger : Bedurfniss {
 
     }
 
-    public override KIAction needHasNotBeenSatisfied(NeedManager needM, GameObject agent)
+    public override KIAction needHasNotBeenSatisfied(GameObject agent)
     {
 
         if ( currentvalue > MaxValue - 5 ) {

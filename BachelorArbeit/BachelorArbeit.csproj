@@ -84,6 +84,7 @@
     <Compile Include="Assets\Imported Assets\NavMeshComponents\Scripts\NavMeshModifierVolume.cs" />
     <Compile Include="Assets\Imported Assets\NavMeshComponents\Scripts\NavMeshSurface.cs" />
     <Compile Include="Assets\Scripts\AgentDie.cs" />
+    <Compile Include="Assets\Scripts\ConquerNeedStationA.cs" />
     <Compile Include="Assets\Scripts\IIndigent.cs" />
     <Compile Include="Assets\Scripts\KIAction.cs" />
     <Compile Include="Assets\Scripts\KIAgent.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Assets\Scripts\NeedManager.cs" />
     <Compile Include="Assets\Scripts\Needs\Bedurfniss.cs" />
     <Compile Include="Assets\Scripts\Needs\CitizenSatisfaction.cs" />
+    <Compile Include="Assets\Scripts\Needs\FactionLoyalty.cs" />
     <Compile Include="Assets\Scripts\Needs\Freetime.cs" />
     <Compile Include="Assets\Scripts\Needs\Hunger.cs" />
     <Compile Include="Assets\Scripts\Needs\Work.cs" />

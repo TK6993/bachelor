@@ -13,9 +13,18 @@ public class CitizenSatisfaction : Bedurfniss {
 
 
     // signatur müsste nochmal überarbeittet werden mit den Paramether , diese werden hier nicht gebraucht.
-    public override KIAction needHasNotBeenSatisfied( NeedManager needM, GameObject agent )
+    public override KIAction needHasNotBeenSatisfied(  GameObject agent )
     {
-        throw new NotImplementedException();
+        if ( currentvalue > MaxValue - 5 )
+        {
+            ConquerNeedStationA action  = (ConquerNeedStationA) agent.GetComponent<KIAgent>().agentActionsbyName[ "conquerNeedStation" ];
+            action.setNeedStationKind( mostWantedNeed.name );
+            return action;
+
+            // needM.logoutAgentfromStation( agent );
+            //Destroy( gameObject );
+        }
+        return null;
     }
 
     // Use this for initialization
@@ -57,7 +66,6 @@ public class CitizenSatisfaction : Bedurfniss {
         }
         else {
             mostWantedNeed = mostCitizenWantedNeed;
-            needHasNotBeenSatisfied(faction,null );
             return false;
         }
 

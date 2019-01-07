@@ -10,8 +10,8 @@ public class AgentDie : KIAction {
     {
         this.actor = actor;
         KIAgent agent = actor.GetComponent<KIAgent>();
-        agent.needManager.logoutAgentfromStation( actor );
-
+        agent.faction.logoutAgentfromStation( actor );
+        
         Destroy( gameObject );
         return true;
     }

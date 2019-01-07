@@ -78,7 +78,7 @@ public abstract class Bedurfniss : MonoBehaviour, IComparable {
         return currentvalue;
     }
 
-    abstract public KIAction needHasNotBeenSatisfied( NeedManager needM, GameObject agent );
+    abstract public KIAction needHasNotBeenSatisfied( GameObject agent );
 
     public virtual bool satisfy() {
         //work to do

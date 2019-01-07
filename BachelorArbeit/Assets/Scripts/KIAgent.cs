@@ -11,13 +11,14 @@ public class KIAgent : MonoBehaviour, IIndigent
 
     [SerializeField] private Bedurfniss[ ] bedürfnisse;
     [SerializeField] private bool isWorkingOnNeed;
-    public NeedManager needManager;
+    public KIFaction faction;
     [SerializeField] private GameObject waiter;
     [SerializeField] private GameObject waiterPrefab;
     [SerializeField] private Bedurfniss workingNeed;
     public Bedurfniss mostAskedNeed;
     [SerializeField] private int counterOfWaitingNeeds = 0;
-    public KIAction[] agentActions;
+    public
+        KIAction[] agentActions;
 
     public Dictionary<string, KIAction> agentActionsbyName = new Dictionary<string, KIAction>();
 
@@ -113,7 +114,7 @@ public class KIAgent : MonoBehaviour, IIndigent
                     waitingForFreeNeedPoint = false;
                     counterOfWaitingNeeds++;
                     if(counterOfWaitingNeeds > bedürfnisse.Length-1 ) { counterOfWaitingNeeds = 0; }
-                    KIAction action = workingNeed.needHasNotBeenSatisfied(needManager,gameObject);
+                    KIAction action = workingNeed.needHasNotBeenSatisfied(gameObject);
                 if ( action != null ) action.doAction(gameObject);
             }
                 else {
@@ -126,7 +127,7 @@ public class KIAgent : MonoBehaviour, IIndigent
 
     private void FindWayTosatisfactionPoint( Bedurfniss b )
     {
-        Vector3 pointForSatisfaction = needManager.getNearestPointofSatisfaction( b, gameObject);
+        Vector3 pointForSatisfaction = faction.getNearestPointofSatisfaction( b, gameObject);
         navAgent.SetDestination( pointForSatisfaction );
     }
 
