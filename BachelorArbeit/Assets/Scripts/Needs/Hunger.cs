@@ -9,6 +9,7 @@ public class Hunger : Bedurfniss {
 	// Use this for initialization
 	void Start () {
         name = "hunger";
+        needWithNeedStation = true;
         MinValue = -20;
 	}
 	
@@ -17,11 +18,11 @@ public class Hunger : Bedurfniss {
 		
 	}
 
-    public override bool satisfy()
+    public override bool satisfy( GameObject actor)
     {
         decreaseCurrentValue( 50 );
         // base.tryToSatisfy();
-        return false;
+        return true;
         
 
 
@@ -31,7 +32,7 @@ public class Hunger : Bedurfniss {
     {
 
         if ( currentvalue > MaxValue - 5 ) {
-            KIAction action = agent.GetComponent<KIAgent>().agentActionsbyName[ "agentDie" ];
+            KIAction action = agent.GetComponent<AgentDie>();
             return action;
             
            // needM.logoutAgentfromStation( agent );

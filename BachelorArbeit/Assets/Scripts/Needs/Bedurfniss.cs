@@ -7,10 +7,11 @@ public abstract class Bedurfniss : MonoBehaviour, IComparable {
 
 
   [SerializeField] private int increaseValue = 1;
+    public bool needWithNeedStation = false;
     public int askForCounter = 0;
   public int currentvalue;
-  private int maxValue= 60;
-  private int minValue=-10;
+  private int maxValue= 500;
+  private int minValue=-200;
   public string name;
 
     public int MaxValue
@@ -78,13 +79,11 @@ public abstract class Bedurfniss : MonoBehaviour, IComparable {
         return currentvalue;
     }
 
-    abstract public KIAction needHasNotBeenSatisfied( GameObject agent );
+    abstract public KIAction needHasNotBeenSatisfied( GameObject actor );
 
-    public virtual bool satisfy() {
-        //work to do
-       return false;
-       
-    }
+    abstract public bool satisfy( GameObject actor );
+   
+
 
     public int CompareTo( object obj )
     {

@@ -6,20 +6,19 @@ using UnityEngine.AI;
 
 public class ConquerNeedStationA : KIAction {
 
-    string NeedStationKind;
-    NeedStation needStation;
-    NeedStation needStationToConqer;
-    KIFaction faction;
+    Bedurfniss wantedNeed;
+    GameObject needStationToConquer;
+    //KIFaction faction;
 
     public override bool doAction( GameObject actor )
     {
-        this.actor = actor;
+        // Dieese Aktion wird von einer Fraktion an einen agent weiter gegeben deswegen hier die Unterscheidung , denn Fraktion und Agnet gehen unterschiedlich mit der Aktion um
+        this.actor = actor;// Kann sowohl eine Fraktion als auch ein Agnet sein.
         KIFaction faction = actor.GetComponent<KIFaction>();
         if ( faction != null )
         {
-            fractionConqerNeedStation();
-
-
+            needStationToConquer = faction.worldneedManager.getNearestPointofSatisfaction( wantedNeed, gameObject );
+            actor.GetComponent<KIFaction>().taskForAgents = this;
         }
         else {
             KIAgent agent = actor.GetComponent<KIAgent>();
@@ -32,42 +31,21 @@ public class ConquerNeedStationA : KIAction {
     }
 
     private void agentConqerNeedStationAgent( KIAgent agent) {
+
         NavMeshAgent navAgent = agent.gameObject.GetComponent<NavMeshAgent>();
-        navAgent.SetDestination( needStationToConqer.gameObject.transform.position);
-        while ( navAgent.remainingDistance > 5.0f ) {
-            Debug.Log("conquering");
+        navAgent.SetDestination( needStationToConquer.transform.position);
 
-        }
-        GameObject[] needStationsInFaction = faction.agentNeeds[ NeedStationKind ];
-        Array.Resize( ref needStationsInFaction, needStationsInFaction.Length + 1 );
-        needStationsInFaction[ needStationsInFaction.Length - 1 ] = needStationToConqer.gameObject;
-        needStationToConqer.isInPossession = true;
+        KIFaction faction = agent.faction;
+        faction.listOfAgentNeedStations[ wantedNeed.name ].Add( needStationToConquer );
+        //agents an listofagentneed stations anpassen
+
+        needStationToConquer.GetComponent<NeedStation>().isInPossession = true;
+        faction.taskForAgents = null;
 
 
     }
 
-    private void fractionConqerNeedStation()
-    {
-
-        faction = actor.GetComponent<KIFaction>();
-
-        GameObject[ ] stations = faction.getAllNeedStationsFromWorldNeedManagerOfKind( NeedStationKind );
-        float closestMagnitude = float.MaxValue;
-        GameObject closestStation = null;
-        foreach ( GameObject needStation in stations )
-        {
-            NeedStation station = needStation.GetComponent<NeedStation>();
-            if ( station.isInPossession ) continue;
-            float magnitude = ( actor.transform.position - needStation.transform.position ).sqrMagnitude;
-            if ( magnitude < closestMagnitude )
-            {
-                closestMagnitude = magnitude;
-                closestStation = needStation;
-            }
-
-        }
-        if ( closestStation != null ) needStationToConqer = closestStation.GetComponent<NeedStation>();
-    }
+  
 
 
 
@@ -76,8 +54,8 @@ public class ConquerNeedStationA : KIAction {
         this.actor = actor;
     }
 
-    public void setNeedStationKind(string needStationKind) {
-        this.NeedStationKind = needStationKind;
+    public void setWantedNeed(Bedurfniss need) {
+        this.wantedNeed = need;
     }
 
     // Use this for initialization

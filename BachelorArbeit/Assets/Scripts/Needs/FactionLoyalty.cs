@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class FactionLoyalty : Bedurfniss {
 
-    KIFaction agentsFaction;
 
 
     public override KIAction needHasNotBeenSatisfied( GameObject agent )
@@ -16,7 +15,6 @@ public class FactionLoyalty : Bedurfniss {
     // Use this for initialization
     void Start () {
         name = "factionLoyalty";
-        agentsFaction = gameObject.GetComponent<KIAgent>().faction;
     }
 	
 	// Update is called once per frame
@@ -25,13 +23,16 @@ public class FactionLoyalty : Bedurfniss {
 	}
 
 
-    public override bool satisfy()
+    public override bool satisfy(GameObject actor)
     {
+        KIFaction agentsFaction = actor.GetComponent<KIAgent>().faction;
         KIAction taskToDoForTheFaction = agentsFaction.taskForAgents;
-        taskToDoForTheFaction.doAction( gameObject );
-        decreaseCurrentValue( 50 );
-        // base.tryToSatisfy();
-        return false;
+        if ( taskToDoForTheFaction != null )
+        {
+            taskToDoForTheFaction.doAction( gameObject );
+        }
+        decreaseCurrentValue( 30 );
+        return true;
 
 
 

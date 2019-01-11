@@ -9,15 +9,15 @@ public class Freetime : Bedurfniss {
 
     public override KIAction needHasNotBeenSatisfied( GameObject agent )
     {
-        throw new NotImplementedException();
+        return null;
     }
 
 
-    public override bool satisfy()
+    public override bool satisfy(GameObject actor)
     {
         decreaseCurrentValue( 0 );
         //base.tryToSatisfy();
-        return false;
+        return true;
 
 
 
@@ -25,6 +25,7 @@ public class Freetime : Bedurfniss {
     // Use this for initialization
     void Start () {
         name = "freetime";
+        needWithNeedStation = true;
 	}
 	
 	// Update is called once per frame

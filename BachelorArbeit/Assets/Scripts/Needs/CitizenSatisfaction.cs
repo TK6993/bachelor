@@ -12,13 +12,12 @@ public class CitizenSatisfaction : Bedurfniss {
 
 
 
-    // signatur müsste nochmal überarbeittet werden mit den Paramether , diese werden hier nicht gebraucht.
-    public override KIAction needHasNotBeenSatisfied(  GameObject agent )
+    public override KIAction needHasNotBeenSatisfied(  GameObject actor )
     {
-        if ( currentvalue > MaxValue - 5 )
+        if ( currentvalue > 0 )
         {
-            ConquerNeedStationA action  = (ConquerNeedStationA) agent.GetComponent<KIAgent>().agentActionsbyName[ "conquerNeedStation" ];
-            action.setNeedStationKind( mostWantedNeed.name );
+            ConquerNeedStationA action = (ConquerNeedStationA) actor.GetComponent<ConquerNeedStationA>();
+            action.setWantedNeed( mostWantedNeed);
             return action;
 
             // needM.logoutAgentfromStation( agent );
@@ -29,7 +28,6 @@ public class CitizenSatisfaction : Bedurfniss {
 
     // Use this for initialization
     void Start () {
-        faction = gameObject.GetComponent<KIFaction>();
 	}
 	
 	// Update is called once per frame
@@ -37,8 +35,14 @@ public class CitizenSatisfaction : Bedurfniss {
 		
 	}
 
-    public override bool satisfy()
+    public override bool satisfy( GameObject actor)
     {
+        if ( currentvalue < 0 )
+        {
+            mostWantedNeed = null;
+            return true;
+        }
+        KIFaction faction = actor.GetComponent<KIFaction>();
         Dictionary<Bedurfniss, int> needsToSatisfy = new Dictionary<Bedurfniss,int>();
         float tempValue = 0.0f;
         int tempHighestValue = 0;
@@ -47,6 +51,7 @@ public class CitizenSatisfaction : Bedurfniss {
         {
             Bedurfniss mostAskedNeed = agent.mostAskedNeed;
             tempValue += agent.satisfaction;
+
             if ( mostAskedNeed != null && !needsToSatisfy.ContainsKey( mostAskedNeed ) ) needsToSatisfy.Add( mostAskedNeed, 1 );
             else if ( mostAskedNeed != null && needsToSatisfy.ContainsKey( mostAskedNeed ) ) needsToSatisfy[ mostAskedNeed ]++;
             if ( mostAskedNeed != null )
@@ -59,15 +64,11 @@ public class CitizenSatisfaction : Bedurfniss {
             }
 
         }
-        currentvalue = (int) (tempValue / faction.agentMembers.Length);
-        if ( currentvalue < 0 )
-        {
-            return true;
-        }
-        else {
-            mostWantedNeed = mostCitizenWantedNeed;
-            return false;
-        }
+       currentvalue = (int) (tempValue / faction.agentMembers.Length);
+        
+       mostWantedNeed = mostCitizenWantedNeed;
+       return false;
+        
 
     }
 }

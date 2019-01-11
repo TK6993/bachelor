@@ -9,6 +9,7 @@ public class Work : Bedurfniss {
     void Start()
     {
         name = "work";
+        needWithNeedStation = true;
     }
 
     // Update is called once per frame
@@ -17,11 +18,11 @@ public class Work : Bedurfniss {
 
     }
 
-    public override bool satisfy()
+    public override bool satisfy( GameObject actor )
     {
-        decreaseCurrentValue( 25 );
+        decreaseCurrentValue( 600 );
         //base.tryToSatisfy();
-        return false;
+        return true;
 
 
 
@@ -29,6 +30,6 @@ public class Work : Bedurfniss {
 
     public override KIAction needHasNotBeenSatisfied(  GameObject Agent )
     {
-        throw new NotImplementedException();
+        return null;
     }
 }
