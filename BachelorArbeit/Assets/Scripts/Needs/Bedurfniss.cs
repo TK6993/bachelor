@@ -10,14 +10,15 @@ public abstract class Bedurfniss : MonoBehaviour, IComparable {
     public bool needWithNeedStation = false;
     public int askForCounter = 0;
   public int currentvalue;
-  private int maxValue= 500;
-  private int minValue=-200;
+  private int maxValue= 5000;
+  private int minValue=-5000;
   public string name;
 
     public int MaxValue
     {
         get
         {
+          
             return maxValue;
             
         }

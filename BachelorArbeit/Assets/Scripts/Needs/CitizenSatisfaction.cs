@@ -37,11 +37,6 @@ public class CitizenSatisfaction : Bedurfniss {
 
     public override bool satisfy( GameObject actor)
     {
-        if ( currentvalue < 0 )
-        {
-            mostWantedNeed = null;
-            return true;
-        }
         KIFaction faction = actor.GetComponent<KIFaction>();
         Dictionary<Bedurfniss, int> needsToSatisfy = new Dictionary<Bedurfniss,int>();
         float tempValue = 0.0f;
@@ -65,10 +60,17 @@ public class CitizenSatisfaction : Bedurfniss {
 
         }
        currentvalue = (int) (tempValue / faction.agentMembers.Length);
+        if ( currentvalue < 0 )
+        {
+            mostWantedNeed = null;
+            return true;
+        }
         
        mostWantedNeed = mostCitizenWantedNeed;
        return false;
         
 
     }
+
+    
 }

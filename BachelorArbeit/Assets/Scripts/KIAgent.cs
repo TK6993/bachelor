@@ -15,9 +15,14 @@ public class KIAgent : MonoBehaviour, IIndigent
     [SerializeField] private GameObject waiter;
     [SerializeField] private GameObject waiterPrefab;
     [SerializeField] private Bedurfniss workingNeed;
+
+    
+
     public Bedurfniss mostAskedNeed;
     [SerializeField] private int counterOfWaitingNeeds = 0;
     public KIAction[] agentActions;
+
+    [SerializeField] private int money = 0;
 
     public Dictionary<string, KIAction> agentActionsbyName = new Dictionary<string, KIAction>();
 
@@ -25,6 +30,22 @@ public class KIAgent : MonoBehaviour, IIndigent
 
     public List<GameObject> currentCollisions = new List<GameObject>();
     public float satisfaction = 0;
+    [SerializeField]private int salery;
+
+    public int Salery
+    {
+        get
+        {
+            return salery;
+        }
+
+        set
+        {
+            salery = value;
+        }
+    }
+
+
 
 
     // Use this for initialization
@@ -55,7 +76,7 @@ public class KIAgent : MonoBehaviour, IIndigent
 
 
         else if ( waiter == null && isWorkingOnNeed ) {
-            //increaseNeeds();
+            increaseNeeds();
             isWorkingOnNeed= !tryToSatisfyNeed(workingNeed);
             //isWorkingOnNeed = !tryToSatisfyNeed( workingNeed );
            // waiter = Instantiate( waiterPrefab );
@@ -64,44 +85,24 @@ public class KIAgent : MonoBehaviour, IIndigent
         }
 
     }
-    // TODO: 2 und 3 ... wichtigstes bedürfnis angehen wenn bestzet
-    // is wworking on needs betrachten 
-  /*  public  bool tryToSatisfyNeed( Bedurfniss workingNeed )
-    {
 
-        if ( waitingForFreeNeedPoint ) // ist in jedem fall false wenn das workingneed keine NeedStation erfordert
-        {
-            satisfaction += 0.5f;
-            if ( satisfaction > 10 ) satisfaction = 10;
-            else if ( satisfaction < -10 ) satisfaction = -10;
-            workingNeed.changeAskedCounter( true );// true sorgt für eine Erhöhung des AskCounters im Bedürfniss
-
-
-            counterOfWaitingNeeds++;
-            if ( counterOfWaitingNeeds > bedürfnisse.Length - 1 ) { counterOfWaitingNeeds = 0; }
-
-            KIAction action = workingNeed.needHasNotBeenSatisfied( gameObject );
-            if ( action != null ) action.doAction( gameObject );
-
-            waitingForFreeNeedPoint = false;
-            return false;
-        }
-       
-          counterOfWaitingNeeds = 0;// !!Beobachten wegen: wird auf 0 gestetzt in jedem fall bei needs ohne station
-       if ( counterOfWaitingNeeds < 0 ) counterOfWaitingNeeds = 0;
-
-        if ( !workingNeed.needWithNeedStation )
-        {
-            return workingNeed.satisfy( gameObject );
-        }
-
-        return false;
-    }*/
+    public void changeMoney( int amount) {
+        money += amount;
+        if ( money < 0 ) money = 0;
+    }
 
     bool processNeedWithoutStation() {
         if ( !workingNeed.needWithNeedStation )
         {
             workingNeed.satisfy( gameObject );
+
+            satisfaction -= 1f;
+            workingNeed.changeAskedCounter( false );// true sorgt für eine Verringerung des AskCounters im Bedürfniss
+            if ( satisfaction > 10 ) satisfaction = 10;
+            else if ( satisfaction < -10 ) satisfaction = -10;
+
+            counterOfWaitingNeeds = 0;// !!Beobachten wegen: wird auf 0 gestetzt in jedem fall bei needs ohne station
+            if ( counterOfWaitingNeeds < 0 ) counterOfWaitingNeeds = 0;
             return false;
         }
         else return true;
@@ -112,22 +113,27 @@ public class KIAgent : MonoBehaviour, IIndigent
 
         if ( waitingForFreeNeedPoint ) // ist in jedem fall false wenn das workingneed keine NeedStation erfordert
         {
-            satisfaction += 0.5f;
-            if ( satisfaction > 10 ) satisfaction = 10;
-            else if ( satisfaction < -10 ) satisfaction = -10;
-            workingNeed.changeAskedCounter( true );// true sorgt für eine Erhöhung des AskCounters im Bedürfniss
-
-
-            counterOfWaitingNeeds++;
-            if ( counterOfWaitingNeeds > bedürfnisse.Length - 1 ) { counterOfWaitingNeeds = 0; }
-
-            KIAction action = workingNeed.needHasNotBeenSatisfied( gameObject );
-            if ( action != null ) action.doAction( gameObject );
-
-            waitingForFreeNeedPoint = false;
+            failedToSatisfy();
             return false;
         }
         else return true; 
+
+    }
+
+    private void failedToSatisfy() {
+        satisfaction += 0.5f;
+        if ( satisfaction > 10 ) satisfaction = 10;
+        else if ( satisfaction < -10 ) satisfaction = -10;
+        workingNeed.changeAskedCounter( true );// true sorgt für eine Erhöhung des AskCounters im Bedürfniss
+
+
+        counterOfWaitingNeeds++;
+        if ( counterOfWaitingNeeds > bedürfnisse.Length - 1 ) { counterOfWaitingNeeds = 0; }
+
+        KIAction action = workingNeed.needHasNotBeenSatisfied( gameObject );
+        if ( action != null ) action.doAction( gameObject );
+
+       waitingForFreeNeedPoint = false;
 
     }
 
@@ -141,12 +147,18 @@ public class KIAgent : MonoBehaviour, IIndigent
 
                 NeedStation needS = coll.gameObject.GetComponent<NeedStation>();
 
-                satisfaction -= 0.1f;
-                workingNeed.changeAskedCounter( false );// true sorgt für eine Verringerung des AskCounters im Bedürfniss
-                if ( satisfaction > 10 ) satisfaction = 10;
-                else if ( satisfaction < -10 ) satisfaction = -10;
+                if ( workingNeed.satisfy( gameObject ) ) {
+                    satisfaction -= 1f;
+                    workingNeed.changeAskedCounter( false );// true sorgt für eine Verringerung des AskCounters im Bedürfniss
+                    if ( satisfaction > 10 ) satisfaction = 10;
+                    else if ( satisfaction < -10 ) satisfaction = -10;
+                }
+                else {
+                    failedToSatisfy();
+                }
 
-                 return   workingNeed.satisfy( gameObject );
+
+                return true; 
                 
             }
         }
@@ -193,6 +205,23 @@ public class KIAgent : MonoBehaviour, IIndigent
         }
 
 
+    }
+
+    public bool pay( string v )
+    {
+        int payamount;
+        switch ( v ) {
+            case "food" :  payamount = faction.foodPrice ; break;
+            default: payamount = 0; break;
+        }
+        if ( payamount > money )
+        {
+            return false;
+        }
+        else {
+            money -= payamount;
+            return true;
+        }
     }
 
     Bedurfniss setMostRequestedNeed() {

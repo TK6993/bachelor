@@ -26,6 +26,8 @@ public class KIFaction : NeedManager,IIndigent {
 
     [SerializeField] private GameObject waiter;
     [SerializeField] private GameObject waiterPrefab;
+    public Color factionColor;
+    public int foodPrice;
 
 
 
@@ -34,7 +36,7 @@ public class KIFaction : NeedManager,IIndigent {
     // Use this for initialization
     public override void Start () {
         base.Start();
-
+        
        foreach (  string s in agentNeeds.Keys )
         {
             listOfAgentNeedStations.Add(s,new List<GameObject>());
@@ -49,7 +51,6 @@ public class KIFaction : NeedManager,IIndigent {
 	
 	// Update is called once per frame
 	void Update ()  {
-        if( listOfAgentNeedStations[ "work" ].Count>0)Debug.Log(listOfAgentNeedStations["work"][0].name);
         if ( waiter == null && !isWorkingOnNeed )
         {
             waiter = Instantiate( waiterPrefab );
@@ -146,6 +147,7 @@ public class KIFaction : NeedManager,IIndigent {
         if ( nearestPlace == null ){ // Warten wenn kein  Punkt gefunden wurde 
             agent.GetComponent<KIAgent>().waitingForFreeNeedPoint = true;
             return freetTimePoints[ 0 ];
+           // return agent;
         }
 
         else {
@@ -157,5 +159,39 @@ public class KIFaction : NeedManager,IIndigent {
         }
 
 
+    }
+
+
+    public override void logoutAgentfromStation( GameObject agent )
+    {
+
+        List<GameObject>[ ] values = new List<GameObject>[ listOfAgentNeedStations.Count];
+        listOfAgentNeedStations.Values.CopyTo( values, 0 );
+
+
+
+        for ( int needList = 0; needList < values.Length; needList++ )
+        {
+
+            foreach ( GameObject satisfactionPoint in values[ needList ] )
+            {
+                NeedStation needS = satisfactionPoint.GetComponent<NeedStation>();
+                needS.removeFromStation( agent );
+
+            }
+
+        }
+    }
+
+    public void updateAgentMemberList()
+    {
+        KIAgent[ ] tempMemberList = gameObject.GetComponent<KIFaction>().agentMembers;
+        List<KIAgent> templist = new List<KIAgent>();
+        foreach ( KIAgent agent in tempMemberList )
+        {
+            if ( agent != null ) templist.Add( agent );
+        }
+        tempMemberList = templist.ToArray();
+        agentMembers = tempMemberList;
     }
 }

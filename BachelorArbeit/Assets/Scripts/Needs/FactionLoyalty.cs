@@ -31,7 +31,7 @@ public class FactionLoyalty : Bedurfniss {
         {
             taskToDoForTheFaction.doAction( gameObject );
         }
-        decreaseCurrentValue( 30 );
+        decreaseCurrentValue( 500 );
         return true;
 
 

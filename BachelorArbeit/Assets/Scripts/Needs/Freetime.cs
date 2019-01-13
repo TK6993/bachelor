@@ -15,7 +15,7 @@ public class Freetime : Bedurfniss {
 
     public override bool satisfy(GameObject actor)
     {
-        decreaseCurrentValue( 0 );
+        decreaseCurrentValue( 25 );
         //base.tryToSatisfy();
         return true;
 

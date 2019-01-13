@@ -91,7 +91,7 @@ public class NeedManager : MonoBehaviour {
     }
 
 
-    public void logoutAgentfromStation( GameObject agent ) {
+    public virtual void logoutAgentfromStation( GameObject agent ) {
 
         GameObject[ ][] values = new GameObject[ agentNeeds.Count ][];
         agentNeeds.Values.CopyTo( values, 0 );

@@ -20,7 +20,9 @@ public class Work : Bedurfniss {
 
     public override bool satisfy( GameObject actor )
     {
-        decreaseCurrentValue( 600 );
+        KIAgent agent = actor.GetComponent<KIAgent>();
+        decreaseCurrentValue( 9000 );
+        agent.changeMoney(agent.Salery);
         //base.tryToSatisfy();
         return true;
 

@@ -10,6 +10,8 @@ public class NeedStation : MonoBehaviour
     public int stationSize = 1;
     public List<GameObject> agentsOnThisStation = new List<GameObject>();
     public bool isInPossession =false;
+    public GameObject ownerFaction;
+    [SerializeField] private List<GameObject> ListOfVisitors;
 
     // Use this for initialization
     void Start()
@@ -29,6 +31,10 @@ public class NeedStation : MonoBehaviour
             agentsOnThisStation.Add( agent );
             // agent.GetComponent<KIAgent>().currentCollisions.Add( gameObject );
             if ( agentsOnThisStation.Count >= stationSize ) isFull = true;
+            if ( ListOfVisitors.Contains( agent ) ) {
+                agent.GetComponent<KIAgent>().currentCollisions.Add( gameObject );
+
+            }
             return true;
         }
         else if ( agentsOnThisStation.Count >= stationSize )
@@ -66,6 +72,17 @@ public class NeedStation : MonoBehaviour
     }
 
 
+     void OnTriggerEnter( Collider other )
+    {
+        ListOfVisitors.Add( other.gameObject );
+    }
+
+     void OnTriggerExit( Collider other )
+    {
+        ListOfVisitors.Remove( other.gameObject );
+    }
+
    
-  
+
+
 }

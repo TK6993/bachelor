@@ -32,14 +32,21 @@ public class ConquerNeedStationA : KIAction {
 
     private void agentConqerNeedStationAgent( KIAgent agent) {
 
-        NavMeshAgent navAgent = agent.gameObject.GetComponent<NavMeshAgent>();
-        navAgent.SetDestination( needStationToConquer.transform.position);
+            KIFaction faction = agent.faction;
+        if ( needStationToConquer )
+        {
+            NavMeshAgent navAgent = agent.gameObject.GetComponent<NavMeshAgent>();
+            navAgent.SetDestination( needStationToConquer.transform.position );
 
-        KIFaction faction = agent.faction;
-        faction.listOfAgentNeedStations[ wantedNeed.name ].Add( needStationToConquer );
-        //agents an listofagentneed stations anpassen
-
-        needStationToConquer.GetComponent<NeedStation>().isInPossession = true;
+            //agents an listofagentneed stations anpassen
+            if ( !needStationToConquer.GetComponent<NeedStation>().isInPossession )
+            {
+            faction.listOfAgentNeedStations[ wantedNeed.name ].Add( needStationToConquer );
+                needStationToConquer.GetComponent<NeedStation>().isInPossession = true;
+                needStationToConquer.GetComponent<NeedStation>().ownerFaction = faction.gameObject;
+                needStationToConquer.transform.GetChild( 0 ).gameObject.GetComponent<SpriteRenderer>().color = faction.factionColor;
+            }
+        }
         faction.taskForAgents = null;
 
 

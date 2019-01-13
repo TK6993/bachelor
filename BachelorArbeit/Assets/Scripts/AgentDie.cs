@@ -13,6 +13,7 @@ public class AgentDie : KIAction {
         agent.faction.logoutAgentfromStation( actor );
         
         Destroy( gameObject );
+        agent.faction.updateAgentMemberList();
         return true;
     }
 

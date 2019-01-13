@@ -10,7 +10,6 @@ public class Hunger : Bedurfniss {
 	void Start () {
         name = "hunger";
         needWithNeedStation = true;
-        MinValue = -20;
 	}
 	
 	// Update is called once per frame
@@ -20,7 +19,9 @@ public class Hunger : Bedurfniss {
 
     public override bool satisfy( GameObject actor)
     {
-        decreaseCurrentValue( 50 );
+       KIAgent agent = actor.GetComponent<KIAgent>();
+        if ( !agent.pay( "food" ) )return false;
+        decreaseCurrentValue( 3000 );
         // base.tryToSatisfy();
         return true;
         
