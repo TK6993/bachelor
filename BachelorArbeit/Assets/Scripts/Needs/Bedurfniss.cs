@@ -110,7 +110,8 @@ public abstract class Bedurfniss : MonoBehaviour, IComparable {
     }
 
     public void  changeAskedCounter( bool changeDirection ) {
-        askForCounter += ( -1 + (2* Convert.ToInt32( changeDirection )) );
+        if ( changeDirection ) askForCounter++;
+        else askForCounter = 0;
         if ( askForCounter < 0 ) askForCounter = 0;
 
     }

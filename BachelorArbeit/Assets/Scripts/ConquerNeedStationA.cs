@@ -9,6 +9,10 @@ public class ConquerNeedStationA : KIAction {
     [SerializeField] Bedurfniss wantedNeed;
     [SerializeField] GameObject needStationToConquer;
     [SerializeField] GameObject responsibleAgent;
+    private bool publishedTask = false;
+    KIFaction agentsFaction;
+    NeedStation needStation;
+    NavMeshAgent navAgent;
     //KIFaction faction;
 
     public override bool doAction( GameObject actor )
@@ -18,13 +22,22 @@ public class ConquerNeedStationA : KIAction {
         KIFaction faction = actor.GetComponent<KIFaction>();
         if ( faction != null )
         {   
-            if(responsibleAgent == null ) {
+            if ( wantedNeed == null ) return true;
+            if(!publishedTask && !satsifiedNeed ) {
                 needStationToConquer = faction.worldneedManager.getNearestPointofSatisfaction( wantedNeed, gameObject );
+                if(needStationToConquer == null ) { // wenn es keine need station mehr auf der map gibt
+                    satsifiedNeed = true;
+                        wantedNeed = null;
+                        return true;
+                        }
+                needStationToConquer.GetComponent<NeedStation>().isInPossession = true;
                 actor.GetComponent<KIFaction>().taskForAgents = this;
+                publishedTask = true;
+                return false;
             }
-            if ( !satsifiedNeed ) return false;
-            
+           else { return false; }
         }
+
         else {
             KIAgent agent = actor.GetComponent<KIAgent>();
             return agentConqerNeedStationAgent( agent);
@@ -32,45 +45,44 @@ public class ConquerNeedStationA : KIAction {
 
 
         }
-        return true;
+
     }
 
     private bool agentConqerNeedStationAgent( KIAgent agent )
     {
-        if ( needStationToConquer && (responsibleAgent == null || responsibleAgent == agent.gameObject) )
+        if ( responsibleAgent == null )
         {
+            agentsFaction = agent.faction;
+            agentsFaction.taskForAgents = null;
             responsibleAgent = agent.gameObject;
-            NeedStation needStation = needStationToConquer.GetComponent<NeedStation>();
+            needStation = needStationToConquer.GetComponent<NeedStation>();
+            navAgent = agent.gameObject.GetComponent<NavMeshAgent>();
+            navAgent.SetDestination( needStationToConquer.transform.position );
+            return false;
+        }
+       else if ( responsibleAgent == agent.gameObject ) {
 
-         //   if ( !needStation.isInPossession ){
-                    needStation.isInPossession = true;
-                KIFaction faction = agent.faction;
-                NavMeshAgent navAgent = agent.gameObject.GetComponent<NavMeshAgent>();
-                if ( faction.taskForAgents != null )
-                {
-                    satsifiedNeed = true;
-                    faction.taskForAgents = null;
-                    navAgent.SetDestination( needStationToConquer.transform.position );
-                }
-                if ( navAgent.remainingDistance <= 0.005f )
-                {
-                    faction.listOfAgentNeedStations[ wantedNeed.name ].Add( needStationToConquer );
-                    needStationToConquer.GetComponent<NeedStation>().ownerFaction = faction.gameObject;
-                    needStationToConquer.transform.GetChild( 0 ).gameObject.GetComponent<SpriteRenderer>().color = faction.factionColor;
-                    needStationToConquer = null;
-                   // wantedNeed = null;
-                    responsibleAgent = null;
+            if ( navAgent.remainingDistance <= 0.005f ) {
+                satsifiedNeed = true;
+                agentsFaction.listOfAgentNeedStations[ wantedNeed.name ].Add( needStationToConquer );
+                needStationToConquer.GetComponent<NeedStation>().ownerFaction = agentsFaction.gameObject;
+                needStationToConquer.transform.GetChild( 0 ).gameObject.GetComponent<SpriteRenderer>().color = agentsFaction.factionColor;
+                needStationToConquer = null;
+                wantedNeed = null;
+                responsibleAgent = null;
+                agentsFaction = null;
+                needStation = null;
+                navAgent = null;
+                publishedTask = false;
 
-                    return true;
-                }
-                else return false;
-                //agents an listofagentneed stations anpassen
-            //}
-            //else return true;
-
+                return true;
+            }
+            else return false;
         }
         else return true;
     }
+
+    
 
   
 
@@ -91,8 +103,5 @@ public class ConquerNeedStationA : KIAction {
 
     }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }
