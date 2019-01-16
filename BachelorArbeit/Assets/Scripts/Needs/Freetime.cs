@@ -7,29 +7,32 @@ public class Freetime : Bedurfniss {
 
 
 
-    public override KIAction needHasNotBeenSatisfied( GameObject agent )
+    public override KIAction needHasNotBeenSatisfied()
     {
+        KIAgent agent = actor.GetComponent<KIAgent>();
+        agent.failedToSatisfy();
         return null;
     }
 
-
-    public override bool satisfy(GameObject actor)
+    public override KIAction satify()
     {
+        KIAgent agent = actor.GetComponent<KIAgent>();
         decreaseCurrentValue( 25 );
-        //base.tryToSatisfy();
-        return true;
-
-
-
+        agent.actionDefaultSatisfied();
+        return null;
     }
+
+    public override KIAction tryToSatisfy()
+    {
+        return actor.GetComponent<GoToA>();
+    }
+
+   
     // Use this for initialization
     void Start () {
+        base.Start();
         name = "freetime";
-        needWithNeedStation = true;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }

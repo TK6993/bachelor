@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class Work : Bedurfniss {
 
+    KIAgent agent = null;
+
     // Use this for initialization
-    void Start()
+    public override void Start()
     {
+        base.Start();
         name = "work";
-        needWithNeedStation = true;
     }
 
     // Update is called once per frame
@@ -18,20 +20,28 @@ public class Work : Bedurfniss {
 
     }
 
-    public override bool satisfy( GameObject actor )
+    public override KIAction tryToSatisfy(  )
     {
-        KIAgent agent = actor.GetComponent<KIAgent>();
-        decreaseCurrentValue( 9000 );
-        agent.changeMoney(agent.Salery);
-        //base.tryToSatisfy();
-        return true;
+        if(agent == null) actor.GetComponent<KIAgent>();
+         agent = actor.GetComponent<KIAgent>();
+        return actor.GetComponent<GoToA>(); ;
+     
 
 
 
     }
 
-    public override KIAction needHasNotBeenSatisfied(  GameObject Agent )
+    public override KIAction needHasNotBeenSatisfied( )
     {
+        agent.failedToSatisfy();
+        return null;
+    }
+
+    public override KIAction satify()
+    {
+        agent.changeMoney( agent.Salery );
+        decreaseCurrentValue( 1 );
+        agent.actionDefaultSatisfied();
         return null;
     }
 }

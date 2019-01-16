@@ -28,6 +28,7 @@ public class KIFaction : NeedManager,IIndigent {
     [SerializeField] private GameObject waiterPrefab;
     public Color factionColor;
     public int foodPrice;
+    private KIAction currentAction;
 
 
 
@@ -41,7 +42,7 @@ public class KIFaction : NeedManager,IIndigent {
         {
             listOfAgentNeedStations.Add(s,new List<GameObject>());
         }
-
+        listOfAgentNeedStations[ "freetime" ].Add( agentNeeds[ "freetime" ][ 0 ] );
     }
 
     public GameObject[] getAllNeedStationsFromWorldNeedManagerOfKind( string needStationKind )
@@ -51,22 +52,41 @@ public class KIFaction : NeedManager,IIndigent {
 	
 	// Update is called once per frame
 	void Update ()  {
-        if ( waiter == null && !isWorkingOnNeed )
+
+        if ( waiter == null && currentAction == null )
         {
-            waiter = Instantiate( waiterPrefab );
 
             increaseNeeds();
             evaluateNeeds();
+            currentAction = workingNeed.tryToSatisfy();
+            if ( currentAction == null )
+            {
+                currentAction = workingNeed.satify();
+                // if ( currentAction != null ) currentAction.doAction( gameObject );
+                //isWorkingOnNeed = false;
+            }
+            // else isWorkingOnNeed = true;
+            waiter = Instantiate( waiterPrefab );
 
         }
 
 
-        else if ( waiter == null && isWorkingOnNeed )
+        else if ( waiter == null && currentAction != null )
         {
-           /* waiter = Instantiate( waiterPrefab );
-            */
-            //increaseNeeds();
-            isWorkingOnNeed = !tryToSatisfyNeed( workingNeed );
+            increaseNeeds();
+            isWorkingOnNeed = !currentAction.doAction( gameObject );
+            if ( !isWorkingOnNeed )
+            {
+                if ( currentAction.satsifiedNeed )
+                {
+                    currentAction.satsifiedNeed = false;
+                    currentAction = workingNeed.satify();
+                }
+                else currentAction = workingNeed.needHasNotBeenSatisfied();
+                // if ( currentAction != null ) cur.doAction( gameObject );
+                //currentAction = null;
+            }
+            waiter = Instantiate( waiterPrefab );
 
         }
 
@@ -78,7 +98,7 @@ public class KIFaction : NeedManager,IIndigent {
         Array.Sort( fractionNeeds );
         Array.Reverse( fractionNeeds );
         workingNeed = fractionNeeds[ counterOfWaitingNeeds ];
-        if ( workingNeed != null ) isWorkingOnNeed = true;
+        //if ( workingNeed != null ) isWorkingOnNeed = true;
     }
 
     public  void increaseNeeds()
@@ -89,17 +109,7 @@ public class KIFaction : NeedManager,IIndigent {
         }
     }
 
-    public  bool tryToSatisfyNeed( Bedurfniss workingNeed )
-    {
-        if ( !workingNeed.satisfy(gameObject) ) {
-            KIAction factionAction = workingNeed.needHasNotBeenSatisfied( gameObject );
-            if(factionAction != null) factionAction.doAction(gameObject);
-
-
-        }
-        return true;
-        
-    }
+   
 
     public override GameObject getNearestPointofSatisfaction( Bedurfniss b, GameObject agent )
     {

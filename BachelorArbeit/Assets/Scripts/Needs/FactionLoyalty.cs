@@ -5,15 +5,9 @@ using UnityEngine;
 
 public class FactionLoyalty : Bedurfniss {
 
-
-
-    public override KIAction needHasNotBeenSatisfied( GameObject agent )
-    {
-        throw new NotImplementedException();
-    }
-
     // Use this for initialization
-    void Start () {
+    public override void Start(){
+        base.Start();
         name = "factionLoyalty";
     }
 	
@@ -23,17 +17,32 @@ public class FactionLoyalty : Bedurfniss {
 	}
 
 
-    public override bool satisfy(GameObject actor)
+    public override KIAction needHasNotBeenSatisfied()
+    {
+        KIAgent agent = actor.GetComponent<KIAgent>();
+        agent.failedToSatisfy();
+        return null;
+    }
+
+
+    public override KIAction satify()
+    {
+        KIAgent agent = actor.GetComponent<KIAgent>();
+        agent.actionDefaultSatisfied();
+        decreaseCurrentValue( 50 );
+
+        return null;
+    }
+
+    public override KIAction tryToSatisfy()
     {
         KIFaction agentsFaction = actor.GetComponent<KIAgent>().faction;
         KIAction taskToDoForTheFaction = agentsFaction.taskForAgents;
         if ( taskToDoForTheFaction != null )
         {
-            taskToDoForTheFaction.doAction( gameObject );
+            return  taskToDoForTheFaction;
         }
-        decreaseCurrentValue( 500 );
-        return true;
-
+        return null;
 
 
     }

@@ -957,6 +957,8 @@ GameObject:
   - component: {fileID: 54128287}
   - component: {fileID: 54128289}
   - component: {fileID: 54128294}
+  - component: {fileID: 54128297}
+  - component: {fileID: 54128298}
   m_Layer: 9
   m_Name: Agent (6)
   m_TagString: Untagged
@@ -976,11 +978,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 8
+  increaseValue: 0.05
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -500
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &54128287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -993,11 +996,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 5
+  increaseValue: 0
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -2000
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &54128288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,6 +1027,7 @@ MonoBehaviour:
   waiterPrefab: {fileID: 1501779752017334, guid: 4f15b09ae16acce438550c149faa6f68,
     type: 3}
   workingNeed: {fileID: 0}
+  currentAction: {fileID: 0}
   mostAskedNeed: {fileID: 0}
   counterOfWaitingNeeds: 0
   agentActions:
@@ -1046,6 +1051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 0}
   name: 
+  satsifiedNeed: 0
 --- !u!114 &54128290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1058,11 +1064,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e15232c85e8ed489f8e19aa5fe3846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 0.5
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: 0
+  currentvalue: 1
   name: 
+  actor: {fileID: 0}
 --- !u!195 &54128291
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1156,6 +1163,7 @@ MonoBehaviour:
   askForCounter: 0
   currentvalue: -2500
   name: 
+  actor: {fileID: 0}
 --- !u!33 &54128295
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1180,6 +1188,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &54128297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54128285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00d5b05e40eccb4a85f829c30361952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
+--- !u!114 &54128298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54128285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eae3f243eacce442866ca40ddd97820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
 --- !u!1 &58181267
 GameObject:
   m_ObjectHideFlags: 0
@@ -8536,6 +8574,7 @@ GameObject:
   - component: {fileID: 562513810}
   - component: {fileID: 562513811}
   - component: {fileID: 562513812}
+  - component: {fileID: 562513818}
   m_Layer: 0
   m_Name: Faction_2
   m_TagString: Untagged
@@ -8582,7 +8621,7 @@ MonoBehaviour:
   waiterPrefab: {fileID: 1518697636941846, guid: 146421c5c4c91c1458d8d6f5bfbb8fb0,
     type: 3}
   factionColor: {r: 1, g: 0, b: 0, a: 1}
-  foodPrice: 40
+  foodPrice: 150
 --- !u!114 &562513811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8600,6 +8639,7 @@ MonoBehaviour:
   askForCounter: 0
   currentvalue: 0
   name: zufriedenheit
+  actor: {fileID: 0}
   faction: {fileID: 0}
   mostWantedNeed: {fileID: 0}
 --- !u!114 &562513812
@@ -8616,6 +8656,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 0}
   name: 
+  satsifiedNeed: 0
+  wantedNeed: {fileID: 0}
+  needStationToConquer: {fileID: 0}
+  responsibleAgent: {fileID: 0}
 --- !u!195 &562513813
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8711,6 +8755,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &562513818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562513809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eae3f243eacce442866ca40ddd97820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
 --- !u!1 &562969025
 GameObject:
   m_ObjectHideFlags: 0
@@ -9721,7 +9780,7 @@ MonoBehaviour:
   stationSize: 10
   agentsOnThisStation: []
   isInPossession: 1
-  ownerFaction: {fileID: 0}
+  ownerFaction: {fileID: 562513809}
   ListOfVisitors: []
 --- !u!54 &622018542
 Rigidbody:
@@ -14104,6 +14163,8 @@ GameObject:
   - component: {fileID: 939911204}
   - component: {fileID: 939911206}
   - component: {fileID: 939911211}
+  - component: {fileID: 939911214}
+  - component: {fileID: 939911215}
   m_Layer: 9
   m_Name: Agent (11)
   m_TagString: Untagged
@@ -14123,11 +14184,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 8
+  increaseValue: 0.05
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -500
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &939911204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14140,11 +14202,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 5
+  increaseValue: 0
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -2000
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &939911205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14170,6 +14233,7 @@ MonoBehaviour:
   waiterPrefab: {fileID: 1501779752017334, guid: 4f15b09ae16acce438550c149faa6f68,
     type: 3}
   workingNeed: {fileID: 0}
+  currentAction: {fileID: 0}
   mostAskedNeed: {fileID: 0}
   counterOfWaitingNeeds: 0
   agentActions:
@@ -14193,6 +14257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 0}
   name: 
+  satsifiedNeed: 0
 --- !u!114 &939911207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14205,11 +14270,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e15232c85e8ed489f8e19aa5fe3846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 0.5
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: 0
+  currentvalue: 1
   name: 
+  actor: {fileID: 0}
 --- !u!195 &939911208
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -14303,6 +14369,7 @@ MonoBehaviour:
   askForCounter: 0
   currentvalue: -2500
   name: 
+  actor: {fileID: 0}
 --- !u!33 &939911212
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14327,6 +14394,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &939911214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939911202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00d5b05e40eccb4a85f829c30361952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
+--- !u!114 &939911215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939911202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eae3f243eacce442866ca40ddd97820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
 --- !u!1 &942145899
 GameObject:
   m_ObjectHideFlags: 0
@@ -14347,6 +14444,8 @@ GameObject:
   - component: {fileID: 942145901}
   - component: {fileID: 942145903}
   - component: {fileID: 942145908}
+  - component: {fileID: 942145911}
+  - component: {fileID: 942145912}
   m_Layer: 9
   m_Name: Agent (16)
   m_TagString: Untagged
@@ -14366,11 +14465,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 8
+  increaseValue: 0.05
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -500
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &942145901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14383,11 +14483,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 5
+  increaseValue: 0
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -2000
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &942145902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14413,6 +14514,7 @@ MonoBehaviour:
   waiterPrefab: {fileID: 1501779752017334, guid: 4f15b09ae16acce438550c149faa6f68,
     type: 3}
   workingNeed: {fileID: 0}
+  currentAction: {fileID: 0}
   mostAskedNeed: {fileID: 0}
   counterOfWaitingNeeds: 0
   agentActions:
@@ -14436,6 +14538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 0}
   name: 
+  satsifiedNeed: 0
 --- !u!114 &942145904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14448,11 +14551,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e15232c85e8ed489f8e19aa5fe3846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 0.5
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: 0
+  currentvalue: 1
   name: 
+  actor: {fileID: 0}
 --- !u!195 &942145905
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -14546,6 +14650,7 @@ MonoBehaviour:
   askForCounter: 0
   currentvalue: -2500
   name: 
+  actor: {fileID: 0}
 --- !u!33 &942145909
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14570,6 +14675,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &942145911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942145899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00d5b05e40eccb4a85f829c30361952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
+--- !u!114 &942145912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942145899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eae3f243eacce442866ca40ddd97820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
 --- !u!1 &955967475
 GameObject:
   m_ObjectHideFlags: 0
@@ -14590,6 +14725,8 @@ GameObject:
   - component: {fileID: 955967477}
   - component: {fileID: 955967479}
   - component: {fileID: 955967484}
+  - component: {fileID: 955967487}
+  - component: {fileID: 955967488}
   m_Layer: 9
   m_Name: Agent (9)
   m_TagString: Untagged
@@ -14609,11 +14746,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 8
+  increaseValue: 0.05
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -500
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &955967477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14626,11 +14764,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 5
+  increaseValue: 0
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -2000
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &955967478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14656,6 +14795,7 @@ MonoBehaviour:
   waiterPrefab: {fileID: 1501779752017334, guid: 4f15b09ae16acce438550c149faa6f68,
     type: 3}
   workingNeed: {fileID: 0}
+  currentAction: {fileID: 0}
   mostAskedNeed: {fileID: 0}
   counterOfWaitingNeeds: 0
   agentActions:
@@ -14679,6 +14819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 0}
   name: 
+  satsifiedNeed: 0
 --- !u!114 &955967480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14691,11 +14832,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e15232c85e8ed489f8e19aa5fe3846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 0.5
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: 0
+  currentvalue: 1
   name: 
+  actor: {fileID: 0}
 --- !u!195 &955967481
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -14789,6 +14931,7 @@ MonoBehaviour:
   askForCounter: 0
   currentvalue: -2500
   name: 
+  actor: {fileID: 0}
 --- !u!33 &955967485
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14813,6 +14956,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &955967487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955967475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00d5b05e40eccb4a85f829c30361952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
+--- !u!114 &955967488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955967475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eae3f243eacce442866ca40ddd97820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
 --- !u!1 &957548636
 GameObject:
   m_ObjectHideFlags: 0
@@ -16233,6 +16406,8 @@ GameObject:
   - component: {fileID: 1044942373}
   - component: {fileID: 1044942375}
   - component: {fileID: 1044942380}
+  - component: {fileID: 1044942383}
+  - component: {fileID: 1044942384}
   m_Layer: 9
   m_Name: Agent (12)
   m_TagString: Untagged
@@ -16252,11 +16427,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 8
+  increaseValue: 0.05
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -500
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &1044942373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16269,11 +16445,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 5
+  increaseValue: 0
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -2000
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &1044942374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16299,6 +16476,7 @@ MonoBehaviour:
   waiterPrefab: {fileID: 1501779752017334, guid: 4f15b09ae16acce438550c149faa6f68,
     type: 3}
   workingNeed: {fileID: 0}
+  currentAction: {fileID: 0}
   mostAskedNeed: {fileID: 0}
   counterOfWaitingNeeds: 0
   agentActions:
@@ -16322,6 +16500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 0}
   name: 
+  satsifiedNeed: 0
 --- !u!114 &1044942376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16334,11 +16513,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e15232c85e8ed489f8e19aa5fe3846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 0.5
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: 0
+  currentvalue: 1
   name: 
+  actor: {fileID: 0}
 --- !u!195 &1044942377
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -16432,6 +16612,7 @@ MonoBehaviour:
   askForCounter: 0
   currentvalue: -2500
   name: 
+  actor: {fileID: 0}
 --- !u!33 &1044942381
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16456,6 +16637,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1044942383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044942371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00d5b05e40eccb4a85f829c30361952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
+--- !u!114 &1044942384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044942371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eae3f243eacce442866ca40ddd97820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
 --- !u!1 &1045443158
 GameObject:
   m_ObjectHideFlags: 0
@@ -17142,6 +17353,7 @@ GameObject:
   - component: {fileID: 1083950297}
   - component: {fileID: 1083950296}
   - component: {fileID: 1083950302}
+  - component: {fileID: 1083950304}
   m_Layer: 0
   m_Name: Faction_1
   m_TagString: Untagged
@@ -17166,6 +17378,7 @@ MonoBehaviour:
   askForCounter: 0
   currentvalue: 0
   name: zufriedenheit
+  actor: {fileID: 0}
   faction: {fileID: 0}
   mostWantedNeed: {fileID: 0}
 --- !u!114 &1083950297
@@ -17296,6 +17509,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 0}
   name: 
+  satsifiedNeed: 0
+  wantedNeed: {fileID: 0}
+  needStationToConquer: {fileID: 0}
+  responsibleAgent: {fileID: 0}
 --- !u!195 &1083950303
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -17318,6 +17535,21 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1083950304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083950295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eae3f243eacce442866ca40ddd97820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
 --- !u!1 &1090632274
 GameObject:
   m_ObjectHideFlags: 0
@@ -17736,6 +17968,8 @@ GameObject:
   - component: {fileID: 1111052123}
   - component: {fileID: 1111052125}
   - component: {fileID: 1111052130}
+  - component: {fileID: 1111052133}
+  - component: {fileID: 1111052134}
   m_Layer: 9
   m_Name: Agent (8)
   m_TagString: Untagged
@@ -17755,11 +17989,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 8
+  increaseValue: 0.05
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -500
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &1111052123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17772,11 +18007,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 5
+  increaseValue: 0
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -2000
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &1111052124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17802,6 +18038,7 @@ MonoBehaviour:
   waiterPrefab: {fileID: 1501779752017334, guid: 4f15b09ae16acce438550c149faa6f68,
     type: 3}
   workingNeed: {fileID: 0}
+  currentAction: {fileID: 0}
   mostAskedNeed: {fileID: 0}
   counterOfWaitingNeeds: 0
   agentActions:
@@ -17825,6 +18062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 0}
   name: 
+  satsifiedNeed: 0
 --- !u!114 &1111052126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17837,11 +18075,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e15232c85e8ed489f8e19aa5fe3846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 0.5
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: 0
+  currentvalue: 1
   name: 
+  actor: {fileID: 0}
 --- !u!195 &1111052127
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -17935,6 +18174,7 @@ MonoBehaviour:
   askForCounter: 0
   currentvalue: -2500
   name: 
+  actor: {fileID: 0}
 --- !u!33 &1111052131
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -17959,6 +18199,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1111052133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111052121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00d5b05e40eccb4a85f829c30361952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
+--- !u!114 &1111052134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111052121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eae3f243eacce442866ca40ddd97820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
 --- !u!1 &1118379913
 GameObject:
   m_ObjectHideFlags: 0
@@ -18634,6 +18904,8 @@ GameObject:
   - component: {fileID: 1175710933}
   - component: {fileID: 1175710935}
   - component: {fileID: 1175710940}
+  - component: {fileID: 1175710943}
+  - component: {fileID: 1175710944}
   m_Layer: 9
   m_Name: Agent (13)
   m_TagString: Untagged
@@ -18653,11 +18925,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 8
+  increaseValue: 0.05
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -500
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &1175710933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18670,11 +18943,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 5
+  increaseValue: 0
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -2000
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &1175710934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18700,6 +18974,7 @@ MonoBehaviour:
   waiterPrefab: {fileID: 1501779752017334, guid: 4f15b09ae16acce438550c149faa6f68,
     type: 3}
   workingNeed: {fileID: 0}
+  currentAction: {fileID: 0}
   mostAskedNeed: {fileID: 0}
   counterOfWaitingNeeds: 0
   agentActions:
@@ -18723,6 +18998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 0}
   name: 
+  satsifiedNeed: 0
 --- !u!114 &1175710936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18735,11 +19011,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e15232c85e8ed489f8e19aa5fe3846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 0.5
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: 0
+  currentvalue: 1
   name: 
+  actor: {fileID: 0}
 --- !u!195 &1175710937
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -18833,6 +19110,7 @@ MonoBehaviour:
   askForCounter: 0
   currentvalue: -2500
   name: 
+  actor: {fileID: 0}
 --- !u!33 &1175710941
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -18857,6 +19135,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1175710943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175710931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00d5b05e40eccb4a85f829c30361952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
+--- !u!114 &1175710944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175710931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eae3f243eacce442866ca40ddd97820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
 --- !u!1 &1177120040
 GameObject:
   m_ObjectHideFlags: 0
@@ -19069,6 +19377,8 @@ GameObject:
   - component: {fileID: 1201154676}
   - component: {fileID: 1201154678}
   - component: {fileID: 1201154683}
+  - component: {fileID: 1201154686}
+  - component: {fileID: 1201154687}
   m_Layer: 9
   m_Name: Agent (15)
   m_TagString: Untagged
@@ -19088,11 +19398,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 8
+  increaseValue: 0.05
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -500
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &1201154676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19105,11 +19416,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 5
+  increaseValue: 0
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -2000
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &1201154677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19135,6 +19447,7 @@ MonoBehaviour:
   waiterPrefab: {fileID: 1501779752017334, guid: 4f15b09ae16acce438550c149faa6f68,
     type: 3}
   workingNeed: {fileID: 0}
+  currentAction: {fileID: 0}
   mostAskedNeed: {fileID: 0}
   counterOfWaitingNeeds: 0
   agentActions:
@@ -19158,6 +19471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 0}
   name: 
+  satsifiedNeed: 0
 --- !u!114 &1201154679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19170,11 +19484,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e15232c85e8ed489f8e19aa5fe3846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 0.5
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: 0
+  currentvalue: 1
   name: 
+  actor: {fileID: 0}
 --- !u!195 &1201154680
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -19268,6 +19583,7 @@ MonoBehaviour:
   askForCounter: 0
   currentvalue: -2500
   name: 
+  actor: {fileID: 0}
 --- !u!33 &1201154684
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19292,6 +19608,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1201154686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201154674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00d5b05e40eccb4a85f829c30361952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
+--- !u!114 &1201154687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201154674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eae3f243eacce442866ca40ddd97820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
 --- !u!1 &1201836081
 GameObject:
   m_ObjectHideFlags: 0
@@ -22867,6 +23213,8 @@ GameObject:
   - component: {fileID: 1433070534}
   - component: {fileID: 1433070536}
   - component: {fileID: 1433070541}
+  - component: {fileID: 1433070544}
+  - component: {fileID: 1433070545}
   m_Layer: 9
   m_Name: Agent (7)
   m_TagString: Untagged
@@ -22886,11 +23234,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 8
+  increaseValue: 0.05
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -500
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &1433070534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22903,11 +23252,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 5
+  increaseValue: 0
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -2000
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &1433070535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22933,6 +23283,7 @@ MonoBehaviour:
   waiterPrefab: {fileID: 1501779752017334, guid: 4f15b09ae16acce438550c149faa6f68,
     type: 3}
   workingNeed: {fileID: 0}
+  currentAction: {fileID: 0}
   mostAskedNeed: {fileID: 0}
   counterOfWaitingNeeds: 0
   agentActions:
@@ -22956,6 +23307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 0}
   name: 
+  satsifiedNeed: 0
 --- !u!114 &1433070537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22968,11 +23320,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e15232c85e8ed489f8e19aa5fe3846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 0.5
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: 0
+  currentvalue: 1
   name: 
+  actor: {fileID: 0}
 --- !u!195 &1433070538
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -23066,6 +23419,7 @@ MonoBehaviour:
   askForCounter: 0
   currentvalue: -2500
   name: 
+  actor: {fileID: 0}
 --- !u!33 &1433070542
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -23090,6 +23444,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1433070544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433070532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00d5b05e40eccb4a85f829c30361952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
+--- !u!114 &1433070545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433070532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eae3f243eacce442866ca40ddd97820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
 --- !u!1 &1435834558
 GameObject:
   m_ObjectHideFlags: 0
@@ -25175,7 +25559,7 @@ MonoBehaviour:
   stationSize: 10
   agentsOnThisStation: []
   isInPossession: 1
-  ownerFaction: {fileID: 0}
+  ownerFaction: {fileID: 1083950295}
   ListOfVisitors: []
 --- !u!54 &1577843177
 Rigidbody:
@@ -25976,6 +26360,8 @@ GameObject:
   - component: {fileID: 1641474672}
   - component: {fileID: 1641474674}
   - component: {fileID: 1641474679}
+  - component: {fileID: 1641474682}
+  - component: {fileID: 1641474683}
   m_Layer: 9
   m_Name: Agent (10)
   m_TagString: Untagged
@@ -25995,11 +26381,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 8
+  increaseValue: 0.05
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -500
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &1641474672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26012,11 +26399,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 5
+  increaseValue: 0
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -2000
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &1641474673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26042,6 +26430,7 @@ MonoBehaviour:
   waiterPrefab: {fileID: 1501779752017334, guid: 4f15b09ae16acce438550c149faa6f68,
     type: 3}
   workingNeed: {fileID: 0}
+  currentAction: {fileID: 0}
   mostAskedNeed: {fileID: 0}
   counterOfWaitingNeeds: 0
   agentActions:
@@ -26065,6 +26454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 0}
   name: 
+  satsifiedNeed: 0
 --- !u!114 &1641474675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26077,11 +26467,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e15232c85e8ed489f8e19aa5fe3846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 0.5
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: 0
+  currentvalue: 1
   name: 
+  actor: {fileID: 0}
 --- !u!195 &1641474676
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -26175,6 +26566,7 @@ MonoBehaviour:
   askForCounter: 0
   currentvalue: -2500
   name: 
+  actor: {fileID: 0}
 --- !u!33 &1641474680
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -26199,6 +26591,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1641474682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641474670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00d5b05e40eccb4a85f829c30361952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
+--- !u!114 &1641474683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641474670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eae3f243eacce442866ca40ddd97820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
 --- !u!1 &1647256193
 GameObject:
   m_ObjectHideFlags: 0
@@ -26377,6 +26799,8 @@ GameObject:
   - component: {fileID: 1683524908}
   - component: {fileID: 1683524910}
   - component: {fileID: 1683524915}
+  - component: {fileID: 1683524918}
+  - component: {fileID: 1683524919}
   m_Layer: 9
   m_Name: Agent (4)
   m_TagString: Untagged
@@ -26396,11 +26820,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 8
+  increaseValue: 0.05
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -500
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &1683524908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26413,11 +26838,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 5
+  increaseValue: 0
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -2000
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &1683524909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26443,6 +26869,7 @@ MonoBehaviour:
   waiterPrefab: {fileID: 1501779752017334, guid: 4f15b09ae16acce438550c149faa6f68,
     type: 3}
   workingNeed: {fileID: 0}
+  currentAction: {fileID: 0}
   mostAskedNeed: {fileID: 0}
   counterOfWaitingNeeds: 0
   agentActions:
@@ -26466,6 +26893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 0}
   name: 
+  satsifiedNeed: 0
 --- !u!114 &1683524911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26478,11 +26906,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e15232c85e8ed489f8e19aa5fe3846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 0.5
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: 0
+  currentvalue: 1
   name: 
+  actor: {fileID: 0}
 --- !u!195 &1683524912
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -26576,6 +27005,7 @@ MonoBehaviour:
   askForCounter: 0
   currentvalue: -2500
   name: 
+  actor: {fileID: 0}
 --- !u!33 &1683524916
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -26600,6 +27030,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1683524918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683524906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00d5b05e40eccb4a85f829c30361952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
+--- !u!114 &1683524919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683524906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eae3f243eacce442866ca40ddd97820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
 --- !u!1 &1685576366
 GameObject:
   m_ObjectHideFlags: 0
@@ -28005,6 +28465,8 @@ GameObject:
   - component: {fileID: 1801062608}
   - component: {fileID: 1801062610}
   - component: {fileID: 1801062615}
+  - component: {fileID: 1801062618}
+  - component: {fileID: 1801062619}
   m_Layer: 9
   m_Name: Agent (17)
   m_TagString: Untagged
@@ -28024,11 +28486,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 8
+  increaseValue: 0.05
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -500
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &1801062608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28041,11 +28504,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 5
+  increaseValue: 0
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -2000
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &1801062609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28071,6 +28535,7 @@ MonoBehaviour:
   waiterPrefab: {fileID: 1501779752017334, guid: 4f15b09ae16acce438550c149faa6f68,
     type: 3}
   workingNeed: {fileID: 0}
+  currentAction: {fileID: 0}
   mostAskedNeed: {fileID: 0}
   counterOfWaitingNeeds: 0
   agentActions:
@@ -28094,6 +28559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 0}
   name: 
+  satsifiedNeed: 0
 --- !u!114 &1801062611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28106,11 +28572,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e15232c85e8ed489f8e19aa5fe3846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 0.5
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: 0
+  currentvalue: 1
   name: 
+  actor: {fileID: 0}
 --- !u!195 &1801062612
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -28204,6 +28671,7 @@ MonoBehaviour:
   askForCounter: 0
   currentvalue: -2500
   name: 
+  actor: {fileID: 0}
 --- !u!33 &1801062616
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -28228,6 +28696,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1801062618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801062606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00d5b05e40eccb4a85f829c30361952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
+--- !u!114 &1801062619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801062606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eae3f243eacce442866ca40ddd97820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
 --- !u!1 &1801567796
 GameObject:
   m_ObjectHideFlags: 0
@@ -28406,6 +28904,8 @@ GameObject:
   - component: {fileID: 1813206136}
   - component: {fileID: 1813206138}
   - component: {fileID: 1813206143}
+  - component: {fileID: 1813206146}
+  - component: {fileID: 1813206147}
   m_Layer: 9
   m_Name: Agent (5)
   m_TagString: Untagged
@@ -28425,11 +28925,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 8
+  increaseValue: 0.05
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -500
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &1813206136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28442,11 +28943,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 5
+  increaseValue: 0
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -2000
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &1813206137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28472,6 +28974,7 @@ MonoBehaviour:
   waiterPrefab: {fileID: 1501779752017334, guid: 4f15b09ae16acce438550c149faa6f68,
     type: 3}
   workingNeed: {fileID: 0}
+  currentAction: {fileID: 0}
   mostAskedNeed: {fileID: 0}
   counterOfWaitingNeeds: 0
   agentActions:
@@ -28495,6 +28998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 0}
   name: 
+  satsifiedNeed: 0
 --- !u!114 &1813206139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28507,11 +29011,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e15232c85e8ed489f8e19aa5fe3846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 0.5
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: 0
+  currentvalue: 1
   name: 
+  actor: {fileID: 0}
 --- !u!195 &1813206140
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -28605,6 +29110,7 @@ MonoBehaviour:
   askForCounter: 0
   currentvalue: -2500
   name: 
+  actor: {fileID: 0}
 --- !u!33 &1813206144
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -28629,6 +29135,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1813206146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813206134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00d5b05e40eccb4a85f829c30361952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
+--- !u!114 &1813206147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813206134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eae3f243eacce442866ca40ddd97820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
 --- !u!1 &1822173652
 GameObject:
   m_ObjectHideFlags: 0
@@ -29099,6 +29635,8 @@ GameObject:
   - component: {fileID: 1865837432}
   - component: {fileID: 1865837433}
   - component: {fileID: 1865837438}
+  - component: {fileID: 1865837443}
+  - component: {fileID: 1865837444}
   - component: {fileID: 1865837434}
   - component: {fileID: 1865837439}
   - component: {fileID: 1865837440}
@@ -29134,6 +29672,7 @@ MonoBehaviour:
   waiterPrefab: {fileID: 1501779752017334, guid: 4f15b09ae16acce438550c149faa6f68,
     type: 3}
   workingNeed: {fileID: 0}
+  currentAction: {fileID: 0}
   mostAskedNeed: {fileID: 0}
   counterOfWaitingNeeds: 0
   agentActions:
@@ -29157,6 +29696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 0}
   name: 
+  satsifiedNeed: 0
 --- !u!114 &1865837434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29169,11 +29709,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e15232c85e8ed489f8e19aa5fe3846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 0.5
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: 0
+  currentvalue: 1
   name: 
+  actor: {fileID: 0}
 --- !u!195 &1865837435
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -29267,6 +29808,7 @@ MonoBehaviour:
   askForCounter: 0
   currentvalue: -2500
   name: 
+  actor: {fileID: 0}
 --- !u!114 &1865837439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29279,11 +29821,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 8
+  increaseValue: 0.05
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -500
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &1865837440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29296,11 +29839,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 5
+  increaseValue: 0
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -2000
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!33 &1865837441
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -29325,6 +29869,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1865837443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865837431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00d5b05e40eccb4a85f829c30361952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
+--- !u!114 &1865837444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865837431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eae3f243eacce442866ca40ddd97820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
 --- !u!1 &1873072544
 GameObject:
   m_ObjectHideFlags: 0
@@ -30960,6 +31534,8 @@ GameObject:
   - component: {fileID: 2001316835}
   - component: {fileID: 2001316837}
   - component: {fileID: 2001316842}
+  - component: {fileID: 2001316845}
+  - component: {fileID: 2001316846}
   m_Layer: 9
   m_Name: Agent (18)
   m_TagString: Untagged
@@ -30979,11 +31555,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 8
+  increaseValue: 0.05
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -500
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &2001316835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30996,11 +31573,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 5
+  increaseValue: 0
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -2000
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &2001316836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31026,6 +31604,7 @@ MonoBehaviour:
   waiterPrefab: {fileID: 1501779752017334, guid: 4f15b09ae16acce438550c149faa6f68,
     type: 3}
   workingNeed: {fileID: 0}
+  currentAction: {fileID: 0}
   mostAskedNeed: {fileID: 0}
   counterOfWaitingNeeds: 0
   agentActions:
@@ -31049,6 +31628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 0}
   name: 
+  satsifiedNeed: 0
 --- !u!114 &2001316838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31061,11 +31641,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e15232c85e8ed489f8e19aa5fe3846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 0.5
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: 0
+  currentvalue: 1
   name: 
+  actor: {fileID: 0}
 --- !u!195 &2001316839
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -31159,6 +31740,7 @@ MonoBehaviour:
   askForCounter: 0
   currentvalue: -2500
   name: 
+  actor: {fileID: 0}
 --- !u!33 &2001316843
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -31183,6 +31765,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2001316845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001316833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00d5b05e40eccb4a85f829c30361952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
+--- !u!114 &2001316846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001316833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eae3f243eacce442866ca40ddd97820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
 --- !u!1 &2006056997
 GameObject:
   m_ObjectHideFlags: 0
@@ -32894,6 +33506,8 @@ GameObject:
   - component: {fileID: 2100598725}
   - component: {fileID: 2100598727}
   - component: {fileID: 2100598732}
+  - component: {fileID: 2100598735}
+  - component: {fileID: 2100598736}
   m_Layer: 9
   m_Name: Agent (14)
   m_TagString: Untagged
@@ -32913,11 +33527,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f554608c5f384d839b2484f1db9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 8
+  increaseValue: 0.05
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -500
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &2100598725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32930,11 +33545,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac003f36814b8b47be7deda2f85594e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 5
+  increaseValue: 0
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: -2000
+  currentvalue: 0
   name: 
+  actor: {fileID: 0}
 --- !u!114 &2100598726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32960,6 +33576,7 @@ MonoBehaviour:
   waiterPrefab: {fileID: 1501779752017334, guid: 4f15b09ae16acce438550c149faa6f68,
     type: 3}
   workingNeed: {fileID: 0}
+  currentAction: {fileID: 0}
   mostAskedNeed: {fileID: 0}
   counterOfWaitingNeeds: 0
   agentActions:
@@ -32983,6 +33600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 0}
   name: 
+  satsifiedNeed: 0
 --- !u!114 &2100598728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32995,11 +33613,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e15232c85e8ed489f8e19aa5fe3846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseValue: 1
+  increaseValue: 0.5
   needWithNeedStation: 0
   askForCounter: 0
-  currentvalue: 0
+  currentvalue: 1
   name: 
+  actor: {fileID: 0}
 --- !u!195 &2100598729
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -33093,6 +33712,7 @@ MonoBehaviour:
   askForCounter: 0
   currentvalue: -2500
   name: 
+  actor: {fileID: 0}
 --- !u!33 &2100598733
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -33117,6 +33737,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2100598735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100598723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00d5b05e40eccb4a85f829c30361952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
+--- !u!114 &2100598736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100598723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eae3f243eacce442866ca40ddd97820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  name: 
+  satsifiedNeed: 0
 --- !u!1 &2121188643
 GameObject:
   m_ObjectHideFlags: 0

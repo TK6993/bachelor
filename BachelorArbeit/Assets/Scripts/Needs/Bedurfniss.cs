@@ -6,13 +6,22 @@ using UnityEngine;
 public abstract class Bedurfniss : MonoBehaviour, IComparable {
 
 
-  [SerializeField] private int increaseValue = 1;
+  [SerializeField] private float increaseValue = 1;
     public bool needWithNeedStation = false;
     public int askForCounter = 0;
-  public int currentvalue;
-  private int maxValue= 5000;
-  private int minValue=-5000;
+  public float currentvalue;
+  private int maxValue= 50;
+  private int minValue=-10;
   public string name;
+    public GameObject actor;
+
+
+    public virtual void Start()
+    {
+        actor = gameObject;
+
+    }
+
 
     public int MaxValue
     {
@@ -43,7 +52,7 @@ public abstract class Bedurfniss : MonoBehaviour, IComparable {
         }
     }
 
-    public int Currentvalue
+    public float Currentvalue
     {
         get
         {
@@ -67,32 +76,37 @@ public abstract class Bedurfniss : MonoBehaviour, IComparable {
  
 
 
-   public  int decreaseCurrentValue(int amount) {
+   public  float decreaseCurrentValue(int amount) {
         currentvalue -= amount;
         if ( currentvalue < minValue ) currentvalue = minValue;
         return currentvalue;
 
     }
 
-   public int increaseCurrentValue( int amount ) {
+   public float increaseCurrentValue( float amount ) {
         currentvalue += amount;
         if ( currentvalue > maxValue ) currentvalue = maxValue;
         return currentvalue;
     }
 
-    abstract public KIAction needHasNotBeenSatisfied( GameObject actor );
+    abstract public KIAction needHasNotBeenSatisfied();
 
-    abstract public bool satisfy( GameObject actor );
-   
+    abstract public KIAction tryToSatisfy( );
+
+    abstract public KIAction satify();
+
 
 
     public int CompareTo( object obj )
     {
         Bedurfniss otherBedurfnis = obj as Bedurfniss;
-        if ( otherBedurfnis != null )
+        if ( otherBedurfnis != null ) { 
+           // if ( this.currentvalue < 0 && otherBedurfnis.currentvalue < 0 ) return 0;
+           // if ( this.currentvalue < 0 ) return 1;
             return this.currentvalue.CompareTo( otherBedurfnis.currentvalue );
+    }
         else
-            throw new ArgumentException( "Object is not a Temperature" );
+            throw new ArgumentException( "Object is not a Need" );
     }
 
     public void  changeAskedCounter( bool changeDirection ) {

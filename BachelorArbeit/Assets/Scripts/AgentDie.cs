@@ -30,8 +30,5 @@ public class AgentDie : KIAction {
         name = "agentDie";
     }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }

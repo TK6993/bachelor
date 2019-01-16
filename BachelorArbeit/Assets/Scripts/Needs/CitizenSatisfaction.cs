@@ -12,11 +12,12 @@ public class CitizenSatisfaction : Bedurfniss {
 
 
 
-    public override KIAction needHasNotBeenSatisfied(  GameObject actor )
+    public override KIAction needHasNotBeenSatisfied( )
     {
         if ( currentvalue > 0 )
         {
             ConquerNeedStationA action = (ConquerNeedStationA) actor.GetComponent<ConquerNeedStationA>();
+            
             action.setWantedNeed( mostWantedNeed);
             return action;
 
@@ -27,15 +28,18 @@ public class CitizenSatisfaction : Bedurfniss {
     }
 
     // Use this for initialization
-    void Start () {
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    public override void Start()
+    {
+        base.Start();
+        name = "citzenSatisfaction";
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
-    public override bool satisfy( GameObject actor)
+    public override KIAction tryToSatisfy()
     {
         KIFaction faction = actor.GetComponent<KIFaction>();
         Dictionary<Bedurfniss, int> needsToSatisfy = new Dictionary<Bedurfniss,int>();
@@ -44,9 +48,11 @@ public class CitizenSatisfaction : Bedurfniss {
         Bedurfniss mostCitizenWantedNeed= null;
         foreach ( KIAgent agent in faction.agentMembers )
         {
+            //Zählt die Zufriedenheit aller Fraktionsmitglieder zusammen.
             Bedurfniss mostAskedNeed = agent.mostAskedNeed;
             tempValue += agent.satisfaction;
 
+            //Ermittlen des am meisten gewünsten Bedürfniss der Fraktionsmitglieder
             if ( mostAskedNeed != null && !needsToSatisfy.ContainsKey( mostAskedNeed ) ) needsToSatisfy.Add( mostAskedNeed, 1 );
             else if ( mostAskedNeed != null && needsToSatisfy.ContainsKey( mostAskedNeed ) ) needsToSatisfy[ mostAskedNeed ]++;
             if ( mostAskedNeed != null )
@@ -63,14 +69,17 @@ public class CitizenSatisfaction : Bedurfniss {
         if ( currentvalue < 0 )
         {
             mostWantedNeed = null;
-            return true;
+            return null;
         }
         
        mostWantedNeed = mostCitizenWantedNeed;
-       return false;
+       return GetComponent<EmptyActionA>();
         
 
     }
 
-    
+    public override KIAction satify()
+    {
+        return null;
+    }
 }

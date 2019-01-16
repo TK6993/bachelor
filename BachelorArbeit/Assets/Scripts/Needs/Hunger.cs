@@ -5,40 +5,51 @@ using UnityEngine;
 
 public class Hunger : Bedurfniss {
 
+    KIAgent agent = null;
 
-	// Use this for initialization
-	void Start () {
+
+    public override void Start(){
+        base.Start();
         name = "hunger";
-        needWithNeedStation = true;
-	}
+
+    }
+
+ 
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
 
-    public override bool satisfy( GameObject actor)
+    public override KIAction tryToSatisfy()
     {
-       KIAgent agent = actor.GetComponent<KIAgent>();
-        if ( !agent.pay( "food" ) )return false;
-        decreaseCurrentValue( 3000 );
-        // base.tryToSatisfy();
-        return true;
+       if(agent == null) agent = actor.GetComponent<KIAgent>();
+        if ( !agent.pay( "food" ) )return actor.GetComponent<EmptyActionA>();
+       
+        return actor.GetComponent<GoToA>(); 
         
 
 
     }
 
-    public override KIAction needHasNotBeenSatisfied(GameObject agent)
+    public override KIAction needHasNotBeenSatisfied()
     {
 
         if ( currentvalue > MaxValue - 5 ) {
-            KIAction action = agent.GetComponent<AgentDie>();
+            KIAction action = actor.GetComponent<AgentDie>();
             return action;
             
            // needM.logoutAgentfromStation( agent );
             //Destroy( gameObject );
         }
+        agent.failedToSatisfy();
+        return null;
+    }
+
+    public override KIAction satify()
+    {
+        decreaseCurrentValue( 5 );
+        agent.actionDefaultSatisfied();
         return null;
     }
 }

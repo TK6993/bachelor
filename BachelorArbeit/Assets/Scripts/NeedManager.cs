@@ -52,6 +52,7 @@ public class NeedManager : MonoBehaviour {
     {
          //Suche nach nächten freien Punkt zur Erfüllung des Bedürfnisses
          GameObject nearestPlace = null;
+       
     
          GameObject[ ] needSatisfactionPlaces = agentNeeds[b.name]; // Erstellen eines Arrays das wir uns aus dem Dictionry needs holen duch den na,en des bedürfnisses als Key 
 

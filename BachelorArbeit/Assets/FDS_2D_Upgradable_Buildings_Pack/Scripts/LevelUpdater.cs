@@ -11,6 +11,7 @@ public class LevelUpdater : MonoBehaviour {
 
     private void Awake()
     {
+       
         render = GetComponent<SpriteRenderer>();
         render.sprite = levels[level];
         maxLevels = levels.Length-1;
