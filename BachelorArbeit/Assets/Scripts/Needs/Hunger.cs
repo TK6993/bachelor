@@ -23,8 +23,8 @@ public class Hunger : Bedurfniss {
 
     public override KIAction tryToSatisfy()
     {
-       if(agent == null) agent = actor.GetComponent<KIAgent>();
-        if ( !agent.pay( "food" ) )return actor.GetComponent<EmptyActionA>();
+       //if(agent == null) agent = actor.GetComponent<KIAgent>();
+       // if ( !agent.pay( "food" ) )return actor.GetComponent<EmptyActionA>();
        
         return actor.GetComponent<GoToA>(); 
         
@@ -34,8 +34,9 @@ public class Hunger : Bedurfniss {
 
     public override KIAction needHasNotBeenSatisfied()
     {
+        if ( agent == null ) agent = actor.GetComponent<KIAgent>();
 
-        if ( currentvalue > MaxValue - 5 ) {
+        if ( currentvalue > MaxValue -2 ) {
             KIAction action = actor.GetComponent<AgentDie>();
             return action;
             
@@ -48,7 +49,10 @@ public class Hunger : Bedurfniss {
 
     public override KIAction satify()
     {
-        decreaseCurrentValue( 5 );
+
+        if ( agent == null ) agent = actor.GetComponent<KIAgent>();
+        if ( !agent.pay( "food" ) ) return actor.GetComponent<EmptyActionA>();
+        decreaseCurrentValue( 50 );
         agent.actionDefaultSatisfied();
         return null;
     }

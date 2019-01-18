@@ -86,6 +86,11 @@
     <Compile Include="Assets\Scripts\NeedStation.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Waiter.cs" />
+    <Compile Include="Assets\UI\AgentUiManager.cs" />
+    <Compile Include="Assets\UI\InputManager.cs" />
+    <Compile Include="Assets\UI\SimpleHealthBar\Healthbar.cs" />
+    <Compile Include="Assets\UI\StationUiManager.cs" />
+    <None Include="Assets\UI\SimpleHealthBar\documentation.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/TK/Documents/bachelor/BachelorArbeit/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

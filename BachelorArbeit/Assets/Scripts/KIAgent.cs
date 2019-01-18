@@ -9,7 +9,7 @@ public class KIAgent : MonoBehaviour, IIndigent
 {
     public NavMeshAgent navAgent;
 
-    [SerializeField] private Bedurfniss[ ] bedürfnisse;
+    [SerializeField] public Bedurfniss[ ] bedürfnisse;
     [SerializeField] private bool isWorkingOnNeed;
     public KIFaction faction;
     [SerializeField] private GameObject waiter;
@@ -234,9 +234,9 @@ public class KIAgent : MonoBehaviour, IIndigent
           }*/
     }
 
-     
 
-    
+   
+
 
 
 }
