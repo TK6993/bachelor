@@ -7,6 +7,12 @@ TagManager:
   - hunger
   - work
   - freetime
+  - IgnoreLayerSorting
+  - KPP
+  - science
+  - technologie
+  - faction
+  - tower
   layers:
   - Default
   - TransparentFX
@@ -18,7 +24,7 @@ TagManager:
   - 
   - goal
   - agent
-  - 
+  - obstacle
   - 
   - 
   - 

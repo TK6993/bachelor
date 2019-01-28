@@ -43,7 +43,7 @@ public class Hunger : Bedurfniss {
            // needM.logoutAgentfromStation( agent );
             //Destroy( gameObject );
         }
-        agent.failedToSatisfy();
+        failedToSatisfy();
         return null;
     }
 
@@ -51,9 +51,9 @@ public class Hunger : Bedurfniss {
     {
 
         if ( agent == null ) agent = actor.GetComponent<KIAgent>();
-        if ( !agent.pay( "food" ) ) return actor.GetComponent<EmptyActionA>();
-        decreaseCurrentValue( 50 );
-        agent.actionDefaultSatisfied();
+        if ( agent.pay( "food" ) < 0 ) return actor.GetComponent<EmptyActionA>();
+        decreaseCurrentValue( 60 );
+        actionDefaultSatisfied();
         return null;
     }
 }

@@ -10,6 +10,7 @@ public class NeedManager : MonoBehaviour {
     public GameObject[ ] hungerPoints;
     public GameObject[ ] workPoints;
     public GameObject[ ] freetTimePoints;
+    public GameObject[ ] techPoints;
     public Dictionary<string, GameObject[]> agentNeeds = new Dictionary<string,GameObject[]>();
 
     // Use this for initialization
@@ -17,15 +18,12 @@ public class NeedManager : MonoBehaviour {
         agentNeeds.Add("hunger",hungerPoints);
         agentNeeds.Add( "work", workPoints );
         agentNeeds.Add( "freetime", freetTimePoints);
+        agentNeeds.Add( "technologie", techPoints );
 
 
 
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
 
     public GameObject[ ] arrayResize( GameObject[ ] arrayToResize, int resizeAmount )
     {

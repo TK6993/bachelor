@@ -104,8 +104,8 @@ MonoBehaviour:
   health: 0
   minimumHealth: 0
   maximumHealth: 60
-  lowHealth: 10
-  highHealth: 51
+  lowHealth: 40
+  highHealth: 93
   regenerateHealth: 0
   healthPerSecond: 10
   highHealthColor: {r: 0.3537736, g: 1, b: 0.3537736, a: 1}

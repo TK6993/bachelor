@@ -10,15 +10,15 @@ public class Freetime : Bedurfniss {
     public override KIAction needHasNotBeenSatisfied()
     {
         KIAgent agent = actor.GetComponent<KIAgent>();
-        agent.failedToSatisfy();
+       failedToSatisfy();
         return null;
     }
 
     public override KIAction satify()
     {
         KIAgent agent = actor.GetComponent<KIAgent>();
-        decreaseCurrentValue( 25 );
-        agent.actionDefaultSatisfied();
+       actionDefaultSatisfied();
+        //agent.counterOfWaitingNeeds = 0;
         return null;
     }
 

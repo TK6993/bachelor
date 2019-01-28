@@ -14,7 +14,7 @@ public abstract class Bedurfniss : MonoBehaviour, IComparable {
   private int minValue=-10;
   public string name;
     public GameObject actor;
-
+    public float  priority =1;
 
     public virtual void Start()
     {
@@ -68,7 +68,7 @@ public abstract class Bedurfniss : MonoBehaviour, IComparable {
   
 
 
-    public void changeNeed() {
+    public virtual void changeNeed() {
 
         increaseCurrentValue( increaseValue );
     }
@@ -115,4 +115,27 @@ public abstract class Bedurfniss : MonoBehaviour, IComparable {
         if ( askForCounter < 0 ) askForCounter = 0;
 
     }
+
+    public void actionDefaultSatisfied()
+    {
+        IIndigent a = actor.GetComponent<IIndigent>();
+        changeAskedCounter( false );
+        a.changeWaitingCounter( false ); ;// !!Beobachten wegen: wird auf 0 gestetzt in jedem fall bei needs ohne station
+        
+    }
+
+    public void failedToSatisfy()
+    {
+        IIndigent a = actor.GetComponent<IIndigent>();
+        changeAskedCounter( true );// true sorgt für eine Erhöhung des AskCounters im Bedürfniss
+        a.changeWaitingCounter( true );
+
+
+        // KIAction action = workingNeed.needHasNotBeenSatisfied( gameObject );
+        // if ( action != null ) action.doAction( gameObject );
+
+        a.setWaitingForFreeNeedPoint(false);
+
+    }
+
 }

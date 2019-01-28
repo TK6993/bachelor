@@ -13,8 +13,9 @@ public class AgentUiManager : MonoBehaviour
 
     [SerializeField]Text agentName;
     [SerializeField]Text factionName;
+    [SerializeField] Text moneyAmount;
 
-    [SerializeField] bool AgentUIisVisible= false;
+    [SerializeField] bool agentUIisVisible= false;
 
     [SerializeField] public GameObject needBarPrefab;
     public Dictionary<string, GameObject> uiNeeds = new Dictionary<string, GameObject>();
@@ -29,7 +30,7 @@ public class AgentUiManager : MonoBehaviour
     void Update()
     {
         
-        if ( AgentUIisVisible ) updateNeedView();
+        if ( agentUIisVisible ) updateNeedView();
         //else  drawNeeds( activeKIAgent ); 
     }
 
@@ -37,7 +38,7 @@ public class AgentUiManager : MonoBehaviour
     public void drawNeeds(KIAgent agent) {
         clearAgentUIManager();
         activeKIAgent = agent;
-        AgentUIisVisible = true;
+        agentUIisVisible = true;
         activeNeeds = agent.bedürfnisse;
 
         foreach ( Bedurfniss need in activeNeeds )
@@ -62,8 +63,9 @@ public class AgentUiManager : MonoBehaviour
     {
         Healthbar bar = uiSatisfaction.GetComponentInChildren<Healthbar>();
         //bar.Start();
-        float barValue = ( -10 - activeKIAgent.satisfaction + 10 ) + 10;
+        float barValue = ( -10 - activeKIAgent.satisfaction + 50 ) + 10;
         bar.SetHealth( barValue );
+        moneyAmount.text = "" + activeKIAgent.money;
 
 
     }
@@ -92,7 +94,7 @@ public class AgentUiManager : MonoBehaviour
 
     public void clearAgentUIManager(){
 
-            AgentUIisVisible = false;
+            agentUIisVisible = false;
             activeNeeds = null;
         activeKIAgent = null;
         foreach ( GameObject uiNeed in uiNeeds.Values )

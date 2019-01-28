@@ -23,14 +23,15 @@ public class ConquerNeedStationA : KIAction {
         if ( faction != null )
         {   
             if ( wantedNeed == null ) return true;
-            if(!publishedTask && !satsifiedNeed ) {
+            if(!publishedTask && !satsifiedNeed) {
                 needStationToConquer = faction.worldneedManager.getNearestPointofSatisfaction( wantedNeed, gameObject );
-                if(needStationToConquer == null ) { // wenn es keine need station mehr auf der map gibt
+                if ( needStationToConquer == null ) { // wenn es keine need station mehr auf der map gibt
                     satsifiedNeed = true;
-                        wantedNeed = null;
-                        return true;
-                        }
+                    wantedNeed = null;
+                    return true;
+                   }
                 needStationToConquer.GetComponent<NeedStation>().isInPossession = true;
+
                 actor.GetComponent<KIFaction>().taskForAgents = this;
                 publishedTask = true;
                 return false;
@@ -82,9 +83,11 @@ public class ConquerNeedStationA : KIAction {
         else return true;
     }
 
-    
 
-  
+
+
+
+
 
 
 

@@ -74,7 +74,8 @@ public class StationUiManager : MonoBehaviour
 
     void drawName()
     {
-        factionName.text = activeStation.ownerFaction.GetComponent<KIFaction>().fractionName;
+        if ( activeStation.ownerFaction == null ) factionName.text = "Unparteiisch";
+        else factionName.text = activeStation.ownerFaction.GetComponent<KIFaction>().fractionName;
         needName.text = activeStation.gameObject.tag;
 
 

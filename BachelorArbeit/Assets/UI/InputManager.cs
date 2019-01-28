@@ -10,14 +10,10 @@ public class InputManager : MonoBehaviour
     [SerializeField] GameObject uiAgentPanel;
     [SerializeField] StationUiManager stationUI;
     [SerializeField] GameObject uiStationPanel;
+    [SerializeField] FactionUiManger factionUI;
+    [SerializeField] GameObject uiFactionPanel;
 
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -30,8 +26,8 @@ public class InputManager : MonoBehaviour
             {
                 KIAgent agent = hit.transform.gameObject.GetComponent<KIAgent>();
                 NeedStation station = hit.transform.gameObject.GetComponent<NeedStation>();
-                if ( agent != null )
-                {
+                KIFaction faction = hit.transform.gameObject.GetComponent<KIFaction>();
+                if ( agent != null ) {
                     uiAgentPanel.gameObject.SetActive( true );
                     agentUI.drawNeeds( agent );
                     //Debug.Log( hit.transform.gameObject.name );
@@ -41,14 +37,20 @@ public class InputManager : MonoBehaviour
                 else if ( station != null ) {
                     uiStationPanel.gameObject.SetActive( true );
                     stationUI.drawPanel( station );
+                }
 
+                else if ( faction != null ){
+                    uiFactionPanel.gameObject.SetActive( true );
+                    factionUI.drawPanel( faction );
 
                 }
-                else{
+                else {
                     agentUI.clearAgentUIManager();
                     stationUI.clearUIManager();
                     uiAgentPanel.SetActive( false );
                     uiStationPanel.SetActive( false );
+                    uiFactionPanel.SetActive( false );
+                    factionUI.clearUIManager();
 
 
                 }
@@ -58,3 +60,4 @@ public class InputManager : MonoBehaviour
         }
     }
 }
+

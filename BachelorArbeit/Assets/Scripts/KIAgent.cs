@@ -9,36 +9,33 @@ public class KIAgent : MonoBehaviour, IIndigent
 {
     public NavMeshAgent navAgent;
 
-    [SerializeField] public Bedurfniss[ ] bedürfnisse;
-    [SerializeField] private bool isWorkingOnNeed;
     public KIFaction faction;
-    [SerializeField] private GameObject waiter;
-    [SerializeField] private GameObject waiterPrefab;
-      public Bedurfniss workingNeed;
-    [SerializeField] KIAction currentAction;
-
-
-
-
+    public Bedurfniss[ ] bedürfnisse;
+    public KIAction currentAction;
+    public Bedurfniss workingNeed;
     public Bedurfniss mostAskedNeed;
-    [SerializeField] private int counterOfWaitingNeeds = 0;
-    public KIAction[] agentActions;
-
-    [SerializeField] private int money = 0;
-
-    public Dictionary<string, KIAction> agentActionsbyName = new Dictionary<string, KIAction>();
-
+    public int money = 0;
     public bool waitingForFreeNeedPoint = false;
-
-    public List<GameObject> currentCollisions = new List<GameObject>();
     public float satisfaction = 0;
+
+
+    [SerializeField]private int counterOfWaitingNeeds = 0;
+    [SerializeField]private GameObject waiterPrefab;
     [SerializeField]private int salery;
+
+    [HideInInspector]public List<GameObject> currentCollisions = new List<GameObject>();
+
+
+    private GameObject waiter;
+    private bool isWorkingOnNeed;
+    private bool gameIsPaused = false;
+
 
     public int Salery
     {
         get
         {
-            return salery;
+            return (int) (salery * (1 + (0.5f * faction.Techlevel)));
         }
 
         set
@@ -53,17 +50,14 @@ public class KIAgent : MonoBehaviour, IIndigent
     // Use this for initialization
     void Start()
     {
-        foreach ( KIAction action in agentActions )
-        {
-            agentActionsbyName.Add( action.name, action );
-        }
+        
         
      }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if ( gameIsPaused ) return;
 
         if ( waiter == null && currentAction==null ) {
 
@@ -106,54 +100,21 @@ public class KIAgent : MonoBehaviour, IIndigent
 
  
 
-    public bool actionDefaultSatisfied() {
-        satisfaction -= 1f;
-        workingNeed.changeAskedCounter( false );// true sorgt für eine Verringerung des AskCounters im Bedürfniss
-        if ( satisfaction > 10 ) satisfaction = 10;
-        else if ( satisfaction < -10 ) satisfaction = -10;
-
-        counterOfWaitingNeeds = 0;// !!Beobachten wegen: wird auf 0 gestetzt in jedem fall bei needs ohne station
-        if ( counterOfWaitingNeeds < 0 ) counterOfWaitingNeeds = 0;
-
-
-        return true;
-    }
-
-  
-
-    public void failedToSatisfy() {
-        satisfaction += 1f;
-        if ( satisfaction > 10 ) satisfaction = 10;
-        else if ( satisfaction < -10 ) satisfaction = -10;
-        workingNeed.changeAskedCounter( true );// true sorgt für eine Erhöhung des AskCounters im Bedürfniss
-
-
-        counterOfWaitingNeeds++;
-        if ( counterOfWaitingNeeds > bedürfnisse.Length - 1 ) { counterOfWaitingNeeds = 0; }
-
-       // KIAction action = workingNeed.needHasNotBeenSatisfied( gameObject );
-       // if ( action != null ) action.doAction( gameObject );
-
-       waitingForFreeNeedPoint = false;
-
-    }
-
-   
-
-   
-
     public  void evaluateNeeds()
     {
 
         //noch sehr einfach (ermittelt das höchste bedürfniss.)
        
 
-            Array.Sort( bedürfnisse );
-            Array.Reverse( bedürfnisse );
-            //highestNeedValue = b.Currentvalue;
-            workingNeed = bedürfnisse[ counterOfWaitingNeeds];
-        if ( workingNeed.currentvalue < 0 ) workingNeed = GetComponent<Freetime>();
-            mostAskedNeed = setMostRequestedNeed();
+        Array.Sort( bedürfnisse );
+        Array.Reverse( bedürfnisse );
+        satisfaction = calculateSatisfaction();
+        workingNeed = bedürfnisse[ counterOfWaitingNeeds];
+        if ( workingNeed.currentvalue < 0 ) {
+         workingNeed = GetComponent<Freetime>();
+        }
+
+       mostAskedNeed = setMostRequestedNeed();
 
 
         
@@ -175,22 +136,29 @@ public class KIAgent : MonoBehaviour, IIndigent
 
     }
 
-    public bool pay( string v )
+    public int pay( string v )
     {
         int payamount;
         switch ( v ) {
-            case "food" :  payamount = faction.foodPrice ; break;
-            default: payamount = 0; break;
+            case "food" :
+                payamount = faction.foodPrice ;
+                 break;
+            case "taxes" :
+                payamount =(int)( salery * ( faction.taxesPercent / 100.0f ));
+                break;
+            default:
+                payamount = 0;
+                break;
         }
         if ( payamount > money )
         {
-            Bedurfniss work = GetComponent<Work>();
-            work.increaseCurrentValue( 1 );
-            return false;
+            Bedurfniss pros  = GetComponent<Prosperity>();
+            pros.increaseCurrentValue( 10 );
+            return -1;
         }
         else {
             money -= payamount;
-            return true;
+            return payamount;
         }
     }
 
@@ -208,6 +176,31 @@ public class KIAgent : MonoBehaviour, IIndigent
     }
 
 
+    int calculateSatisfaction() {
+
+        float tempSatisfaction = 0;
+        float devineCounter = 0;
+
+        foreach ( Bedurfniss need in bedürfnisse )
+        {
+            tempSatisfaction += need.currentvalue * need.priority;
+            devineCounter += need.priority;
+        }
+
+        return (int) (tempSatisfaction / devineCounter);
+
+    }
+
+    public void changeWaitingCounter( bool changeDirection )
+    {
+        if ( changeDirection ) counterOfWaitingNeeds++;
+        else counterOfWaitingNeeds = 0;
+        if ( counterOfWaitingNeeds > bedürfnisse.Length - 1 ) { counterOfWaitingNeeds = 0; }
+    }
+
+    public void setWaitingForFreeNeedPoint( bool value ) {
+        waitingForFreeNeedPoint = value;
+    }
 
     void OnTriggerEnter( Collider col )
     {
@@ -223,20 +216,16 @@ public class KIAgent : MonoBehaviour, IIndigent
     void OnTriggerExit( Collider col )
     {
         // Agent gibt die Bedürfnissstation frei
+         if ( col.gameObject.layer == 8 ) {
         col.GetComponent<NeedStation>().removeFromStation(gameObject);
         currentCollisions.Remove( col.gameObject );
-        /* if ( col.gameObject.layer == 8 ) {
-              NeedStation needS = col.gameObject.GetComponent<NeedStation>();
-              if ( needS.taken && needS.agentOnThisStation == gameObject) {
-                      needS.taken = false;
-                      needS.agentOnThisStation = null;
-                  }
-          }*/
+          }
+              
     }
 
-
-   
-
-
-
+    public void pauseGame( bool value )
+    {
+        gameIsPaused = value;
+        GetComponent<NavMeshAgent>().isStopped = value;
+    }
 }

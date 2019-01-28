@@ -7,4 +7,7 @@ interface IIndigent
 {
     void evaluateNeeds();
     void increaseNeeds();
+    void changeWaitingCounter(bool changeDirection);
+    void setWaitingForFreeNeedPoint( bool value );
+    void pauseGame( bool value );
 }

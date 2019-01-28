@@ -6,6 +6,9 @@ using UnityEngine;
 public class Work : Bedurfniss {
 
     KIAgent agent = null;
+   [SerializeField] public NeedStation workplace = null;
+
+
 
     // Use this for initialization
     public override void Start()
@@ -14,11 +17,7 @@ public class Work : Bedurfniss {
         name = "work";
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
 
     public override KIAction tryToSatisfy(  )
     {
@@ -33,15 +32,20 @@ public class Work : Bedurfniss {
 
     public override KIAction needHasNotBeenSatisfied( )
     {
-        agent.failedToSatisfy();
+        failedToSatisfy();
+        increaseCurrentValue( 60 );
         return null;
     }
 
     public override KIAction satify()
     {
-        agent.changeMoney( agent.Salery );
-        decreaseCurrentValue( 1 );
-        agent.actionDefaultSatisfied();
+       // agent.changeMoney( agent.Salery );
+        actionDefaultSatisfied();
+       decreaseCurrentValue( 60 );
         return null;
+    }
+
+    public void setworkplace( WorkPlace workP ) {
+        this.workplace = workP;
     }
 }

@@ -23,4 +23,11 @@ public class LevelUpdater : MonoBehaviour {
         render.sprite = levels[level];
     }
 
+    public void upgradeGraphic() {
+
+        level = ( level < maxLevels ) ? level + 1 : level;
+        render.sprite = levels[ level ];
+
+    }
+
 }

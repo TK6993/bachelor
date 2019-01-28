@@ -8,32 +8,81 @@ public class KIFaction : NeedManager,IIndigent {
 
     public string fractionName;
     public KIAgent[ ] agentMembers;
-    public KIAction[ ] factionsActions;
-    public Bedurfniss[ ] fractionNeeds;
-
-
+    public Bedurfniss[ ] bedüfnisse;
     public NeedManager worldneedManager;
+    public KIAction taskForAgents;
+    public Bedurfniss mostWantedNeed;
+    public Color factionColor;
+    public int foodPrice;
+    public float taxesPercent = 10.0f;
+
 
     [SerializeField] private Bedurfniss workingNeed;
     [SerializeField] private bool isWorkingOnNeed;
     [SerializeField] private int counterOfWaitingNeeds = 0;
-
-    public Dictionary<string, List<GameObject>> listOfAgentNeedStations = new Dictionary<string, List<GameObject>>();
-    public KIAction taskForAgents;
-
-    public Bedurfniss mostWantedNeed;
-
-
-    [SerializeField] private GameObject waiter;
     [SerializeField] private GameObject waiterPrefab;
-    public Color factionColor;
-    public int foodPrice;
+    [SerializeField] public int money;
+    [SerializeField] int techlevel;
+
+    [HideInInspector] public Dictionary<string, List<GameObject>> listOfAgentNeedStations = new Dictionary<string, List<GameObject>>();
+
+
+    private GameObject waiter;
+    [SerializeField]
     private KIAction currentAction;
+    private bool gameIsPaused;
 
+    public int Techlevel
+    {
+        get
+        {
+            return calculateTechLevel();
+        }
 
+        set
+        {
+            techlevel = value;
+        }
+    }
 
+    public bool GameIsPaused
+    {
+        get
+        {
+            return gameIsPaused;
+        }
 
+        set
+        {
+            gameIsPaused = value;
+        }
+    }
 
+    private int calculateTechLevel()
+    {
+      List<GameObject> techStations = listOfAgentNeedStations["technologie"];
+        int temp = 0;
+        foreach ( GameObject station in techStations )
+        {
+            NeedStation needS = station.GetComponent<NeedStation>();
+            temp += needS.level;
+        }
+        return temp;
+    }
+
+    public int pay( int payamount )
+    {   
+        if ( payamount > money )
+        {
+           // hier folgen wegen zuwenig Geld einbinden.
+            return -1;
+        }
+        else
+        {
+            money -= payamount;
+            return payamount;
+        }
+    }
     // Use this for initialization
     public override void Start () {
         base.Start();
@@ -49,9 +98,16 @@ public class KIFaction : NeedManager,IIndigent {
     {
         return worldneedManager.agentNeeds[ needStationKind ];
     }
-	
-	// Update is called once per frame
-	void Update ()  {
+
+    public void increaseMoney( int paiedTaxesAmount )
+    {
+        money += paiedTaxesAmount;
+    }
+
+    // Update is called once per frame
+    void Update ()  {
+
+        if ( gameIsPaused ) return;
 
         if ( waiter == null && currentAction == null )
         {
@@ -94,16 +150,45 @@ public class KIFaction : NeedManager,IIndigent {
 
     public  void evaluateNeeds()
     {
-
-        Array.Sort( fractionNeeds );
-        Array.Reverse( fractionNeeds );
-        workingNeed = fractionNeeds[ counterOfWaitingNeeds ];
+        Array.Sort( bedüfnisse );
+        Array.Reverse( bedüfnisse );
+        workingNeed = bedüfnisse[ counterOfWaitingNeeds ];
         //if ( workingNeed != null ) isWorkingOnNeed = true;
     }
 
+
+   /* public bool actionDefaultSatisfied()
+    {
+     
+
+        counterOfWaitingNeeds = 0;// !!Beobachten wegen: wird auf 0 gestetzt in jedem fall bei needs ohne station
+        if ( counterOfWaitingNeeds < 0 ) counterOfWaitingNeeds = 0;
+
+
+        return true;
+    }
+
+  
+
+
+
+    public void failedToSatisfy()
+    {
+      
+
+        counterOfWaitingNeeds++;
+        if ( counterOfWaitingNeeds > bedüfnisse.Length - 1 ) { counterOfWaitingNeeds = 0; }
+
+        // KIAction action = workingNeed.needHasNotBeenSatisfied( gameObject );
+        // if ( action != null ) action.doAction( gameObject );
+
+    
+
+    }*/
+
     public  void increaseNeeds()
     {
-        foreach ( Bedurfniss need in fractionNeeds )
+        foreach ( Bedurfniss need in bedüfnisse )
         {
             need.changeNeed();
         }
@@ -193,7 +278,7 @@ public class KIFaction : NeedManager,IIndigent {
         }
     }
 
-    public void updateAgentMemberList()
+    public void updateAgentMemberList(KIAgent agentToAdd)
     {
         KIAgent[ ] tempMemberList = gameObject.GetComponent<KIFaction>().agentMembers;
         List<KIAgent> templist = new List<KIAgent>();
@@ -201,7 +286,26 @@ public class KIFaction : NeedManager,IIndigent {
         {
             if ( agent != null ) templist.Add( agent );
         }
+        if ( agentToAdd != null ) templist.Add( agentToAdd );
         tempMemberList = templist.ToArray();
         agentMembers = tempMemberList;
+    }
+
+    public void changeWaitingCounter( bool changeDirection)
+    {
+        if ( changeDirection ) counterOfWaitingNeeds++;
+        else counterOfWaitingNeeds = 0;
+        if ( counterOfWaitingNeeds > bedüfnisse.Length - 1 ) { counterOfWaitingNeeds = 0; }
+    }
+
+    public void setWaitingForFreeNeedPoint( bool value )
+    {
+        //nothing TODO here;
+    }
+
+    public void pauseGame( bool value )
+    {
+        gameIsPaused = value;
+         GetComponent<NavMeshAgent>().isStopped = value;
     }
 }

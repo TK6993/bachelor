@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,10 +12,35 @@ public class NeedStation : MonoBehaviour
     public List<GameObject> agentsOnThisStation = new List<GameObject>();
     public bool isInPossession =false;
     public GameObject ownerFaction;
+    public int level = 1;
+    public GameObject waiterPrefab;
+    public int lifeCounterLimit = 120;
+
     [SerializeField] private List<GameObject> ListOfVisitors;
+    [SerializeField] int upgradeCosts= 70;
+
+    [SerializeField] private int counterIsInUse = 0;
+    private GameObject waiter;
+
+
+
+    public int UpgradeCosts
+    {
+        get
+        {
+
+            return (int) (upgradeCosts*level - ((upgradeCosts * level) * ( 0.05f * ownerFaction.GetComponent<KIFaction>().Techlevel )));
+
+        }
+
+        set
+        {
+            upgradeCosts = value;
+        }
+    }
 
     // Use this for initialization
-    void Start()
+    public virtual void Start()
     {
         if ( !hasCapacity ) stationSize = 1000;
     }
@@ -22,10 +48,30 @@ public class NeedStation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if ( ownerFaction != null ) {
+            if ( ownerFaction.GetComponent<KIFaction>().GameIsPaused ) return;
+                if(waiter == null ){
+                    counterIsInUse++;
+                if ( counterIsInUse >= lifeCounterLimit ) loseOwnerFaction( ownerFaction );
+                    waiter = Instantiate( waiterPrefab );
+                }
 
+        }
     }
 
-    public bool resgisterOnStation( GameObject agent) {
+    public virtual void loseOwnerFaction( GameObject ownerFaction )
+    {
+
+        agentsOnThisStation.Clear();
+        isFull = false;
+        isInPossession = false;
+        List<GameObject> needListOfStationOfThisKind = ownerFaction.GetComponent<KIFaction>().listOfAgentNeedStations[ gameObject.tag ];
+        needListOfStationOfThisKind.Remove( gameObject );
+        gameObject.transform.GetChild( 0 ).gameObject.GetComponent<SpriteRenderer>().color = new Color(1,1,1);
+        this.ownerFaction = null;
+    }
+
+    public virtual bool resgisterOnStation( GameObject agent) {
         if ( agentsOnThisStation.Count < stationSize && !agentsOnThisStation.Contains( agent ) )
         {
             agentsOnThisStation.Add( agent );
@@ -46,7 +92,7 @@ public class NeedStation : MonoBehaviour
 
     }
 
-    public bool removeFromStation(GameObject agent) {
+    public virtual bool removeFromStation(GameObject agent) {
         if ( agentsOnThisStation.Contains( agent ) )
         {
             isFull = false;
@@ -75,6 +121,7 @@ public class NeedStation : MonoBehaviour
      void OnTriggerEnter( Collider other )
     {
         ListOfVisitors.Add( other.gameObject );
+        counterIsInUse = 0;
     }
 
      void OnTriggerExit( Collider other )
