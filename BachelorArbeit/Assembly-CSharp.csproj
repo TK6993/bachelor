@@ -86,6 +86,7 @@
     <Compile Include="Assets\Scripts\Needs\FactionLoyalty.cs" />
     <Compile Include="Assets\Scripts\Needs\Freetime.cs" />
     <Compile Include="Assets\Scripts\Needs\Hunger.cs" />
+    <Compile Include="Assets\Scripts\Needs\MilitaryFaction.cs" />
     <Compile Include="Assets\Scripts\Needs\Prosperity.cs" />
     <Compile Include="Assets\Scripts\Needs\Taxes.cs" />
     <Compile Include="Assets\Scripts\Needs\TechnologieFaction.cs" />

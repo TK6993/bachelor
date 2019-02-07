@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class Bedurfniss : MonoBehaviour, IComparable {
 
 
-  [SerializeField] private float increaseValue = 1;
+  [SerializeField] public float increaseValue = 1;
     public bool needWithNeedStation = false;
     public int askForCounter = 0;
   public float currentvalue;

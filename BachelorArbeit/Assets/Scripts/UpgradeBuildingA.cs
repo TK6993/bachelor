@@ -9,8 +9,9 @@ public class UpgradeBuildingA : KIAction
     {
         this.actor = actor;
         KIFaction faction = actor.GetComponent<KIFaction>();
+        if ( faction.mostWantedNeed == null )
+            return true;// nur kurzer fix
         string needName = faction.mostWantedNeed.name;
-        if ( !faction.listOfAgentNeedStations.ContainsKey( needName ) ) Debug.Log( needName );
         List<GameObject> factionsNeedStationsOfSearchedNeed = faction.listOfAgentNeedStations[ needName ];
         NeedStation stationToUpgrade = null;
         satsifiedNeed = true;

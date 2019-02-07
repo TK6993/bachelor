@@ -28,8 +28,8 @@ public class KIFaction : NeedManager,IIndigent {
 
 
     private GameObject waiter;
-    [SerializeField]
-    private KIAction currentAction;
+    [SerializeField] private KIAction currentAction;
+    public Dictionary<NeedStation, int> endangeredNeedStations = new Dictionary<NeedStation, int>();
     private bool gameIsPaused;
 
     public int Techlevel
@@ -157,35 +157,6 @@ public class KIFaction : NeedManager,IIndigent {
     }
 
 
-   /* public bool actionDefaultSatisfied()
-    {
-     
-
-        counterOfWaitingNeeds = 0;// !!Beobachten wegen: wird auf 0 gestetzt in jedem fall bei needs ohne station
-        if ( counterOfWaitingNeeds < 0 ) counterOfWaitingNeeds = 0;
-
-
-        return true;
-    }
-
-  
-
-
-
-    public void failedToSatisfy()
-    {
-      
-
-        counterOfWaitingNeeds++;
-        if ( counterOfWaitingNeeds > bedüfnisse.Length - 1 ) { counterOfWaitingNeeds = 0; }
-
-        // KIAction action = workingNeed.needHasNotBeenSatisfied( gameObject );
-        // if ( action != null ) action.doAction( gameObject );
-
-    
-
-    }*/
-
     public  void increaseNeeds()
     {
         foreach ( Bedurfniss need in bedüfnisse )
@@ -213,16 +184,17 @@ public class KIFaction : NeedManager,IIndigent {
 
             // Herausfinden ob die Stelle schon besetzt ist
             needS = p.GetComponent<NeedStation>();
-           
-                if ( needS.isItFull() )
-                {
-                    continue;
-                }
-            
+
+            if ( needS.isItFull() )
+            {
+                continue;
+            }
 
             NavMeshPath path = new NavMeshPath();
             navAgent.CalculatePath( p.transform.position, path ); // Pfand zum Ziel berechnen
+            /*
             Vector3[ ] corners = path.corners;
+            
 
             // Länge des Pfades berechnen
             for ( int c = 0; c < corners.Length; c++ )
@@ -230,14 +202,18 @@ public class KIFaction : NeedManager,IIndigent {
                 if ( c != corners.Length - 1 )
                     newPathLenght += Vector3.Distance( corners[ c ], corners[ c + 1 ] );
             }
+        }*/
+
+            newPathLenght = CalculatePathCost( path );
+
             if ( newPathLenght < pathlength )
             {
                 pathlength = newPathLenght;
+                if ( this.fractionName == "green"  && p.name == "Cube (17)") Debug.Log( pathlength );
                 nearestPlace = p;
             }
             newPathLenght = 0;
         }
-
 
         if ( nearestPlace == null ){ // Warten wenn kein  Punkt gefunden wurde 
             agent.GetComponent<KIAgent>().waitingForFreeNeedPoint = true;
@@ -254,6 +230,54 @@ public class KIFaction : NeedManager,IIndigent {
         }
 
 
+    
+    }
+
+    float CalculatePathCost( NavMeshPath path )
+    {
+        if ( path.corners.Length < 2 ) return 0;
+
+        float cost = 0;
+        NavMeshHit hit;
+        NavMesh.SamplePosition( path.corners[ 0 ], out hit, 0.1f, NavMesh.AllAreas );
+        Vector3 rayStart = path.corners[ 0 ];
+        int mask = hit.mask;
+        int index = IndexFromMask( mask );
+
+        for ( int i = 1; i < path.corners.Length; ++i )
+        {
+
+            while ( true )
+            {
+                NavMesh.Raycast( rayStart, path.corners[ i ], out hit, mask );
+
+                cost += NavMesh.GetAreaCost( index ) * hit.distance;
+
+                if ( hit.mask != 0 ) mask = hit.mask;
+
+                index = IndexFromMask( mask );
+                rayStart = hit.position;
+
+                if ( hit.mask == 0 )
+                { //hit boundary; move startPoint of ray a bit closer to endpoint
+                    rayStart += ( path.corners[ i ] - rayStart ).normalized * 0.01f;
+                }
+
+                if ( !hit.hit ) break;
+            }
+        }
+
+        return cost;
+    }
+
+    int IndexFromMask( int mask )
+    {
+        for ( int i = 0; i < 32; ++i )
+        {
+            if ( ( 1 << i ) == mask )
+                return i;
+        }
+        return -1;
     }
 
 
@@ -302,6 +326,24 @@ public class KIFaction : NeedManager,IIndigent {
     {
         //nothing TODO here;
     }
+
+    public void increaseEndangeredStation(NeedStation needS ) {
+        if ( endangeredNeedStations.ContainsKey( needS ) ) {
+            endangeredNeedStations[ needS ]++;
+        }
+        else {
+            endangeredNeedStations.Add( needS, 1 );
+        }
+
+    }
+
+    public int getEndangeredCounter( NeedStation needS ) {
+
+        if ( !endangeredNeedStations.ContainsKey( needS ) ) return 0;
+        return endangeredNeedStations[ needS ];
+    }
+
+
 
     public void pauseGame( bool value )
     {

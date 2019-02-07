@@ -30,6 +30,11 @@ public class Work : Bedurfniss {
 
     }
 
+    public override void changeNeed()
+    {
+        if(workplace == null) increaseCurrentValue( 60 );
+    }
+
     public override KIAction needHasNotBeenSatisfied( )
     {
         failedToSatisfy();

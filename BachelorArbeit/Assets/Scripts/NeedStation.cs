@@ -28,8 +28,8 @@ public class NeedStation : MonoBehaviour
     {
         get
         {
-
-            return (int) (upgradeCosts*level - ((upgradeCosts * level) * ( 0.05f * ownerFaction.GetComponent<KIFaction>().Techlevel )));
+            int kosten = upgradeCosts * level *level * level;
+            return (int) (kosten - ((kosten) * ( 0.05f * ownerFaction.GetComponent<KIFaction>().Techlevel )));
 
         }
 
@@ -70,6 +70,7 @@ public class NeedStation : MonoBehaviour
         gameObject.transform.GetChild( 0 ).gameObject.GetComponent<SpriteRenderer>().color = new Color(1,1,1);
         this.ownerFaction = null;
     }
+
 
     public virtual bool resgisterOnStation( GameObject agent) {
         if ( agentsOnThisStation.Count < stationSize && !agentsOnThisStation.Contains( agent ) )

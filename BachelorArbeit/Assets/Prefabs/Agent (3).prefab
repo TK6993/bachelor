@@ -137,27 +137,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navAgent: {fileID: 0}
+  faction: {fileID: 0}
   "bed\xFCrfnisse":
   - {fileID: 1865837438}
   - {fileID: 1865837434}
   - {fileID: 1865837439}
   - {fileID: 1865837440}
   - {fileID: 5518904425462002620}
-  isWorkingOnNeed: 0
-  faction: {fileID: 0}
-  waiter: {fileID: 0}
-  waiterPrefab: {fileID: 1501779752017334, guid: 4f15b09ae16acce438550c149faa6f68,
-    type: 3}
-  workingNeed: {fileID: 0}
   currentAction: {fileID: 0}
+  workingNeed: {fileID: 0}
   mostAskedNeed: {fileID: 0}
-  counterOfWaitingNeeds: 0
-  agentActions: []
   money: 0
   waitingForFreeNeedPoint: 0
-  currentCollisions: []
   satisfaction: 0
+  counterOfWaitingNeeds: 0
+  waiterPrefab: {fileID: 1501779752017334, guid: 4f15b09ae16acce438550c149faa6f68,
+    type: 3}
   salery: 120
+  currentCollisions: []
 --- !u!114 &1865837433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,7 +254,7 @@ MonoBehaviour:
   increaseValue: 0.2
   needWithNeedStation: 1
   askForCounter: 2
-  currentvalue: -5
+  currentvalue: -10
   name: 
   actor: {fileID: 0}
   priority: 2.7
@@ -279,7 +276,7 @@ MonoBehaviour:
   currentvalue: 15
   name: 
   actor: {fileID: 0}
-  priority: 1.2
+  priority: 2.1
   workplace: {fileID: 0}
 --- !u!114 &5518904425462002620
 MonoBehaviour:

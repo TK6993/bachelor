@@ -20,8 +20,12 @@ public class Shoot : MonoBehaviour
     {
         if ( other.gameObject.tag != "tower" ) {
             if ( other.gameObject.layer == 9 ) {
-                other.gameObject.GetComponent<Hunger>().increaseCurrentValue( 5 );
+                Bedurfniss ueberleben = other.gameObject.GetComponent<Hunger>();
+                ueberleben.increaseCurrentValue( 2 );
+                if ( ueberleben.currentvalue >= ueberleben.MaxValue ) {
+                    other.gameObject.GetComponent<AgentDie>().doAction(other.gameObject);
 
+                }
             }
           //  Destroy( gameObject );
 

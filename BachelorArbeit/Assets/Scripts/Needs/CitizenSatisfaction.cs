@@ -14,8 +14,9 @@ public class CitizenSatisfaction : Bedurfniss {
 
     public override KIAction needHasNotBeenSatisfied( )
     {
-        
-            if ( mostWantedNeed.needWithNeedStation )
+
+      
+         /*   if ( mostWantedNeed.needWithNeedStation )
             {
                 UpgradeBuildingA upgradeAction = actor.GetComponent<UpgradeBuildingA>();
                 if ( upgradeAction.hasEnoughtMoneyForUpgrade( mostWantedNeed ) ) return upgradeAction;
@@ -27,8 +28,8 @@ public class CitizenSatisfaction : Bedurfniss {
 
                     action.setWantedNeed( mostWantedNeed );
                     return action;
-            }
-            return null;
+            }*/
+            return null; 
 
             // needM.logoutAgentfromStation( agent );
             //Destroy( gameObject );
@@ -47,20 +48,35 @@ public class CitizenSatisfaction : Bedurfniss {
 
     public override KIAction tryToSatisfy()
     {
+        if ( mostWantedNeed == null ) return null;
         if ( mostWantedNeed.needWithNeedStation )
         {
-            if ( currentvalue < 10 || !isConquerNecessary( mostWantedNeed, faction ) )
+            faction.mostWantedNeed = mostWantedNeed;
+            if ( currentvalue < 10 && !isConquerNecessary( mostWantedNeed, faction ) )
             {
                 mostWantedNeed = null;
-                return GetComponent<PlaceTowerA>();
+               // return GetComponent<PlaceTowerA>();
+                return GetComponent<CreateNewAgentA>();
+
             }
-            else{
-                    UpgradeBuildingA upgradeAction = actor.GetComponent<UpgradeBuildingA>();
-                    if ( upgradeAction.hasEnoughtMoneyForUpgrade( mostWantedNeed ) ) return upgradeAction;
-                    ConquerNeedStationA conquerAction = (ConquerNeedStationA) actor.GetComponent<ConquerNeedStationA>();
-                    conquerAction.setWantedNeed( mostWantedNeed );
-                    return conquerAction;  
-                }
+            else
+            {
+                UpgradeBuildingA upgradeAction = actor.GetComponent<UpgradeBuildingA>();
+                if ( upgradeAction.hasEnoughtMoneyForUpgrade( mostWantedNeed ) ) return upgradeAction;
+                ConquerNeedStationA conquerAction = (ConquerNeedStationA) actor.GetComponent<ConquerNeedStationA>();
+                conquerAction.setWantedNeed( mostWantedNeed );
+                return conquerAction;
+            }
+        }
+        else {
+            if ( mostWantedNeed.name == "prosperity" ) {
+                Bedurfniss technologie = GetComponent<TechnologieFaction>();
+                technologie.increaseCurrentValue( technologie.increaseValue );
+                return null;
+            } 
+
+
+
         }
         return null;
 

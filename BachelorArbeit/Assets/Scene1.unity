@@ -111,7 +111,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: c48689ec9e349c04094e7f0859a7cf2c, type: 2}
 --- !u!1 &1362040
 GameObject:
   m_ObjectHideFlags: 0
@@ -2882,10 +2882,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 6143955589881202180, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143955589881202180, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 638930019380577940, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 638930019380577940, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
         type: 3}
@@ -11467,10 +11477,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 6143955589881202180, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143955589881202180, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 638930019380577940, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 638930019380577940, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
         type: 3}
@@ -16093,10 +16113,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 3680027700350894893, guid: 3f449905c94554b4e852b36662cfa45a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3680027700350894893, guid: 3f449905c94554b4e852b36662cfa45a,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1372887018793265125, guid: 3f449905c94554b4e852b36662cfa45a,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6050144897543937534, guid: 3f449905c94554b4e852b36662cfa45a,
         type: 3}
@@ -17806,10 +17836,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 3680027700350894893, guid: 3f449905c94554b4e852b36662cfa45a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3680027700350894893, guid: 3f449905c94554b4e852b36662cfa45a,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1372887018793265125, guid: 3f449905c94554b4e852b36662cfa45a,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6050144897543937534, guid: 3f449905c94554b4e852b36662cfa45a,
         type: 3}
@@ -21725,10 +21765,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 6143955589881202180, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143955589881202180, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 638930019380577940, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 638930019380577940, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
         type: 3}
@@ -23123,10 +23173,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 4950619968578543565, guid: 3d89025fda62f674aa2d5ad34ffa3ffa,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950619968578543565, guid: 3d89025fda62f674aa2d5ad34ffa3ffa,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4950619968578543560, guid: 3d89025fda62f674aa2d5ad34ffa3ffa,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3504476031849531446, guid: 3d89025fda62f674aa2d5ad34ffa3ffa,
         type: 3}
@@ -24630,7 +24690,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &416288764
 GameObject:
@@ -24884,7 +24944,7 @@ PrefabInstance:
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.96
+      value: 7.52
       objectReference: {fileID: 0}
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
@@ -24894,7 +24954,7 @@ PrefabInstance:
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.01
+      value: 0.94
       objectReference: {fileID: 0}
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
@@ -26734,10 +26794,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 4950619968578543565, guid: 3d89025fda62f674aa2d5ad34ffa3ffa,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950619968578543565, guid: 3d89025fda62f674aa2d5ad34ffa3ffa,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4950619968578543560, guid: 3d89025fda62f674aa2d5ad34ffa3ffa,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3504476031849531446, guid: 3d89025fda62f674aa2d5ad34ffa3ffa,
         type: 3}
@@ -29908,10 +29978,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 5021947662154722172, guid: 7154e7db72f770943b0c6513ba7e6a42,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5021947662154722172, guid: 7154e7db72f770943b0c6513ba7e6a42,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2712299736078052950, guid: 7154e7db72f770943b0c6513ba7e6a42,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2712299736078052950, guid: 7154e7db72f770943b0c6513ba7e6a42,
         type: 3}
@@ -33931,10 +34011,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 4950619968578543565, guid: 3d89025fda62f674aa2d5ad34ffa3ffa,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950619968578543565, guid: 3d89025fda62f674aa2d5ad34ffa3ffa,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4950619968578543560, guid: 3d89025fda62f674aa2d5ad34ffa3ffa,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3504476031849531446, guid: 3d89025fda62f674aa2d5ad34ffa3ffa,
         type: 3}
@@ -34698,6 +34788,7 @@ GameObject:
   - component: {fileID: 562513822}
   - component: {fileID: 562513823}
   - component: {fileID: 562513824}
+  - component: {fileID: 562513825}
   m_Layer: 0
   m_Name: Faction_2
   m_TagString: faction
@@ -34731,6 +34822,7 @@ MonoBehaviour:
   - {fileID: 562513811}
   - {fileID: 562513819}
   - {fileID: 562513823}
+  - {fileID: 562513825}
   worldneedManager: {fileID: 1310670142}
   taskForAgents: {fileID: 0}
   mostWantedNeed: {fileID: 0}
@@ -34959,7 +35051,7 @@ MonoBehaviour:
   name: 
   satsifiedNeed: 0
   callDoActionCounter: 0
-  counterLimitToSpawnNewAgent: 2
+  counterLimitToSpawnNewAgent: 1
   agentPrefab: {fileID: 1865837431, guid: 73354958c1249df4084a58fa127c3385, type: 3}
 --- !u!114 &562513823
 MonoBehaviour:
@@ -35000,6 +35092,26 @@ MonoBehaviour:
   faction: {fileID: 0}
   stationsWherePlacementisnotPossible: []
   wasBulildCounter: 0
+  towerBuildPrice: 10
+--- !u!114 &562513825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562513809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d18f5821f42d8a746845836866165d52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseValue: 0
+  needWithNeedStation: 0
+  askForCounter: 0
+  currentvalue: -10
+  name: 
+  actor: {fileID: 0}
+  priority: 1
 --- !u!1 &562969025
 GameObject:
   m_ObjectHideFlags: 0
@@ -35909,7 +36021,7 @@ PrefabInstance:
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.3
+      value: -4.45
       objectReference: {fileID: 0}
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
@@ -35919,7 +36031,7 @@ PrefabInstance:
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.25
+      value: -1.23
       objectReference: {fileID: 0}
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
@@ -37333,8 +37445,9 @@ Transform:
   - {fileID: 981932566}
   - {fileID: 1075096441}
   - {fileID: 1789523380}
+  - {fileID: 1477960879}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &602887309
 GameObject:
@@ -40000,10 +40113,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 6143955589881202180, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143955589881202180, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 638930019380577940, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 638930019380577940, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
         type: 3}
@@ -45744,7 +45867,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &743600546
 Transform:
@@ -45767,7 +45890,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743600545}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -50974,7 +51097,7 @@ PrefabInstance:
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.31
+      value: 18.67
       objectReference: {fileID: 0}
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
@@ -50984,7 +51107,7 @@ PrefabInstance:
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.11
+      value: 3.42
       objectReference: {fileID: 0}
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
@@ -51548,10 +51671,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 5021947662154722172, guid: 7154e7db72f770943b0c6513ba7e6a42,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5021947662154722172, guid: 7154e7db72f770943b0c6513ba7e6a42,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2712299736078052950, guid: 7154e7db72f770943b0c6513ba7e6a42,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2712299736078052950, guid: 7154e7db72f770943b0c6513ba7e6a42,
         type: 3}
@@ -59602,7 +59735,7 @@ PrefabInstance:
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.82
+      value: 11.85
       objectReference: {fileID: 0}
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
@@ -59612,7 +59745,7 @@ PrefabInstance:
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.38
+      value: 2.76
       objectReference: {fileID: 0}
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
@@ -62297,10 +62430,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 5021947662154722172, guid: 7154e7db72f770943b0c6513ba7e6a42,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5021947662154722172, guid: 7154e7db72f770943b0c6513ba7e6a42,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2712299736078052950, guid: 7154e7db72f770943b0c6513ba7e6a42,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2712299736078052950, guid: 7154e7db72f770943b0c6513ba7e6a42,
         type: 3}
@@ -66346,6 +66489,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482eb6376d0de1748b6331ea1096ba4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1083950311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083950295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d18f5821f42d8a746845836866165d52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseValue: 0
+  needWithNeedStation: 0
+  askForCounter: 0
+  currentvalue: -10
+  name: 
+  actor: {fileID: 0}
+  priority: 1
 --- !u!1 &1084776731
 GameObject:
   m_ObjectHideFlags: 0
@@ -68132,7 +68294,7 @@ PrefabInstance:
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.1
+      value: 11.38
       objectReference: {fileID: 0}
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
@@ -68142,7 +68304,7 @@ PrefabInstance:
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.15
+      value: -0.9
       objectReference: {fileID: 0}
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
@@ -69690,10 +69852,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 5021947662154722172, guid: 7154e7db72f770943b0c6513ba7e6a42,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5021947662154722172, guid: 7154e7db72f770943b0c6513ba7e6a42,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2712299736078052950, guid: 7154e7db72f770943b0c6513ba7e6a42,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2712299736078052950, guid: 7154e7db72f770943b0c6513ba7e6a42,
         type: 3}
@@ -70899,10 +71071,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 3680027700350894893, guid: 3f449905c94554b4e852b36662cfa45a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3680027700350894893, guid: 3f449905c94554b4e852b36662cfa45a,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1372887018793265125, guid: 3f449905c94554b4e852b36662cfa45a,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6050144897543937534, guid: 3f449905c94554b4e852b36662cfa45a,
         type: 3}
@@ -73876,10 +74058,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 6143955589881202180, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143955589881202180, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 638930019380577940, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 638930019380577940, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
         type: 3}
@@ -78544,10 +78736,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 6143955589881202180, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143955589881202180, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 638930019380577940, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 638930019380577940, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
         type: 3}
@@ -83623,10 +83825,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 5021947662154722172, guid: 7154e7db72f770943b0c6513ba7e6a42,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5021947662154722172, guid: 7154e7db72f770943b0c6513ba7e6a42,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2712299736078052950, guid: 7154e7db72f770943b0c6513ba7e6a42,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2712299736078052950, guid: 7154e7db72f770943b0c6513ba7e6a42,
         type: 3}
@@ -90576,8 +90788,8 @@ Transform:
   - {fileID: 1243514492}
   - {fileID: 1386825313}
   - {fileID: 281855080}
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_Father: {fileID: 601504951}
+  m_RootOrder: 69
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1478939300
 GameObject:
@@ -96367,10 +96579,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 3680027700350894893, guid: 3f449905c94554b4e852b36662cfa45a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3680027700350894893, guid: 3f449905c94554b4e852b36662cfa45a,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1372887018793265125, guid: 3f449905c94554b4e852b36662cfa45a,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6050144897543937534, guid: 3f449905c94554b4e852b36662cfa45a,
         type: 3}
@@ -102404,10 +102626,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 6143955589881202180, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143955589881202180, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 638930019380577940, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 638930019380577940, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
         type: 3}
@@ -115606,10 +115838,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 4950619968578543565, guid: 3d89025fda62f674aa2d5ad34ffa3ffa,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950619968578543565, guid: 3d89025fda62f674aa2d5ad34ffa3ffa,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4950619968578543560, guid: 3d89025fda62f674aa2d5ad34ffa3ffa,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3504476031849531446, guid: 3d89025fda62f674aa2d5ad34ffa3ffa,
         type: 3}
@@ -116930,10 +117172,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 6143955589881202180, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143955589881202180, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 638930019380577940, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 638930019380577940, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
         type: 3}
@@ -120838,6 +121090,7 @@ GameObject:
   - component: {fileID: 2037967552}
   - component: {fileID: 2037967553}
   - component: {fileID: 2037967554}
+  - component: {fileID: 2037967555}
   m_Layer: 0
   m_Name: Faction_3
   m_TagString: faction
@@ -120925,6 +121178,7 @@ MonoBehaviour:
   - {fileID: 2037967542}
   - {fileID: 2037967549}
   - {fileID: 2037967553}
+  - {fileID: 2037967555}
   worldneedManager: {fileID: 1310670142}
   taskForAgents: {fileID: 0}
   mostWantedNeed: {fileID: 0}
@@ -121099,7 +121353,7 @@ MonoBehaviour:
   name: 
   satsifiedNeed: 0
   callDoActionCounter: 0
-  counterLimitToSpawnNewAgent: 2
+  counterLimitToSpawnNewAgent: 1
   agentPrefab: {fileID: 1865837431, guid: 73354958c1249df4084a58fa127c3385, type: 3}
 --- !u!114 &2037967553
 MonoBehaviour:
@@ -121140,6 +121394,26 @@ MonoBehaviour:
   faction: {fileID: 0}
   stationsWherePlacementisnotPossible: []
   wasBulildCounter: 0
+  towerBuildPrice: 10
+--- !u!114 &2037967555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037967539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d18f5821f42d8a746845836866165d52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseValue: 0
+  needWithNeedStation: 0
+  askForCounter: 0
+  currentvalue: -10
+  name: 
+  actor: {fileID: 0}
+  priority: 1
 --- !u!1 &2039577900
 GameObject:
   m_ObjectHideFlags: 0
@@ -124903,10 +125177,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 6143955589881202180, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143955589881202180, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 638930019380577940, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 638930019380577940, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
         type: 3}
@@ -125671,10 +125955,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 6143955589881202180, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143955589881202180, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 638930019380577940, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 638930019380577940, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
         type: 3}
@@ -126471,7 +126765,7 @@ PrefabInstance:
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.38
+      value: 4.3
       objectReference: {fileID: 0}
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
@@ -126481,7 +126775,7 @@ PrefabInstance:
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.07
+      value: -15.22
       objectReference: {fileID: 0}
     - target: {fileID: 1491386222954516643, guid: 673a3b804e2385442aa2b86d0b2488eb,
         type: 3}
@@ -128769,10 +129063,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 5021947662154722172, guid: 7154e7db72f770943b0c6513ba7e6a42,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5021947662154722172, guid: 7154e7db72f770943b0c6513ba7e6a42,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2712299736078052950, guid: 7154e7db72f770943b0c6513ba7e6a42,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2712299736078052950, guid: 7154e7db72f770943b0c6513ba7e6a42,
         type: 3}
@@ -129252,6 +129556,11 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 87059727859476946, guid: e35776a7228cfe241a2c73dccef90261,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 87059727859476950, guid: e35776a7228cfe241a2c73dccef90261, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e35776a7228cfe241a2c73dccef90261, type: 3}
@@ -129612,10 +129921,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 6143955589881202180, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143955589881202180, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 638930019380577940, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 638930019380577940, guid: 0ec6a063c41f9d3428085d68f71bd3c5,
         type: 3}
@@ -129877,10 +130196,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 4950619968578543565, guid: 3d89025fda62f674aa2d5ad34ffa3ffa,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950619968578543565, guid: 3d89025fda62f674aa2d5ad34ffa3ffa,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4950619968578543560, guid: 3d89025fda62f674aa2d5ad34ffa3ffa,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3504476031849531446, guid: 3d89025fda62f674aa2d5ad34ffa3ffa,
         type: 3}
@@ -130228,6 +130557,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6295508524128771944, guid: 803bcfbd6e607324ba1cc062d333d1f8,
         type: 3}
+      propertyPath: "bed\xFCfnisse.Array.size"
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6295508524128771944, guid: 803bcfbd6e607324ba1cc062d333d1f8,
+        type: 3}
       propertyPath: freetTimePoints.Array.data[0]
       value: 
       objectReference: {fileID: 1577843174}
@@ -130251,6 +130585,11 @@ PrefabInstance:
       propertyPath: worldneedManager
       value: 
       objectReference: {fileID: 1310670142}
+    - target: {fileID: 6295508524128771944, guid: 803bcfbd6e607324ba1cc062d333d1f8,
+        type: 3}
+      propertyPath: "bed\xFCfnisse.Array.data[3]"
+      value: 
+      objectReference: {fileID: 1083950311}
     - target: {fileID: 6295508524128771948, guid: 803bcfbd6e607324ba1cc062d333d1f8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -130305,6 +130644,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1083950300, guid: 803bcfbd6e607324ba1cc062d333d1f8, type: 3}
+      propertyPath: increaseValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1083950308, guid: 803bcfbd6e607324ba1cc062d333d1f8, type: 3}
+      propertyPath: counterLimitToSpawnNewAgent
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 803bcfbd6e607324ba1cc062d333d1f8, type: 3}
@@ -130415,6 +130762,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8088797625810455964, guid: 86cc444055424b145a9f113026d69b2a,
+        type: 3}
+      propertyPath: m_TagString
+      value: navgenerator
+      objectReference: {fileID: 0}
     - target: {fileID: 8088797625810455936, guid: 86cc444055424b145a9f113026d69b2a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -130453,7 +130805,7 @@ PrefabInstance:
     - target: {fileID: 8088797625810455936, guid: 86cc444055424b145a9f113026d69b2a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8088797625810455936, guid: 86cc444055424b145a9f113026d69b2a,
         type: 3}
@@ -130759,10 +131111,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObsBox
       objectReference: {fileID: 0}
+    - target: {fileID: 3680027700350894893, guid: 3f449905c94554b4e852b36662cfa45a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3680027700350894893, guid: 3f449905c94554b4e852b36662cfa45a,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1372887018793265125, guid: 3f449905c94554b4e852b36662cfa45a,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6050144897543937534, guid: 3f449905c94554b4e852b36662cfa45a,
         type: 3}

@@ -15,7 +15,7 @@ public class PlaceTowerA : KIAction
     private int placeDir = 1;
     private TowerStation tower;
     public float wasBulildCounter = 0;
-
+    [SerializeField] private int towerBuildPrice = 10;
 
     public override bool doAction( GameObject actor )
     {
@@ -23,6 +23,7 @@ public class PlaceTowerA : KIAction
         if ( stationToTryToPlaceATower == null )
         {
             faction = actor.GetComponent<KIFaction>();
+            if ( faction.pay( towerBuildPrice ) < 0 ) return resetAction();
             getFarthestStation();
             if ( stationToTryToPlaceATower == null ) return true;
             InstaciateTower( placeDir );
@@ -49,22 +50,21 @@ public class PlaceTowerA : KIAction
 
 
     private void getFarthestStation() {
-        float distanceFromFactionCore = 0;
+        float highestEndangeredCounter = 0;
         GameObject farthestStation = null;
-        foreach ( List<GameObject> stationList in faction.listOfAgentNeedStations.Values )
-        {
-            foreach ( GameObject station in stationList )
+        
+            foreach ( NeedStation station in faction.endangeredNeedStations.Keys )
             {
-                if ( stationsWherePlacementisnotPossible.Contains( station ) ) continue;
-                float temp = Vector3.Distance( faction.gameObject.transform.position, station.transform.position );
-                if ( temp >= distanceFromFactionCore )
+                if ( stationsWherePlacementisnotPossible.Contains( station.gameObject ) ) continue;
+                int temp = faction.getEndangeredCounter( station );
+                if ( temp > highestEndangeredCounter )
                 {
-                    distanceFromFactionCore = temp;
-                    farthestStation = station;
+                    highestEndangeredCounter = temp;
+                    farthestStation = station.gameObject;
                 }
 
             }
-        }
+        
         stationToTryToPlaceATower = farthestStation;
     }
 
@@ -81,8 +81,11 @@ public class PlaceTowerA : KIAction
             stationToTryToPlaceATower = null;
             getFarthestStation();
             if ( stationToTryToPlaceATower == null ) failedToPlace = true;
-            placeDir = 1;
-            InstaciateTower( placeDir );
+            else
+            {
+                placeDir = 1;
+                InstaciateTower( placeDir );
+            }
             break;
         default:
             placeDir++;
@@ -100,10 +103,10 @@ public class PlaceTowerA : KIAction
         float xModifier = 0;
         float zModifier = 0;
 
-        if ( placeDirection < 3 )  zModifier = 2f + ( ( placeDirection / 2 ) * -4f );
+        if ( placeDirection < 3 )  zModifier = 3f + ( ( placeDirection / 2 ) * -6f );
         else {
             placeDirection = placeDirection / 2;
-            xModifier  = 2f + ( ( placeDirection / 2 ) * -4f );
+            xModifier  = -3f + ( ( placeDirection / 2 ) * 6f );
         }
        
         Vector3 positionToBePlaced = new Vector3( stationToTryToPlaceATower.transform.position.x+xModifier, stationToTryToPlaceATower.transform.position.y, stationToTryToPlaceATower.transform.position.z+zModifier );

@@ -164,9 +164,10 @@ public class KIAgent : MonoBehaviour, IIndigent
 
     Bedurfniss setMostRequestedNeed() {
         Bedurfniss tempNeed = null;
-        int highestAskCounter = 0;
+        int highestAskCounter = 1;
         foreach ( Bedurfniss need in bedürfnisse )      
         {
+            if ( need.name == "factionLoyalty" ) continue;
             if ( need.askForCounter > highestAskCounter ) {
                 tempNeed = need;
                 highestAskCounter = need.askForCounter;

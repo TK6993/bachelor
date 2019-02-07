@@ -46,7 +46,7 @@ public class NeedManager : MonoBehaviour {
 
 
 
-    public virtual GameObject getNearestPointofSatisfaction( Bedurfniss b, GameObject agent )
+    public virtual GameObject getNearestPointofSatisfaction( Bedurfniss b, GameObject actor )
     {
          //Suche nach nächten freien Punkt zur Erfüllung des Bedürfnisses
          GameObject nearestPlace = null;
@@ -54,7 +54,7 @@ public class NeedManager : MonoBehaviour {
     
          GameObject[ ] needSatisfactionPlaces = agentNeeds[b.name]; // Erstellen eines Arrays das wir uns aus dem Dictionry needs holen duch den na,en des bedürfnisses als Key 
 
-         NavMeshAgent navAgent = agent.GetComponent<NavMeshAgent>();       
+         NavMeshAgent navAgent = actor.GetComponent<NavMeshAgent>();       
          float pathlength = float.MaxValue;
          float newPathLenght = 0;
          NeedStation needS = null;
@@ -63,20 +63,27 @@ public class NeedManager : MonoBehaviour {
 
             // Herausfinden ob die Stelle schon besetzt ist
             needS = p.GetComponent<NeedStation>();
-            
-                if ( needS.isInPossession ) {
+
+            if ( needS.ownerFaction != null )// überprüfen ob diese Station bereits der Fraction gehört
+            {
+                if ( needS.ownerFaction.GetComponent<KIFaction>() == actor.GetComponent<KIFaction>() )
+                {
                     continue;
+                }
             }
 
            NavMeshPath path = new NavMeshPath();
            navAgent.CalculatePath( p.transform.position, path ); // Pfand zum Ziel berechnen
-           Vector3[] corners = path.corners;
+          Vector3[] corners = path.corners;
 
                 // Länge des Pfades berechnen
                 for ( int c = 0; c < corners.Length; c++ ){
                     if(c != corners.Length-1)
                     newPathLenght += Vector3.Distance( corners[ c ], corners[ c + 1 ] );
                 }
+           //     newPathLenght = CalculatePathCost(path);
+
+                if( needS.ownerFaction != null ) newPathLenght = newPathLenght; // erhöht die kosten um eine Station einzunehmen.
                 if ( newPathLenght < pathlength ) {
                     pathlength = newPathLenght;
                     nearestPlace = p;
@@ -87,6 +94,54 @@ public class NeedManager : MonoBehaviour {
         return nearestPlace;
 
 
+    }
+
+
+    float CalculatePathCost( NavMeshPath path )
+    {
+        if ( path.corners.Length < 2 ) return 0;
+
+        float cost = 0;
+        NavMeshHit hit;
+        NavMesh.SamplePosition( path.corners[ 0 ], out hit, 0.1f, NavMesh.AllAreas );
+        Vector3 rayStart = path.corners[ 0 ];
+        int mask = hit.mask;
+        int index = IndexFromMask( mask );
+
+        for ( int i = 1; i < path.corners.Length; ++i )
+        {
+
+            while ( true )
+            {
+                NavMesh.Raycast( rayStart, path.corners[ i ], out hit, mask );
+
+                cost += NavMesh.GetAreaCost( index ) * hit.distance;
+
+                if ( hit.mask != 0 ) mask = hit.mask;
+
+                index = IndexFromMask( mask );
+                rayStart = hit.position;
+
+                if ( hit.mask == 0 )
+                { //hit boundary; move startPoint of ray a bit closer to endpoint
+                    rayStart += ( path.corners[ i ] - rayStart ).normalized * 0.01f;
+                }
+
+                if ( !hit.hit ) break;
+            }
+        }
+
+        return cost;
+    }
+
+    int IndexFromMask( int mask )
+    {
+        for ( int i = 0; i < 32; ++i )
+        {
+            if ( ( 1 << i ) == mask )
+                return i;
+        }
+        return -1;
     }
 
 

@@ -13,6 +13,7 @@ TagManager:
   - technologie
   - faction
   - tower
+  - navgenerator
   layers:
   - Default
   - TransparentFX

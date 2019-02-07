@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 6033032809129030984}
   - component: {fileID: 5373098068015397541}
   - component: {fileID: 2336040562732946122}
+  - component: {fileID: 4304201812858230666}
   m_Layer: 0
-  m_Name: Tower
+  m_Name: Tower_red
   m_TagString: tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,6 +112,8 @@ MonoBehaviour:
   bulletprefab: {fileID: 4531855945365588394, guid: f04cbf37f790d2a4186680f0849a0b0b,
     type: 3}
   placeholderBullet: {fileID: 7230729083373644399}
+  waiterprefab: {fileID: 114136384682537814, guid: 4f15b09ae16acce438550c149faa6f68,
+    type: 3}
 --- !u!54 &2336040562732946122
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,6 +130,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4304201812858230666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474110384153052950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2777bba7e4e7c6f4681e3ea77eef5438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 4, y: 40, z: 4}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 3
+  m_AffectedAgents: ffffffff
 --- !u!1 &8333159778846289823
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,7 +318,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 11.540413
+  m_Radius: 8
   m_Center: {x: -0.15, y: -0.0000013207068, z: -10.31157}
 --- !u!1001 &6538337369409479621
 PrefabInstance:
